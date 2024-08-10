@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/03414abcb6.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b3d4a3510f.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="MK.png" alt="" class="logo" />
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+          </ul>
+          
+          <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+          
+    
+          <p>UI/UX Designer</p>
+          <h1 id="typing-text"><span id="cursor"></span>
+        
+            Hi, I'm <span>Mahesh </span><br />
+            kumar from India
+          </h1>
+        </div>
+      </div>
+    </div>
+    
+    <!------------------------about------------>
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img
+              src="WhatsApp_Image_2024-02-19_at_23.52.43_d99d3a0b-removebg (1).png"
+              alt="user image"
+            />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>
+              <span style="font-weight: bold; color: #fff; font-size: 24px;">H</span>ello, I'm Mahesh, a passionate and driven B-Tech student currently pursuing my degree at Marri Laxman Reddy Institute of Technology and Management. With a strong interest in UI/UX design and web development, I am dedicated to creating intuitive and engaging user experiences that blend functionality with aesthetics.
+
+I have a solid foundation in various programming languages, including C, Python, and JavaScript, which I continuously strive to enhance through self-learning and practical application. My curiosity and enthusiasm for technology drive me to explore new skills and stay updated with the latest industry trends.
+
+In addition to my academic pursuits, I am committed to expanding my expertise in the tech industry by undertaking personal projects and collaborating with like-minded individuals. My goal is to contribute meaningfully to the field of technology, whether by designing user-friendly interfaces or developing efficient and robust web solutions
+I am always open to new opportunities and collaborations that challenge me to grow and push the boundaries of what technology can achieve. Feel free to connect with me as I continue my journey in the dynamic world of technology.
+            </p>
+            <div class="tab-titles">
+              <p class="tab-links action-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>UI/UX</span><br />Designing Web/App interfaces</li>
+                <li>
+                  <span>Web Development</span><br />
+                  Web/App Development
+                </li>
+                <li>
+                  <span>Video Editing</span><br />In Adobe Premiere Pro and Adobe After Effects
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li>
+                  <span>2023 - Current</span><br />UI/UX Design Training at ET
+                  Institute
+                </li>
+                <li>
+                  <span>2020 - 2023</span><br />
+                  Team lead at StarApp LLc.
+                </li>
+                <li>
+                  <span>2016 - 2017</span><br />Insternship at ekart eCommerce.
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li>
+                  <span>2023 - Present</span><br />B-Tech Marri Laxman Reddy Institute of Technology and Management (MLRITM), Hyderabad. 
+                </li>
+                <li>
+                  <span>2023</span><br />
+                  Inter from Narayana college, Chintal, Hyderabad. 
+                </li>
+                <li><span>2021</span><br />10th from Netaji high school, Chintal, Hyderabad.</li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- ------------------services---------------- -->
+     <div  id="services">
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+      <div class="services-list">
+        <div>
+          <i class="fa-solid fa-code"></i>
+          <h2>Web Design</h2>
+          <p>As a dedicated web designer, I specialize in crafting visually appealing and highly functional websites that deliver an exceptional user experience. My work revolves around the perfect blend of creativity and technology, ensuring that each design not only looks stunning but also performs flawlessly across devices.</p>
+          <a href="#">learn more</a>
+        </div>
+        <div>
+          <i class="fa-solid fa-crop"></i>
+          <h2>Video Editing</h2>
+          <p>I am a skilled web editor with a passion for crafting compelling and impactful digital content. My expertise lies in editing, managing, and optimizing website content to ensure it is clear, concise, and engaging. I work closely with designers, developers, and content creators to maintain a consistent brand voice and enhance the user experience across all digital platforms</p>
+          <a href="#">learn more</a>
+        </div>
+        <div>
+          <i class="fa-brands fa-app-store"></i>
+          <h2>Photo Editing</h2>
+          <p>I’m a skilled photo editor with a passion for transforming images into captivating visuals. My expertise includes retouching, color correction, and creative photo manipulation to bring out the best in every shot. I work closely with photographers and clients to ensure that each image aligns with their vision and meets the highest quality standards.</p>
+          <a href="#">learn more</a>
+        
+      </div>
+      <div>
+        <i class="fa-solid fa-globe"></i>
+        <h2>Web Development</h2>
+        <p>I specialize in creating responsive, user-centric websites that combine aesthetics with functionality. My work spans front-end and back-end development, ensuring that every site I build is fast, secure, and scalable. From crafting clean, efficient code to optimizing performance, I’m dedicated to delivering high-quality web solutions that meet client goals and enhance user experiences.</p>
+        <a href="#">learn more</a>
+      
+    </div>
+    
+      </div>
+     </div>
+  </div>
+  </div>
+  <!----------------portfolio---------------->
+  <div id="portfolio">
+    <div class="container">
+      <h1 class="sub-title">My Work</h1>
+      <div class="work-list">
+        <div class="work">
+          <img src="work-1.png" alt="">
+          <div class="layer">
+            <h3>Social Media App</h3>
+            <p>Developed a responsive social media platform with user profiles, real-time updates, and interactive features.</p>
+               <a href="#"><i class="fa-solid fa-up-right-from-square"></i> </a>
+          </div>
+        </div>
+        <div class="work">
+          <img src="work-2.png" alt="">
+          <div class="layer">
+            <h3>Music App</h3>
+            <p>Designed a dynamic music website featuring streaming, playlists, and user-friendly navigation for music enthusiasts.</p>
+               <a href="#"><i class="fa-solid fa-up-right-from-square"></i> </a>
+          </div>
+        </div>
+        <div class="work">
+          <img src="work-3.png" alt="">
+          <div class="layer">
+            <h3>Online Shopping App</h3>
+            <p>Built an intuitive online shopping app with product browsing, secure checkout, and user reviews.</p>
+               <a href="#"><i class="fa-solid fa-up-right-from-square"></i> </a>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="btn">See More</a>
+    </div>
+
+  </div>
+  <!-- -------------contact-------------------- -->
+   <div id="contact">
+    <div class="container">
+      <div class="row">
+      <div class="contact-left">
+        
+        <h1 class="sub-title">Contact Me</h1>
+        <p><i class="fa-solid fa-paper-plane"></i> kolim5263@gmail.com</p>
+        <p><i class="fa-solid fa-square-phone"></i> 6302596695</p>
+        <div class="social-icons">
+          <a href="https://discord.gg/zknVjSuv"><i class="fa-brands fa-discord"></i></a>
+          <a href="https://www.instagram.com/maheshtechie.7/"><i class="fa-brands fa-facebook"></i></a>
+          <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
+          <a href="https://www.instagram.com/maheshtechie.7/"><i class="fa-brands fa-square-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/mahesh-kumar-b48686242/"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/Maheshkumar313"><i class="fa-brands fa-square-github"></i></a>
+        </div>
+        <a href="first resume.pdf" download class="btn btn2">Download CV</a>
+      </div>
+      <div class="contact-right">
+        <form name="submit-to-google-sheet" >
+          <input type="text" name="Name" placeholder="Your Name" required>
+          <input type="email" name="Email" placeholder="Your Email" required>
+          <textarea name="Message" rows="6" placeholder="Your Message" ></textarea>
+          <button type="submit"class="btn btn2">Submit</button>
+        </form>
+        <span id="msg"></span>
+      </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>Copyright &#169; Mahesh. It's made by Me</p>
+    </div>
+   </div>
+   
+
+  
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+  
+    function opentab(tabname) {
+      for (let tablink of tablinks) {
+        tablink.classList.remove("active-link");
+      }
+      for (let tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+    }
+  </script>
+  <script>
+    var sidemenu =document.getElementById("sidemenu");
+    function openmenu(){
+      sidemenu.style.right = "0";
+    }
+    function closemenu(){
+      sidemenu.style.right = "-200px";
+    }
+
+  </script>
+ 
+  
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyi2cd9O5YHKGYbQVGs0S-l9X05qB-RBkuauTIjeZsCc6pXe-3lh7EOKnw_iTGOWb2eGw/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          msg.innerHTML = "Message sent Successfully"
+          setTimeout(function(){
+            msg.innerHTML = ""
+
+          },5000)
+          form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+
+    
+    
+    
+
+ 
+  
+  </body>
+</html>
