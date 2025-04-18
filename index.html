@@ -7,35 +7,33 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/03414abcb6.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/b3d4a3510f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+
   </head>
   <body>
     <div id="header">
       <div class="container">
         <nav>
-          <img src="MK.png" alt="" class="logo" />
+          <img src="MK.png" alt="Logo" class="logo" />
           <ul id="sidemenu">
-            <li><a href="#header">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#header" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
             <i class="fas fa-times" onclick="closemenu()"></i>
           </ul>
-          
           <i class="fas fa-bars" onclick="openmenu()"></i>
         </nav>
-        <div class="header-text">
-          
     
-          <p>UI/UX Designer</p>
-          <h1 id="typing-text"><span id="cursor"></span>
-        
-            Hi, I'm <span>Mahesh </span><br />
-            kumar from India
-          </h1>
+        <div class="header-text">
+          <p>Cloud Engineer</p>
+          <h1>Hi, I'm <span>Mahesh</span><br /><span id="typing-text"></span></h1>
         </div>
       </div>
     </div>
+    
     
     <!------------------------about------------>
     <div id="about">
@@ -263,7 +261,61 @@ I am always open to new opportunities and collaborations that challenge me to gr
         })
         .catch(error => console.error('Error!', error.message))
     })
+    var typed = new Typed("#typing-text", {
+      strings: ["Cloud Engineer", "Frontend Developer", "Tech Enthusiast"], 
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth"
+        });
+      });
+    });
+    const roles = ["CLOUD SPECIALIST", "FRONTEND SHAPER", "TECH FUTURIST"];
+    const el = document.getElementById("typing-text");
+    let index = 0;
+    
+    function glitchText() {
+      const originalText = roles[index];
+      let displayText = originalText;
+      
+      // Initial clean display
+      el.textContent = displayText;
+      el.style.textShadow = "0 0 10px #0ff";
+      
+      // Add glitch effects
+      for (let i = 0; i < 3; i++) {
+        setTimeout(() => {
+          // Random character swaps
+          displayText = originalText.split("").map(c => 
+            Math.random() > 0.8 ? String.fromCharCode(c.charCodeAt(0) + Math.floor(Math.random() * 10) - 5) : c
+          ).join("");
+          
+          el.textContent = displayText;
+          el.style.textShadow = `0 0 ${Math.random() * 15}px rgba(0, 255, 255, ${Math.random()})`;
+        }, i * 100);
+      }
+      
+      // Return to normal
+      setTimeout(() => {
+        el.textContent = originalText;
+        el.style.textShadow = "0 0 10px #0ff";
+        index = (index + 1) % roles.length;
+        setTimeout(glitchText, 2500);
+      }, 300);
+    }
+    
+    glitchText();
+
+    
+    
   </script>
+  
+
 
 
     
