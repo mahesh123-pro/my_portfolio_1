@@ -262,25 +262,42 @@ nav ul li a:hover::after {
 }
 .services-list div a {
   text-decoration: none;
-  color: #fff;
+  color: black;
   font-size: 12px;
   margin-top: 20px;
   display: inline-block;
 }
 .services-list div:hover {
-  background: #ff004f;
+  background: cyan;
   transform: translateY(-10px);
 }
-/* ---------------portfolio------------------------ */
+/* ---------------My Work Section------------------------ */
 #portfolio {
   padding: 50px 0;
 }
+
+
+.show-extra .extra-work {
+  display: block;
+}
+
+
 .work-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 40px;
   margin-top: 50px;
 }
+.extra-work-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.extra-work-container.show {
+  max-height: 1000px; /* Adjust depending on content */
+}
+
 .work {
   border-radius: 10px;
   position: relative;
@@ -292,10 +309,19 @@ nav ul li a:hover::after {
   display: block;
   transition: transform 0.5s;
 }
+.extra-work {
+  display: none; /* Initially hide extra work items */
+}
+
+.extra-work-container.show .extra-work {
+  display: block; /* Show the extra work items when 'show' class is added */
+}
+
+
 .layer {
   width: 100%;
   height: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+  background: linear-gradient(rgba(0, 0, 0, 0.6), cyan);
   border-radius: 10px;
   position: absolute;
   left: 0;
@@ -316,11 +342,11 @@ nav ul li a:hover::after {
 }
 .layer a {
   margin: 20px;
-  color: #ff004f;
+  color: cyan;
   text-decoration: none;
   font-size: 18px;
   line-height: 60px;
-  background: #fff;
+  background: black;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -336,15 +362,22 @@ nav ul li a:hover::after {
   display: block;
   margin: 50px auto;
   width: fit-content;
-  border: 1px solid #ff004f;
+  border: 1px solid cyan;
   padding: 14px 50px;
   border-radius: 6px;
   text-decoration: none;
-  color: white;
-  transition: background 0.5s;
+  color: black;
+  transition: 0.3s ease;
+  border-radius: 10px;
 }
 .btn:hover {
-  background: #ff004f;
+  background: cyan;
+  box-shadow: 0 0 5px cyan,
+  0 0 20px cyan,
+  0 0 50px cyan,
+  0 0 100px cyan,
+  0 0 200px cyan;
+  
 }
 
 /* ------------------contacts---------------- */

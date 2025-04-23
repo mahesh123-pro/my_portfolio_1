@@ -145,11 +145,13 @@ I am always open to new opportunities and collaborations that challenge me to gr
      </div>
   </div>
   </div>
-  <!----------------portfolio---------------->
+  <!----------------My Work Section---------------->
   <div id="portfolio">
     <div class="container">
       <h1 class="sub-title">My Work</h1>
-      <div class="work-list">
+
+      <div class="work-list" id="workList">
+        
         <div class="work">
           <img src="work-1.png" alt="">
           <div class="layer">
@@ -158,6 +160,7 @@ I am always open to new opportunities and collaborations that challenge me to gr
                <a href="#"><i class="fa-solid fa-up-right-from-square"></i> </a>
           </div>
         </div>
+
         <div class="work">
           <img src="work-2.png" alt="">
           <div class="layer">
@@ -166,6 +169,7 @@ I am always open to new opportunities and collaborations that challenge me to gr
                <a href="#"><i class="fa-solid fa-up-right-from-square"></i> </a>
           </div>
         </div>
+        
         <div class="work">
           <img src="work-3.png" alt="">
           <div class="layer">
@@ -174,8 +178,25 @@ I am always open to new opportunities and collaborations that challenge me to gr
                <a href="#"><i class="fa-solid fa-up-right-from-square"></i> </a>
           </div>
         </div>
+
+  <!-- Collapsible section for extra work -->
+ 
+    <div class="work extra-work">
+      <img src="work-4.png" alt="">
+      <div class="layer">
+        <h3>Portfolio Website</h3>
+        <p>Created a modern portfolio with responsive design and animations.</p>
+        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
       </div>
-      <a href="#" class="btn">See More</a>
+    </div>
+    
+    <!-- Add more extra works here -->
+  </div>
+</div>
+
+
+      <a href="#" class="btn" id="seeMoreBtn">See More</a>
+      
     </div>
 
   </div>
@@ -217,10 +238,12 @@ I am always open to new opportunities and collaborations that challenge me to gr
 
   
   <script>
+    // ----------------Tabs Functionality------------------
+    // Get all elements with class="tab-links" and "tab-contents"
     var tablinks = document.getElementsByClassName("tab-links");
     var tabcontents = document.getElementsByClassName("tab-contents");
   
-    function opentab(tabname) {
+    function opentab(tabname, event) {
       for (let tablink of tablinks) {
         tablink.classList.remove("active-link");
       }
@@ -230,8 +253,11 @@ I am always open to new opportunities and collaborations that challenge me to gr
       event.currentTarget.classList.add("active-link");
       document.getElementById(tabname).classList.add("active-tab");
     }
-  </script>
-  <script>
+    
+ 
+
+  // -----------------side Menu------------------
+ 
     var sidemenu =document.getElementById("sidemenu");
     function openmenu(){
       sidemenu.style.right = "0";
@@ -240,10 +266,9 @@ I am always open to new opportunities and collaborations that challenge me to gr
       sidemenu.style.right = "-200px";
     }
 
-  </script>
- 
   
-  <script>
+
+      //-----------------Google Sheets API------------------
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyi2cd9O5YHKGYbQVGs0S-l9X05qB-RBkuauTIjeZsCc6pXe-3lh7EOKnw_iTGOWb2eGw/exec'
     const form = document.forms['submit-to-google-sheet']
     const msg = document.getElementById("msg")
@@ -261,12 +286,19 @@ I am always open to new opportunities and collaborations that challenge me to gr
         })
         .catch(error => console.error('Error!', error.message))
     })
+ 
+    
+    
+      // -----------------Typed.js------------------
     var typed = new Typed("#typing-text", {
       strings: ["Cloud Engineer", "Frontend Developer", "Tech Enthusiast"], 
       typeSpeed: 50,
       backSpeed: 30,
       loop: true
     });
+  
+
+    // -----------------Smooth Scrolling------------------
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener("click", function (e) {
         e.preventDefault();
@@ -275,6 +307,8 @@ I am always open to new opportunities and collaborations that challenge me to gr
         });
       });
     });
+ 
+    // -----------------Glitch Effect------------------
     const roles = ["CLOUD SPECIALIST", "FRONTEND SHAPER", "TECH FUTURIST"];
     const el = document.getElementById("typing-text");
     let index = 0;
@@ -310,6 +344,34 @@ I am always open to new opportunities and collaborations that challenge me to gr
     }
     
     glitchText();
+
+
+    
+    // -----------------See More Section------------------
+     // Function to handle the "See More" button click
+    
+     const seeMoreBtn = document.getElementById('seeMoreBtn');
+     const extraWorkContainer = document.getElementById('extraWorkContainer');
+     let expanded = false;
+     
+     seeMoreBtn.addEventListener('click', function (e) {
+       e.preventDefault();
+       expanded = !expanded;
+     
+       // Toggling the 'show' class based on the state of `expanded`
+       extraWorkContainer.classList.toggle('show', expanded);
+     
+       // Changing the button text
+       seeMoreBtn.textContent = expanded ? 'Show Less' : 'See More';
+     });
+     
+    
+    
+    
+    
+    
+    
+    
 
     
     
