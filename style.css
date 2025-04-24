@@ -270,11 +270,24 @@ nav ul li a:hover::after {
 .services-list div:hover {
   background: cyan;
   transform: translateY(-10px);
+  color: black;
 }
 /* ---------------My Work Section------------------------ */
 #portfolio {
   padding: 50px 0;
 }
+#portfolio {
+  padding: 50px 0;
+  color: #0ff; /* Change this to your preferred text color */
+}
+
+#portfolio .work h3,
+#portfolio .work p,
+#portfolio .layer h3,
+#portfolio .layer p {
+  color: black; /* Set color for headings and paragraph inside work cards */
+}
+
 
 
 .show-extra .extra-work {
@@ -369,6 +382,7 @@ nav ul li a:hover::after {
   color: black;
   transition: 0.3s ease;
   border-radius: 10px;
+  color: white;
 }
 .btn:hover {
   background: cyan;
@@ -377,6 +391,7 @@ nav ul li a:hover::after {
   0 0 50px cyan,
   0 0 100px cyan,
   0 0 200px cyan;
+  color: black;
   
 }
 
@@ -391,10 +406,24 @@ nav ul li a:hover::after {
   margin-top: 30px;
 }
 .contact-left p i {
-  color: #ff004f;
+  color: #ababab;
   margin-right: 15px;
   font-size: 25px;
 }
+.contact-left p i:hover {
+  color: #ff004f;
+  transition: 0.5s;
+  transform: translateY(-5px);
+  background-color: #ff004f;
+  box-shadow: 0 0 5px #ff004f,
+  0 0 20px #ff004f,
+  0 0 50px #ff004f,
+  0 0 100px #ff004f,
+  0 0 200px #ff004f;
+  color: black;
+}
+
+
 .social-icons {
   margin-top: 30px;
 }
@@ -409,10 +438,29 @@ nav ul li a:hover::after {
 .social-icons a:hover {
   color: #ff004f;
   transform: translateY(-5px);
+  background-color: #ff004f;
+  box-shadow: 0 0 5px #ff004f,
+  0 0 20px #ff004f,
+  0 0 50px #ff004f,
+  0 0 100px #ff004f,
+  0 0 200px #ff004f;
+  color: black;
 }
+  
+
 .btn.btn2 {
   display: inline-block;
   background-color: #ff004f;
+  border-color: #ff004f;
+}
+.btn.btn2:hover{
+  background-color: #ff004f;
+  border-color: #ff004f;
+  box-shadow : 0 0 5px #ff004f,
+  0 0 20px #ff004f,
+  0 0 50px #ff004f,
+  0 0 100px #ff004f,
+  0 0 200px #ff004f;
 }
 
 .contact-right form {
