@@ -233,6 +233,48 @@ nav ul li a:hover::after {
 .tab-contents.active-tab {
   display: block;
 }
+#skills-tools {
+  padding: 50px 0;
+  background: #0a0a0a; /* dark background */
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.skill-item {
+  background: #262626;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.skill-item i {
+  font-size: 50px;
+  color: #ff004f; /* your theme color */
+  margin-bottom: 10px;
+}
+
+.skill-item h3 {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.skill-item:hover {
+  transform: translateY(-10px);
+  background: #ff004f;
+}
+
+.skill-item:hover i, 
+.skill-item:hover h3 {
+  color: #fff;
+}
+
 /*---------------my project session---------------*/
 #my-projects {
   padding: 50px 0;
