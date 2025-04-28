@@ -275,6 +275,79 @@ nav ul li a:hover::after {
   color: #fff;
 }
 
+/* Certifications Section */
+.certifications-section {
+  padding: 80px 20px;
+  background: #111;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: white;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: #ff4d4d;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: #262626;
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(255, 77, 77, 0.3);
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.card-desc {
+  font-size: 16px;
+  color: white;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.card-date {
+  font-size: 14px;
+  color: #ff4d4d;
+  font-weight: 500;
+  position: absolute;
+  bottom: 20px;
+}
+
 /*---------------my project session---------------*/
 #my-projects {
   padding: 50px 0;
