@@ -127,6 +127,13 @@
      // Changing the button text
      seeMoreBtn.textContent = expanded ? 'Show Less' : 'See More';
    });
+
+   //preloader
+  window.addEventListener('load', function () {
+    document.getElementById('preloader').style.display = 'none';
+  });
+
+
    
   
   
