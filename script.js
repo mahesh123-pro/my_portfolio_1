@@ -133,6 +133,25 @@
     document.getElementById('preloader').style.display = 'none';
   });
 
+  document.getElementById('preloader').style.opacity = '0';
+setTimeout(() => {
+  document.getElementById('preloader').style.display = 'none';
+}, 500);
+  
+  
+    // -----------------Scroll Reveal------------------
+    ScrollReveal({ 
+      reset: true,
+      distance: '80px',
+      duration: 2000,
+      delay: 200
+    });
+    
+    ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+    ScrollReveal().reveal('.home-img, .skills-container, .project-box, .contact form', { origin: 'bottom' });
+    ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
+    ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
+
 
    
   

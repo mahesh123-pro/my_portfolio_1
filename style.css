@@ -298,12 +298,12 @@ nav ul li a:hover::after {
 
 .skill-item:hover {
   transform: translateY(-10px);
-  background: #ff004f;
+  background: cyan;
 }
 
 .skill-item:hover i, 
 .skill-item:hover h3 {
-  color: #fff;
+  color: black;
 }
 
 /* Certifications Section */
@@ -330,7 +330,7 @@ nav ul li a:hover::after {
   content: "";
   width: 80px;
   height: 4px;
-  background: #ff004f;
+  background: cyan;
   display: block;
   margin: 10px auto 0;
   border-radius: 2px;
@@ -346,7 +346,7 @@ nav ul li a:hover::after {
   background: #262626;
   padding: 30px 20px;
   border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(8, 188, 216, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -354,9 +354,10 @@ nav ul li a:hover::after {
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 12px 20px rgba(255, 77, 77, 0.3);
-  color: #000000;
-  background: #ff004f;
+  box-shadow: 0 12px 20px rgba(8, 188, 216, 0.1);;
+ 
+  background: cyan;
+  color: black;
 }
 
 .card-title {
