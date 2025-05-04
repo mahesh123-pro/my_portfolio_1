@@ -299,6 +299,7 @@ nav ul li a:hover::after {
 .skill-item:hover {
   transform: translateY(-10px);
   background: cyan;
+  box-shadow: 0 12px 20px cyan;;
 }
 
 .skill-item:hover i, 
@@ -334,6 +335,7 @@ nav ul li a:hover::after {
   display: block;
   margin: 10px auto 0;
   border-radius: 2px;
+  color: #000;
 }
 
 .cards {
@@ -346,40 +348,57 @@ nav ul li a:hover::after {
   background: #262626;
   padding: 30px 20px;
   border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(8, 188, 216, 0.1);
+  /* box-shadow: 0 8px 16px rgba(8, 188, 216, 0.1); */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 16px;
 }
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 12px 20px rgba(8, 188, 216, 0.1);;
+  box-shadow: 0 12px 20px cyan;;
+  /* font-size: 30px; */
+  /* font-weight: 600; */
  
   background: cyan;
   color: black;
 }
 
-.card-title {
+/* .card-title {
   font-size: 22px;
   font-weight: 600;
   color: white;
   margin-bottom: 15px;
 }
+.card-title:hover {
+  color: #000;
+  font-size: 30px;
+} */
 
-.card-desc {
+/* .card-desc {
   font-size: 16px;
   color: #fff;
-  line-height: 1.6;
+  line-height: 1;
   margin-bottom: 20px;
 }
+.card-desc:hover{
+  color: #000;
+} */
 
 .card-date {
   font-size: 14px;
   color: white;
   font-weight: 500;
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
+}
+.card-date:hover{
+  color: #ff4d4d;
+  font-size: 15px;
+
 }
 
 /*---------------my project session---------------*/
@@ -428,16 +447,23 @@ nav ul li a:hover::after {
   text-decoration: none;
   font-weight: bold;
 }
+.project-card a:hover {
+  color: crimson;
+  text-shadow: 0 0 8px #ff4d4d, 0 0 20px #ff4d4d;
+}
 
 .project-card:hover {
-  background: crimson;
+  background: cyan;
   transform: translateY(-10px);
+  box-shadow: 0 12px 20px cyan;;
+  color: black;
 }
 
 .project-card:hover h2,
 .project-card:hover p,
-.project-card:hover a {
-  color: #fff;
+.project-card:hover a
+.project-card:hover i {
+  color: #000;
 }
 
 /* ---------services-------------------------------- */
