@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusConnect - Case Study</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/03414abcb6.js" crossorigin="anonymous"></script>
+    <style>
+        .case-study-hero {
+            padding: 100px 0 50px;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('bg.png');
+            /* Fallback or use existing bg */
+            background-size: cover;
+            text-align: center;
+        }
+
+        .cs-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .cs-section {
+            margin-bottom: 40px;
+            background: #262626;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .cs-section h2 {
+            color: #ff004f;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+        }
+
+        .tech-stack-list span {
+            display: inline-block;
+            background: #444;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .back-btn:hover {
+            color: #ff004f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" style="padding-top: 20px;">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+    </div>
+
+    <header class="case-study-hero">
+        <div class="container">
+            <h1 class="sub-title">CampusConnect</h1>
+            <p class="hero-subtext">Bridging the gap between students and collaboration.</p>
+        </div>
+    </header>
+
+    <div class="cs-container">
+
+        <div class="cs-section">
+            <h2>The Problem</h2>
+            <p>Students in my college struggled to find like-minded peers for hackathons and projects. WhatsApp groups
+                were chaotic, and there was no centralized way to showcase current skills or find collaborators based on
+                specific needs.</p>
+        </div>
+
+        <div class="cs-section">
+            <h2>Why It Mattered</h2>
+            <p>Talented students were missing opportunities simply because they didn't know who else was interested in
+                the same technologies. A platform was needed to democratize project formation.</p>
+        </div>
+
+        <div class="cs-section">
+            <h2>My Approach & Tech Stack</h2>
+            <p>I envisioned a "LinkedIn Lite" for the campus. I chose a stack that allowed for rapid prototyping and
+                real-time updates.</p>
+            <div class="tech-stack-list">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Firebase (Auth & DB)</span>
+            </div>
+        </div>
+
+        <div class="cs-section">
+            <h2>Architecture & Flow</h2>
+            <ul>
+                <li><strong>Authentication:</strong> Users sign up with college email to verify identity.</li>
+                <li><strong>Profile Creation:</strong> Students list skills and current learning focus.</li>
+                <li><strong>Discovery:</strong> A search interface allows filtering by skill (e.g., "Python",
+                    "Designer").</li>
+                <li><strong>Connection:</strong> Direct messaging or "Request to Join" for projects.</li>
+            </ul>
+        </div>
+
+        <div class="cs-section">
+            <h2>Challenges & Lessons</h2>
+            <p>One major challenge was handling real-time data sync without overwhelming the client. I learned how to
+                optimize Firebase queries and structure NoSQL data efficiently.</p>
+        </div>
+
+        <div class="cs-section" style="text-align: center;">
+            <h2>See It In Action</h2>
+            <a href="#" class="btn btn2">View Live Demo</a>
+            <a href="#" class="btn btn2">View GitHub Repo</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <p>Copyright &#169; Mahesh.</p>
+    </div>
+
+</body>
+
+</html>

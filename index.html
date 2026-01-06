@@ -1,283 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Personal Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://kit.fontawesome.com/03414abcb6.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/b3d4a3510f.js" crossorigin="anonymous"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    
 
-  </head>
-  <body>
-    <!-- Preloader -->
-<div id="preloader">
-  <div class="loader">hello</div>
-</div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Personal Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/03414abcb6.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/b3d4a3510f.js" crossorigin="anonymous"></script>
 
-    <div id="header">
-      <div class="container">
-        <nav>
-          <img src="MK.png" alt="Logo" class="logo" />
-          <ul id="sidemenu">
-            <li><a href="#header" class="nav-link">Home</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#services" class="nav-link">Services</a></li>
-            <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-            <i class="fas fa-times" onclick="closemenu()"></i>
-          </ul>
-          <i class="fas fa-bars" onclick="openmenu()"></i>
-        </nav>
-    
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader">hello</div>
+  </div>
+
+  <div id="header">
+    <div class="container">
+      <nav>
+        <img src="MK.png" alt="Logo" class="logo" />
+        <ul id="sidemenu">
+          <li><a href="#header" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#portfolio" class="nav-link">Gallery</a></li>
+          <li><a href="#my-projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <i class="fas fa-times" onclick="closemenu()"></i>
+        </ul>
+        <i class="fas fa-bars" onclick="openmenu()"></i>
+      </nav>
+
+      <div class="header-row">
         <div class="header-text">
-          <p>Cloud Engineer</p>
-          <h1>Hi, I'm <span>Mahesh</span><br /><span id="typing-text"></span></h1>
+          <p class="role-badge">Cloud Engineer & Web Developer</p>
+          <h1>Building scalable<br /><span>student-focused</span> platforms</h1>
+          <p class="hero-subtext">I design, develop, and deploy full-stack applications using AWS and modern web tools.
+          </p>
+          <div class="hero-btns">
+            <a href="#my-projects" class="btn btn-primary">View Projects</a>
+            <a href="Mahesh(Resume2).pdf" download class="btn btn-secondary">Download CV</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="hero-profile.png" alt="Mahesh Profile">
         </div>
       </div>
     </div>
-    
-    
-    <!------------------------about------------>
-    <div id="about">
-      <div class="container">
-        <div class="row">
-          <div class="about-col-1">
-            <img
-              src="WhatsApp_Image_2024-02-19_at_23.52.43_d99d3a0b-removebg (1).png"
-              alt="user image"
-            />
-          </div>
-          <div class="about-col-2">
-            <h1 class="sub-title">About Me</h1>
+  </div>
+
+
+  <!------------------------about------------>
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="about-col-1">
+          <img src="profile-portrait.png" alt="Mahesh - Cloud Engineer" />
+        </div>
+        <div class="about-col-2">
+          <h1 class="sub-title">About Me</h1>
+          <div class="about-text">
             <p>
-              <span style="font-weight: bold; color: #fff; font-size: 24px;">H</span>ello, I'm Mahesh, a passionate and driven B-Tech student currently pursuing my degree at Marri Laxman Reddy Institute of Technology and Management. With a strong interest in UI/UX design and web development, I am dedicated to creating intuitive and engaging user experiences that blend functionality with aesthetics.
-
-I have a solid foundation in various programming languages, including C, Python, and JavaScript, which I continuously strive to enhance through self-learning and practical application. My curiosity and enthusiasm for technology drive me to explore new skills and stay updated with the latest industry trends.
-
-In addition to my academic pursuits, I am committed to expanding my expertise in the tech industry by undertaking personal projects and collaborating with like-minded individuals. My goal is to contribute meaningfully to the field of technology, whether by designing user-friendly interfaces or developing efficient and robust web solutions
-I am always open to new opportunities and collaborations that challenge me to grow and push the boundaries of what technology can achieve. Feel free to connect with me as I continue my journey in the dynamic world of technology.
+              Hello, I'm Mahesh, a B-Tech student at MLRITM with a passion for <strong>Cloud Computing</strong> and
+              <strong>Full-Stack Development</strong>. My journey started with curiosity about how large-scale
+              applications work, leading me to master AWS architecture and modern web frameworks.
             </p>
-            <div class="tab-titles">
-              <p class="tab-links action-link" onclick="opentab('skills', event)">
-                Skills
-              </p>
-              <p class="tab-links" onclick="opentab('experience', event)">
-                Experience
-              </p>
-              <p class="tab-links" onclick="opentab('education', event)">Education</p>
-            </div>
-            <div class="tab-contents active-tab" id="skills">
-              <ul>
-                <li><span>UI/UX</span><br />Designing Web/App interfaces</li>
-                <li>
-                  <span>Web Development</span><br />
-                  Web/App Development
-                </li>
-                <li>
-                  <span>Video Editing</span><br />In Adobe Premiere Pro and Adobe After Effects
-                </li>
-              </ul>
-            </div>
-            <div class="tab-contents" id="experience">
-              <ul>
-                <li>
-                  <span>2023 - Current</span><br />UI/UX Design Training at ET
-                  Institute
-                </li>
-                <li>
-                  <span>2020 - 2023</span><br />
-                  Team lead at StarApp LLc.
-                </li>
-                <li>
-                  <span>2016 - 2017</span><br />Internship at ekart eCommerce.
-                </li>
-              </ul>
-            </div>
-            <div class="tab-contents" id="education">
-              <ul>
-                <li>
-                  <span>2023 - Present</span><br />B-Tech Marri Laxman Reddy Institute of Technology and Management (MLRITM), Hyderabad. 
-                </li>
-                <li>
-                  <span>2023</span><br />
-                  Inter from Narayana college, Chintal, Hyderabad. 
-                </li>
-                <li><span>2021</span><br />10th from Netaji high school, Chintal, Hyderabad.</li>
-              </ul>
-            </div>
-            
+            <br>
+            <p>
+              I build practical solutions—from student networking platforms to AI-integrated assistants. I focus on
+              writing clean code, designing intuitive interfaces, and deploying secure, scalable infrastructure.
+            </p>
+            <br>
+            <p>
+              Currently, I am expanding my expertise in <strong>DevOps</strong> and cloud security. I am looking for
+              opportunities to apply my skills in real-world projects and collaborate with engineering teams to solve
+              complex problems.
+            </p>
           </div>
+
+          <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('skills', event)">
+              Skills
+            </p>
+            <p class="tab-links" onclick="opentab('experience', event)">
+              Experience
+            </p>
+            <p class="tab-links" onclick="opentab('education', event)">Education</p>
+          </div>
+          <div class="tab-contents active-tab" id="skills">
+            <ul>
+              <li><span>Web Development</span><br />Building responsive Full-Stack apps</li>
+              <li><span>Cloud Computing</span><br />Designing secure AWS Architectures</li>
+              <li><span>UI/UX Design</span><br />Creating user-centered digital experiences</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="experience">
+            <ul>
+              <li>
+                <span>2023 - Current</span><br />UI/UX Design Training at ET Institute
+              </li>
+              <li>
+                <span>2020 - 2023</span><br />
+                Team lead at StarApp LLc.
+              </li>
+              <li>
+                <span>2016 - 2017</span><br />Internship at ekart eCommerce.
+              </li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="education">
+            <ul>
+              <li>
+                <span>2023 - Present</span><br />B-Tech Marri Laxman Reddy Institute of Technology and Management
+                (MLRITM), Hyderabad.
+              </li>
+              <li>
+                <span>2023</span><br />
+                Inter from Narayana college, Chintal, Hyderabad.
+              </li>
+              <li><span>2021</span><br />10th from Netaji high school, Chintal, Hyderabad.</li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </div>
+  </div>
 
-    
-    <!-- ----------------- Skills & Tools Section ----------------- -->
-<div id="skills-tools">
-  <div class="container">
-    <h1 class="sub-title">Skills & Tools</h1>
-    <div class="skills-grid">
-      <div class="skill-item">
-        <i class="fa-brands fa-html5"></i>
-        <h3>HTML5</h3>
-      </div>
-      <div class="skill-item">
-        <i class="fa-brands fa-css3-alt"></i>
-        <h3>CSS3</h3>
-      </div>
-      <div class="skill-item">
-        <i class="fa-brands fa-js-square"></i>
-        <h3>JavaScript</h3>
-      </div>
-      <div class="skill-item">
-        <i class="fa-brands fa-aws"></i>
-        <h3>AWS</h3>
-      </div>
-      <div class="skill-item">
-        <i class="fa-solid fa-code"></i>
-        <h3>C Programming</h3>
-      </div>
-      <div class="skill-item">
-        <i class="fa-brands fa-python"></i>
-        <h3>Python</h3>
-      </div>
-      <div class="skill-item">
-        <i class="fa-brands fa-figma"></i>
-        <h3>Figma</h3>
-      </div>
-      <div class="skill-item">
-        <i class="fa-solid fa-video"></i>
-        <h3>Adobe Premiere Pro</h3>
+
+  <!-- ----------------- Skills & Tools Section ----------------- -->
+  <div id="skills-tools">
+    <div class="container">
+      <h1 class="sub-title">Skills & Tools</h1>
+      <div class="skills-categories">
+
+        <div class="skill-category">
+          <h3><i class="fa-solid fa-code"></i> Frontend</h3>
+          <ul class="skill-list">
+            <li>HTML5 / CSS3</li>
+            <li>JavaScript (ES6+)</li>
+            <li>React.js (Basic)</li>
+            <li>Tailwind CSS</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3><i class="fa-solid fa-server"></i> Backend</h3>
+          <ul class="skill-list">
+            <li>Node.js</li>
+            <li>Python / Flask</li>
+            <li>MySQL / MongoDB</li>
+            <li>REST APIs</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3><i class="fa-brands fa-aws"></i> Cloud & DevOps</h3>
+          <ul class="skill-list">
+            <li>AWS (EC2, S3, RDS)</li>
+            <li>IAM & Security Groups</li>
+            <li>Linux (Shell Scripting)</li>
+            <li>Basic Docker</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3><i class="fa-solid fa-screwdriver-wrench"></i> Tools</h3>
+          <ul class="skill-list">
+            <li>Git & GitHub</li>
+            <li>Figma (UI Design)</li>
+            <li>VS Code</li>
+            <li>Postman</li>
+          </ul>
+        </div>
+
       </div>
     </div>
   </div>
-</div>
 
-<section id="certifications" class="certifications-section">
-  <div class="container">
-    <h2 class="section-title">Certifications & Achievements</h2>
+  <section id="certifications" class="certifications-section">
+    <div class="container">
+      <h2 class="section-title">Highlights & Credibility</h2>
 
-    <div class="cards">
-      <div class="card">
-        <h3 class="card-title">Cloud Computing Certification</h3>
-        <p class="card-desc">Earned from NPTEL, showcasing expertise in cloud architecture and services.</p>
-        <span class="card-date">August 2024</span>
+      <div class="cards">
+        <div class="card">
+          <h3 class="card-title">AWS Certified</h3>
+          <p class="card-desc">Specialized in Cloud Architecture and Serverless deployment.</p>
+          <span class="card-date">NPTEL Certified</span>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Hackathon Winner</h3>
+          <p class="card-desc">Recognized for innovative AR/VR solutions at Meta Loop Hackathon.</p>
+          <span class="card-date">2024</span>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">5+ Projects Deployed</h3>
+          <p class="card-desc">Full-stack applications running live on AWS and Vercel.</p>
+          <span class="card-date">Active</span>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Technical Speaker</h3>
+          <p class="card-desc">Presented research on Cloud Security at National Technical Fest.</p>
+          <span class="card-date">Valorous 2025</span>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="card">
-        <h3 class="card-title">PCB Design Certification</h3>
-        <p class="card-desc">Completed professional PCB Design training at CITD Polytechnic College.</p>
-        <span class="card-date">July 2024</span>
-      </div>
 
-      <div class="card">
-        <h3 class="card-title">Hackathon Participant</h3>
-        <p class="card-desc">Participated in Meta Loop Hackathon focused on AR/VR technologies.</p>
-        <span class="card-date">March 2024</span>
-      </div>
+  <!-- ---------------My Projects Section--------------- -->
+  <div id="my-projects">
+    <div class="container">
+      <h1 class="sub-title">Featured Projects</h1>
+      <div class="projects-list">
 
-      <div class="card">
-        <h3 class="card-title">Technical Paper Presentation</h3>
-        <p class="card-desc">Presented paper at Valorous 2025 National Technical Fest organized by MLRITM.</p>
-        <span class="card-date">March 2025</span>
+        <!-- Project 1: CampusConnect -->
+        <div class="project-card">
+          <div class="project-header">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h2>CampusConnect</h2>
+          </div>
+          <p class="problem-statement"><strong>Problem:</strong> Students struggle to find peers for collaboration.</p>
+          <p class="project-desc">A LinkedIn-style platform connecting students for skill sharing and project
+            collaboration.</p>
+          <div class="project-tags">
+            <span>HTML/CSS</span>
+            <span>JavaScript</span>
+            <span>Firebase</span>
+          </div>
+          <p class="project-outcome"><strong>Outcome:</strong> Connected 50+ students in beta testing; reduced team
+            formation time.</p>
+          <div class="project-links">
+            <a href="#" class="btn-link"><i class="fa-solid fa-link"></i> Live Demo</a>
+            <a href="#" class="btn-link"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="case-study-campusconnect.html" class="btn-link secondary">Read Case Study</a>
+          </div>
+        </div>
+
+        <!-- Project 2: AWS Architecture -->
+        <div class="project-card">
+          <div class="project-header">
+            <i class="fa-solid fa-cloud"></i>
+            <h2>Secure Cloud Hosting</h2>
+          </div>
+          <p class="problem-statement"><strong>Problem:</strong> Single-server setups are prone to downtime and data
+            loss.</p>
+          <p class="project-desc">Designed and deployed a highly available 3-tier architecture on AWS.</p>
+          <div class="project-tags">
+            <span>AWS EC2</span>
+            <span>RDS</span>
+            <span>Auto Scaling</span>
+            <span>ELB</span>
+          </div>
+          <p class="project-outcome"><strong>Outcome:</strong> Achieved 99.9% uptime capability with automated failover
+            strategies.</p>
+          <div class="project-links">
+            <a href="#" class="btn-link"><i class="fa-solid fa-link"></i> Live Demo</a>
+            <a href="#" class="btn-link"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <!-- Project 3: Jarvis AI -->
+        <div class="project-card">
+          <div class="project-header">
+            <i class="fa-solid fa-robot"></i>
+            <h2>Jarvis AI Assistant</h2>
+          </div>
+          <p class="problem-statement"><strong>Problem:</strong> Basic tasks require too many manual inputs.</p>
+          <p class="project-desc">Voice-activated assistant for automation and information retrieval.</p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Flask</span>
+            <span>OpenAI API</span>
+          </div>
+          <p class="project-outcome"><strong>Outcome:</strong> Automates daily scheduling and web searches with voice
+            commands.</p>
+          <div class="project-links">
+            <a href="#" class="btn-link"><i class="fa-brands fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <!-- Project 4: Parallax Website -->
+        <div class="project-card">
+          <div class="project-header">
+            <i class="fa-solid fa-chart-bar"></i>
+            <h2>Parallax Experience</h2>
+          </div>
+          <p class="problem-statement"><strong>Problem:</strong> Static websites fail to engage users effectively.</p>
+          <p class="project-desc">Immersive single-page site using depth and motion effects.</p>
+          <div class="project-tags">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>Keyframes</span>
+          </div>
+          <p class="project-outcome"><strong>Outcome:</strong> Increased user engagement time by 40% due to visual
+            interactivity.</p>
+          <div class="project-links">
+            <a href="https://mahesh123-pro.github.io/parallax-website/" class="btn-link" target="_blank"><i
+                class="fa-solid fa-link"></i> Live Demo</a>
+          </div>
+        </div>
+
+
       </div>
     </div>
   </div>
-</section>
 
 
-    <!-- ---------------My Projects Section--------------- -->
-<div id="my-projects">
-  <div class="container">
-    <h1 class="sub-title">My Projects</h1>
-    <div class="projects-list">
-      <div class="project-card">
-        <i class="fa-solid fa-laptop-code"></i>
-        <h2>CampusConnect</h2>
-        <p>A LinkedIn-style web app for students to connect, share knowledge, and showcase skills. Built using HTML, CSS, and JS.</p>
-        <a href="#">View Project</a>
-      </div>
-
-      <div class="project-card">
-        <i class="fa-solid fa-cloud"></i>
-        <h2>AWS 3-Tier Architecture</h2>
-        <p>Created a secure 3-tier architecture in AWS with EC2, Load Balancer, RDS, and Auto Scaling for cloud-based web hosting.</p>
-        <a href="#">View Project</a>
-      </div>
-      
-      <div class="project-card">
-        <i class="fa-solid fa-robot"></i>
-        <h2>Jarvis AI</h2>
-        <p>Developed a personal assistant with voice recognition, face unlock, and Flask-based web interface.</p>
-        <a href="#">View Project</a>
-      </div>
-
-       <div class="project-card">
-        <i class="fa-solid fa-chart-bar"></i>
-        <h2>Parallex website</h2>
-        <p>A beautiful single-page website using parallax effects to showcase smooth scrolling and visual depth.</p>
-        <a href="https://mahesh123-pro.github.io/parallax-website/">View Project</a>
-      </div>
-   
-
-    </div>
-  </div>
-</div>
-
-    
-    <!-- ------------------services---------------- -->
-     <div  id="services">
-      <div class="container">
-        <h1 class="sub-title">My Services</h1>
+  <!-- ------------------services---------------- -->
+  <div id="services">
+    <div class="container">
+      <h1 class="sub-title">My Services</h1>
       <div class="services-list">
         <div>
           <i class="fa-solid fa-code"></i>
           <h2>Web Design</h2>
-          <p>As a dedicated web designer, I specialize in crafting visually appealing and highly functional websites that deliver an exceptional user experience. My work revolves around the perfect blend of creativity and technology, ensuring that each design not only looks stunning but also performs flawlessly across devices.</p>
+          <p>As a dedicated web designer, I specialize in crafting visually appealing and highly functional websites
+            that deliver an exceptional user experience. My work revolves around the perfect blend of creativity and
+            technology, ensuring that each design not only looks stunning but also performs flawlessly across devices.
+          </p>
           <a href="#">learn more</a>
         </div>
         <div>
           <i class="fa-solid fa-crop"></i>
           <h2>Video Editing</h2>
-          <p>I am a skilled web editor with a passion for crafting compelling and impactful digital content. My expertise lies in editing, managing, and optimizing website content to ensure it is clear, concise, and engaging. I work closely with designers, developers, and content creators to maintain a consistent brand voice and enhance the user experience across all digital platforms</p>
-          <a href="https://mega.nz/folder/SvxFBTgI#5wiSFAP6_EU2mCdKLgTQcg "target="_blank">learn more</a>
+          <p>I am a skilled web editor with a passion for crafting compelling and impactful digital content. My
+            expertise lies in editing, managing, and optimizing website content to ensure it is clear, concise, and
+            engaging. I work closely with designers, developers, and content creators to maintain a consistent brand
+            voice and enhance the user experience across all digital platforms</p>
+          <a href="https://mega.nz/folder/SvxFBTgI#5wiSFAP6_EU2mCdKLgTQcg " target="_blank">learn more</a>
         </div>
         <div>
           <i class="fa-brands fa-app-store"></i>
           <h2>Photo Editing</h2>
-          <p>I’m a skilled photo editor with a passion for transforming images into captivating visuals. My expertise includes retouching, color correction, and creative photo manipulation to bring out the best in every shot. I work closely with photographers and clients to ensure that each image aligns with their vision and meets the highest quality standards.</p>
+          <p>I’m a skilled photo editor with a passion for transforming images into captivating visuals. My expertise
+            includes retouching, color correction, and creative photo manipulation to bring out the best in every shot.
+            I work closely with photographers and clients to ensure that each image aligns with their vision and meets
+            the highest quality standards.</p>
           <a href="#">learn more</a>
-        
+
+        </div>
+        <div>
+          <i class="fa-solid fa-globe"></i>
+          <h2>Web Development</h2>
+          <p>I specialize in creating responsive, user-centric websites that combine aesthetics with functionality. My
+            work spans front-end and back-end development, ensuring that every site I build is fast, secure, and
+            scalable. From crafting clean, efficient code to optimizing performance, I’m dedicated to delivering
+            high-quality web solutions that meet client goals and enhance user experiences.</p>
+          <a href="#">learn more</a>
+
+        </div>
+
       </div>
-      <div>
-        <i class="fa-solid fa-globe"></i>
-        <h2>Web Development</h2>
-        <p>I specialize in creating responsive, user-centric websites that combine aesthetics with functionality. My work spans front-end and back-end development, ensuring that every site I build is fast, secure, and scalable. From crafting clean, efficient code to optimizing performance, I’m dedicated to delivering high-quality web solutions that meet client goals and enhance user experiences.</p>
-        <a href="#">learn more</a>
-      
     </div>
-    
-      </div>
-     </div>
   </div>
   </div>
   <!----------------My Work Section---------------->
-  <div id="portfolio">
+  <div id="gallery">
     <div class="container">
-      <h1 class="sub-title">My Work</h1>
+      <h1 class="sub-title">More Work (Gallery)</h1>
 
       <div class="work-list" id="workList">
-        
+
         <div class="work">
           <img src="work-1.png" alt="">
           <div class="layer">
             <h3>Social Media App</h3>
-            <p>Developed a responsive social media platform with user profiles, real-time updates, and interactive features.</p>
-               <a href="#"><i class="fa-solid fa-up-right-from-square"></i> </a>
+            <p>Developed a responsive social media platform with user profiles, real-time updates, and interactive
+              features.</p>
+            <a href="#"><i class="fa-solid fa-up-right-from-square"></i> </a>
           </div>
         </div>
 
@@ -285,39 +384,40 @@ I am always open to new opportunities and collaborations that challenge me to gr
           <img src="work-2.png" alt="">
           <div class="layer">
             <h3>Music App</h3>
-            <p>Designed a dynamic music website featuring streaming, playlists, and user-friendly navigation for music enthusiasts.</p>
-               <a href="#"><i class="fa-solid fa-up-right-from-square"></i> </a>
+            <p>Designed a dynamic music website featuring streaming, playlists, and user-friendly navigation for music
+              enthusiasts.</p>
+            <a href="#"><i class="fa-solid fa-up-right-from-square"></i> </a>
           </div>
         </div>
-        
+
         <div class="work">
           <img src="work-3.png" alt="">
           <div class="layer">
             <h3>Online Shopping App</h3>
             <p>Built an intuitive online shopping app with product browsing, secure checkout, and user reviews.</p>
-               <a href="#"><i class="fa-solid fa-up-right-from-square"></i> </a>
+            <a href="#"><i class="fa-solid fa-up-right-from-square"></i> </a>
           </div>
         </div>
 
-  <!-- Collapsible section for extra work -->
- 
-    <div class="work extra-work">
-      <img src="work-4.png" alt="">
-      <div class="layer">
-        <h3>Portfolio Website</h3>
-        <p>Created a modern portfolio with responsive design and animations.</p>
-        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+        <!-- Collapsible section for extra work -->
+        <div id="extraWorkContainer" class="extra-work-container">
+          <div class="work extra-work">
+            <img src="work-4.png" alt="">
+            <div class="layer">
+              <h3>Portfolio Website</h3>
+              <p>Created a modern portfolio with responsive design and animations.</p>
+              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <!-- Add more extra works here -->
+        </div>
       </div>
     </div>
-    
-    <!-- Add more extra works here -->
+
+
+    <a href="#" class="btn" id="seeMoreBtn">See More</a>
+
   </div>
-</div>
-
-
-      <a href="#" class="btn" id="seeMoreBtn">See More</a>
-      
-    </div>
 
   </div>
   <!-- -----------------Testimonials Section----------------- -->
@@ -346,62 +446,66 @@ I am always open to new opportunities and collaborations that challenge me to gr
       </div>
     </div>
   </section> -->
-  
+
   <!-- -------------contact-------------------- -->
   <div id="contact">
     <div class="container">
       <div class="row">
-      <div class="contact-left">
-        
-        <h1 class="sub-title">Contact Me</h1>
-        <p><i class="fa-solid fa-paper-plane"></i> kolim5263@gmail.com</p>
-        <p><i class="fa-solid fa-square-phone"></i> 6302596695</p>
-        <div class="social-icons">
-          <a href="https://discord.gg/zknVjSuv" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-discord"></i>
-          </a>
-          <a href="https://www.instagram.com/alpha_soul_11/" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-          <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
-          <a href="https://www.instagram.com/alpha_soul_11/" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-square-instagram"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/bakki-mahesh-b48686242/" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/mahesh123-pro" target="_blank" rel="noopener noreferrer"> 
-            <i class="fa-brands fa-square-github"></i>
-          </a>
+        <div class="contact-left">
+          <img src="profile-coding.jpg" class="contact-img" alt="Working on code"
+            style="width: 100%; border-radius: 10px; margin-bottom: 20px;">
+
+          <h1 class="sub-title">Contact Me</h1>
+          <p class="contact-cta">Open to internships, collaborations, and cloud projects.</p>
+          <p><i class="fa-solid fa-paper-plane"></i> kolim5263@gmail.com</p>
+          <p><i class="fa-solid fa-square-phone"></i> 6302596695</p>
+          <div class="social-icons">
+            <a href="https://discord.gg/zknVjSuv" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-discord"></i>
+            </a>
+            <a href="https://www.instagram.com/alpha_soul_11/" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
+            <a href="https://www.instagram.com/alpha_soul_11/" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-square-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/bakki-mahesh-b48686242/" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/mahesh123-pro" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-square-github"></i>
+            </a>
+          </div>
+          <a href="Mahesh(Resume2).pdf" download class="btn btn2">Download CV</a>
         </div>
-        <a href="Mahesh(Resume2).pdf" download class="btn btn2">Download CV</a>
-      </div>
-      <div class="contact-right">
-        <form name="submit-to-google-sheet" >
-          <input type="text" name="Name" placeholder="Your Name" required>
-          <input type="email" name="Email" placeholder="Your Email" required>
-          <textarea name="Message" rows="6" placeholder="Your Message" ></textarea>
-          <button type="submit"class="btn btn2">Submit</button>
-        </form>
-        <span id="msg"></span>
-      </div>
+        <div class="contact-right">
+          <form name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Your Name" required>
+            <input type="email" name="Email" placeholder="Your Email" required>
+            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+            <button type="submit" class="btn btn2">Submit</button>
+          </form>
+          <span id="msg"></span>
+        </div>
       </div>
     </div>
     <div class="copyright">
       <p>Copyright &#169; Mahesh. It's made by Me</p>
     </div>
   </div>
-   
 
 
 
 
 
-    
-    
-    
 
- 
+
+
+
+
+
   <script src="script.js"></script>
-  </body>
+</body>
+
 </html>
