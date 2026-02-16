@@ -79,10 +79,31 @@ seeMoreBtn.addEventListener('click', function (e) {
   expanded = !expanded;
 
   // Toggling the 'show' class based on the state of `expanded`
-  extraWorkContainer.classList.toggle('show', expanded);
+  if (expanded) {
+    extraWorkContainer.style.display = 'block';
+    // Small delay to allow display:block to apply before opacity transition
+    setTimeout(() => {
+      extraWorkContainer.classList.add('show');
+    }, 10);
+    seeMoreBtn.textContent = 'Show Less';
 
-  // Changing the button text
-  seeMoreBtn.textContent = expanded ? 'Show Less' : 'See More';
+    // Smooth scroll to the new items
+    setTimeout(() => {
+      extraWorkContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 300);
+
+  } else {
+    extraWorkContainer.classList.remove('show');
+    seeMoreBtn.textContent = 'See More';
+
+    // Smooth scroll back to gallery top
+    document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
+
+    // Wait for transition to finish before hiding
+    setTimeout(() => {
+      extraWorkContainer.style.display = 'none';
+    }, 800);
+  }
 });
 
 //preloader
@@ -134,12 +155,120 @@ cards.forEach((card) => {
   });
 });
 
+// -----------------Enhanced Services Section Animations------------------
+// Scroll-triggered animations for service cards
+const observerOptions = {
+  threshold: 0.15,
+  rootMargin: '0px 0px -100px 0px'
+};
+
+const serviceObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      // Add staggered animation delay
+      setTimeout(() => {
+        entry.target.classList.add('service-visible');
+      }, index * 150);
+    }
+  });
+}, observerOptions);
+
+// Observe all service cards
+// Observe all service cards and work items
+document.querySelectorAll('.service-card, .work').forEach((card) => {
+  serviceObserver.observe(card);
+});
+
+// -----------------Magnetic Effect for Service Cards------------------
+// Service cards are attracted to mouse cursor
+const serviceCards = document.querySelectorAll('.service-card');
+
+serviceCards.forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+
+    // Subtle magnetic pull effect
+    const moveX = x * 0.1;
+    const moveY = y * 0.1;
+
+    card.style.transform = `translate(${moveX}px, ${moveY}px) translateY(-20px) scale(1.02)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});
+
+// -----------------Parallax Effect for Service Icons------------------
+// Icons move slightly on scroll
+window.addEventListener('scroll', () => {
+  const serviceIcons = document.querySelectorAll('.service-card i');
+  const scrolled = window.pageYOffset;
+
+  serviceIcons.forEach((icon, index) => {
+    const speed = 0.05 + (index * 0.01);
+    const yPos = -(scrolled * speed);
+    icon.style.transform = `translateY(${yPos}px)`;
+  });
+});
+
+// -----------------Service Card Counter Animation------------------
+// Animate numbers when scrolled into view
+const animateValue = (element, start, end, duration) => {
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    element.textContent = Math.floor(progress * (end - start) + start);
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
+};
+
+// -----------------Gradient Animation on Scroll------------------
+// Change gradient colors based on scroll position
+const servicesSection = document.querySelector('#services');
+if (servicesSection) {
+  window.addEventListener('scroll', () => {
+    const rect = servicesSection.getBoundingClientRect();
+    const scrollPercent = Math.max(0, Math.min(1, (window.innerHeight - rect.top) / window.innerHeight));
+
+    // Smoothly transition background gradient
+    const hue = 300 + (scrollPercent * 60); // 300 (pink) to 360 (red)
+    servicesSection.style.filter = `hue-rotate(${hue - 300}deg)`;
+  });
+}
+
 
 // -----------------Dynamic Copyright Year------------------
-const copyrightP = document.querySelector(".copyright p");
-if (copyrightP) {
-  const currentYear = new Date().getFullYear();
-  copyrightP.innerHTML = `Copyright &copy; ${currentYear} Mahesh. Made with <i class="fa-solid fa-heart" style="color: #ff004f;"></i> by Me`;
+// -----------------Footer & Scroll Top Logic------------------
+const yearSpan = document.getElementById('year');
+if (yearSpan) {
+  yearSpan.textContent = new Date().getFullYear();
+}
+
+// Scroll Top Button Logic
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+if (scrollTopBtn) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      scrollTopBtn.classList.add('active');
+    } else {
+      scrollTopBtn.classList.remove('active');
+    }
+  });
+
+  scrollTopBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
 }
 
 

@@ -737,226 +737,278 @@ nav ul li a:hover::after {
 
 
 /* ---------services-------------------------------- */
-/* ---------services-------------------------------- */
+/* --------- Services Section - Professional & Clean ---------------- */
 #services {
-  padding: 80px 0;
-  background: #080808;
-  /* Slightly lighter than pure black for separation */
+  padding: 100px 0;
+  background-color: #0f0f0f;
   position: relative;
   z-index: 1;
 }
 
-/* Add a subtle background glow effect */
-#services::before {
+#services .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+#services .sub-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  color: #fff;
+  position: relative;
+  display: block;
+}
+
+#services .sub-title::after {
   content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60%;
-  height: 60%;
-  background: radial-gradient(circle, rgba(255, 0, 79, 0.05) 0%, transparent 70%);
-  z-index: -1;
-  pointer-events: none;
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #ff004f;
+  margin: 15px auto 0;
+  border-radius: 2px;
 }
 
 .services-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  /* Increased min-width for better layout */
-  grid-gap: 30px;
-  margin-top: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
 }
 
 .service-card {
-  background: rgba(25, 25, 25, 0.6);
-  /* Glass-like dark background */
-  padding: 40px 30px;
-  /* More padding for premium feel */
-  border-radius: 20px;
-  font-weight: 300;
-  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(5px);
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+  transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Top colored bar on hover */
+/* Elegant accent line on top */
 .service-card::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(90deg, #ff004f, #ffeb3b);
+  background: #ff004f;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover {
+  background: #202020;
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border-color: #333;
 }
 
 .service-card:hover::before {
   transform: scaleX(1);
 }
 
+/* Image Styling - Clean & Sharp */
+.service-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  background: #111;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: grayscale(100%) opacity(0.8);
+}
+
+.service-card:hover .service-image img {
+  transform: scale(1.05);
+  filter: grayscale(0%) opacity(1);
+}
+
 .service-card i {
-  font-size: 40px;
-  margin-bottom: 25px;
+  font-size: 32px;
+  margin-bottom: 20px;
   color: #ff004f;
-  transition: all 0.5s ease;
-  background: rgba(255, 0, 79, 0.1);
-  width: 70px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-
-.service-card h2 {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: #fff;
-  transition: color 0.3s ease;
-}
-
-.service-card p {
-  color: #c4c4c4;
-  line-height: 1.7;
-  font-size: 15px;
-  margin-bottom: 25px;
-}
-
-.service-card a {
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  color: #fff;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  transition: all 0.3s ease;
-  margin-top: auto;
-  /* Push to bottom */
-  align-self: flex-start;
-  position: relative;
-}
-
-/* Custom arrow for the link */
-.service-card a::after {
-  content: '\f178';
-  /* FontAwesome arrow right */
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  margin-left: 5px;
+  display: inline-block;
   transition: transform 0.3s ease;
 }
 
-/* Hover States */
-.service-card:hover {
-  transform: translateY(-15px);
-  background: #202020;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-  border-color: rgba(255, 0, 79, 0.3);
-}
-
 .service-card:hover i {
+  transform: scale(1.1);
+}
+
+.service-card h2 {
+  font-size: 22px;
+  font-weight: 600;
   color: #fff;
-  background: #ff004f;
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 0 20px rgba(255, 0, 79, 0.4);
+  margin-bottom: 15px;
 }
 
-.service-card:hover h2 {
+.service-card p {
+  color: #a0a0a0;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.service-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-top: auto;
+}
+
+.service-card a i {
+  font-size: 12px;
+  margin-bottom: 0;
+  transition: transform 0.3s ease;
+}
+
+.service-card a:hover {
   color: #ff004f;
 }
 
-.service-card:hover a {
-  color: #ff004f;
-}
-
-.service-card:hover a::after {
+.service-card a:hover i {
   transform: translateX(5px);
+  color: #ff004f;
 }
 
-/* ---------------My Work Section------------------------ */
-#portfolio {
-  padding: 50px 0;
+/* Watermark Number - Subtle & Professional */
+.service-card {
+  counter-increment: service-count;
 }
 
-#portfolio {
-  padding: 50px 0;
-  color: #0ff;
-  /* Change this to your preferred text color */
+.service-card::after {
+  content: "0" counter(service-count);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 40px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.03);
+  line-height: 1;
+  pointer-events: none;
+  font-family: sans-serif;
 }
 
-#portfolio .work h3,
-#portfolio .work p,
-#portfolio .layer h3,
-#portfolio .layer p {
-  color: black;
-  /* Set color for headings and paragraph inside work cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* Service card reveal style from JS */
+.service-card.service-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
+/* ---------------My Work (Gallery) Section------------------------ */
+#gallery {
+  padding: 80px 0;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
 
-.show-extra .extra-work {
+#gallery .sub-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+#gallery .sub-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff004f, #ffeb3b);
   display: block;
+  margin: 15px auto 0;
+  border-radius: 2px;
 }
-
 
 .work-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
   margin-top: 50px;
-}
-
-.extra-work-container {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-}
-
-.extra-work-container.show {
-  max-height: 1000px;
-  /* Adjust depending on content */
+  perspective: 1000px;
 }
 
 .work {
-  border-radius: 10px;
+  border-radius: 15px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: fadeInUp 0.8s ease-out backwards;
+}
+
+.work::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.work:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 0, 79, 0.2);
+}
+
+.work:hover::before {
+  opacity: 1;
 }
 
 .work img {
   width: 100%;
-  border-radius: 10px;
+  height: 350px;
+  /* Fixed height for uniformity */
+  object-fit: cover;
+  border-radius: 15px;
   display: block;
-  transition: transform 0.5s;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.extra-work {
-  display: none;
-  /* Initially hide extra work items */
+.work:hover img {
+  transform: scale(1.15);
 }
-
-.extra-work-container.show .extra-work {
-  display: block;
-  /* Show the extra work items when 'show' class is added */
-}
-
 
 .layer {
   width: 100%;
   height: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), cyan);
-  border-radius: 10px;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), #ff004f);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -968,58 +1020,133 @@ nav ul li a:hover::after {
   padding: 0 40px;
   text-align: center;
   font-size: 14px;
-  transition: height 0.5s;
-}
-
-.layer h3 {
-  font-weight: 500;
-  margin-bottom: 20px;
-}
-
-.layer a {
-  margin: 20px;
-  color: cyan;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 60px;
-  background: black;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  text-align: center;
-}
-
-.work:hover img {
-  transform: scale(1.1);
+  transition: height 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 2;
 }
 
 .work:hover .layer {
   height: 100%;
 }
 
+.layer h3 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: #fff;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.5s 0.1s;
+}
+
+.layer p {
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.5s 0.2s;
+}
+
+.work:hover .layer h3,
+.work:hover .layer p {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.layer a {
+  margin-top: 10px;
+  color: #ff004f;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 50px;
+  background: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  transform: scale(0);
+  transition: transform 0.4s 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.work:hover .layer a {
+  transform: scale(1);
+}
+
+.layer a:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* Extra Work Container Animation */
+.extra-work-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease-in-out;
+  opacity: 0;
+}
+
+.extra-work-container.show {
+  max-height: 2000px;
+  opacity: 1;
+  margin-top: 40px;
+}
+
+/* See More Button Styling */
+/* See More Button - Premium Gradient Glow */
 .btn {
   display: block;
-  margin: 50px auto;
+  margin: 60px auto;
   width: fit-content;
-  border: 1px solid cyan;
-  padding: 14px 50px;
-  border-radius: 6px;
+  padding: 16px 50px;
+  border-radius: 50px;
   text-decoration: none;
-  color: black;
-  transition: 0.3s ease;
-  border-radius: 10px;
-  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  background: linear-gradient(90deg, #ff004f, #ffeb3b);
+  background-size: 200% auto;
+  position: relative;
+  z-index: 1;
+  transition: all 0.5s ease;
+  box-shadow: 0 5px 20px rgba(255, 0, 79, 0.4);
+  border: none;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 .btn:hover {
-  background: cyan;
-  box-shadow: 0 0 5px cyan,
-    0 0 20px cyan,
-    0 0 50px cyan,
-    0 0 100px cyan,
-    0 0 200px cyan;
-  color: black;
+  background-position: right center;
+  transform: translateY(-5px);
+  box-shadow:
+    0 15px 30px rgba(255, 0, 79, 0.6),
+    0 0 20px rgba(255, 235, 59, 0.4);
+}
 
+.btn:active {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 0, 79, 0.4);
+}
+
+/* Optional internal shine */
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.btn:hover::after {
+  transform: scaleX(1);
 }
 
 /* ------------------Testimonials---------------- */
@@ -1177,7 +1304,9 @@ nav ul li a:hover::after {
   font-size: 50px;
   margin-bottom: 20px;
   background: -webkit-linear-gradient(#fff, #999);
+  background: linear-gradient(#fff, #999);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -1302,23 +1431,177 @@ form .btn2:hover {
 }
 
 /* refined copyright */
-.copyright {
-  width: 100%;
-  text-align: center;
-  padding: 30px 0 10px;
-  background: transparent;
-  font-weight: 400;
-  margin-top: 60px;
+/* ------------ Enhanced Footer ------------- */
+footer {
+  background: #0f0f0f;
+  padding: 60px 0 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
-  color: #555;
-  font-size: 13px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
 }
 
-.copyright span {
-  color: #ff004f;
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 25px;
+  gap: 30px;
+}
+
+.footer-brand h2 {
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 10px;
   font-weight: 700;
+}
+
+.footer-brand h2 span {
+  color: #ff004f;
+}
+
+.footer-brand p {
+  color: #888;
+  font-size: 14px;
+  max-width: 320px;
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 15px;
+  transition: all 0.3s;
+  position: relative;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  color: #ff004f;
+}
+
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: #ff004f;
+  transition: width 0.3s;
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-social a:hover {
+  background: #ff004f;
+  border-color: #ff004f;
+  transform: translateY(-5px) rotate(360deg);
+  box-shadow: 0 5px 15px rgba(255, 0, 79, 0.3);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #666;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+.made-with i {
+  color: #ff004f;
+  animation: heartBeat 1.5s infinite;
+  margin: 0 5px;
+}
+
+@keyframes heartBeat {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.3);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.3);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+}
+
+/* Scroll Top Button */
+.scroll-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 55px;
+  height: 55px;
+  background: #ff004f;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 22px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1001;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(20px);
+}
+
+.scroll-top.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-top:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(255, 0, 79, 0.5);
+  background: linear-gradient(135deg, #ff004f, #d40042);
 }
 
 /* -----------------css for small screens----------- */
@@ -1362,8 +1645,38 @@ nav .fas {
     width: 200px;
     height: 100vh;
     padding-top: 50px;
-    z-index: 2;
+    padding-top: 50px;
+    z-index: 1000;
     transition: right 0.3s ease;
+  }
+
+  /* Responsive Tweaks for Services & Gallery */
+  @media only screen and (max-width: 600px) {
+
+    #services,
+    #gallery {
+      padding: 50px 0;
+    }
+
+    .services-list,
+    .work-list {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .service-card {
+      padding: 30px 20px;
+      min-height: auto;
+    }
+
+    .service-card h2 {
+      font-size: 20px;
+    }
+
+    .service-image {
+      height: 180px;
+    }
   }
 
   nav ul li {
