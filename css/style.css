@@ -2698,7 +2698,7 @@ nav .fas {
 
 .compact-projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
@@ -2817,6 +2817,14 @@ nav .fas {
   overflow: hidden;
   background: #1a1a1a;
   border-bottom: 1px solid #2a2a2a;
+}
+
+.case-study-card {
+  margin-bottom: 100px;
+}
+
+.case-study-image {
+  height: 500px;
 }
 
 .project-image-wrapper img {
@@ -2986,6 +2994,32 @@ nav .fas {
 
   .project-image-wrapper {
     height: 250px;
+  }
+
+  .case-study-card {
+    margin-bottom: 40px;
+  }
+
+  .case-study-image {
+    height: 250px;
+  }
+
+  .case-study-header {
+    padding: 100px 15px 30px !important;
+  }
+
+  .case-study-header h1 {
+    font-size: 28px !important;
+  }
+
+  .project-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .project-actions .btn-link {
+    width: 100%;
+    justify-content: center;
   }
 }
 
