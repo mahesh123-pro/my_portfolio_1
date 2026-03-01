@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CampusConnect Case Study | Mahesh Portfolio</title>
+    <title>AWS Cloud Architecture Case Study | Mahesh Portfolio</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/MK.png" />
@@ -62,68 +62,67 @@
         <div class="case-study-header">
             <a href="index.html#my-projects" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to
                 Projects</a>
-            <h1>CampusConnect Case Study</h1>
+            <h1>3-Tier AWS Architecture Case Study</h1>
         </div>
 
         <div class="premium-project-card" style="margin-bottom: 100px;">
             <div class="project-image-wrapper" style="height: 500px;">
-                <img src="assets/images/work-2.png" alt="CampusConnect Project">
+                <img src="assets/images/work-3.png" alt="Secure Cloud Hosting AWS">
             </div>
             <div class="project-content">
-                <h2 class="project-title">CampusConnect – Student Collaboration Hub</h2>
-                <p class="project-summary">A LinkedIn-style web platform connecting university students for skill
-                    sharing, team building, and project collaboration.</p>
+                <h2 class="project-title">3-Tier Secure Cloud Architecture</h2>
+                <p class="project-summary">Designed and deployed a highly available, fault-tolerant 3-tier web
+                    architecture on AWS mimicking enterprise deployment standards.</p>
 
                 <div class="project-grid">
                     <div class="project-section">
                         <h3><i class="fa-solid fa-layer-group"></i> Tech Stack</h3>
                         <ul class="clean-list">
-                            <li><strong>Frontend:</strong> HTML, CSS, JavaScript</li>
-                            <li><strong>Backend:</strong> Firebase</li>
-                            <li><strong>Database:</strong> Cloud Firestore</li>
-                            <li><strong>Auth:</strong> Firebase Authentication</li>
+                            <li><strong>Cloud:</strong> AWS EC2, S3, RDS</li>
+                            <li><strong>Networking:</strong> VPC, Route 53, ALB</li>
+                            <li><strong>Scaling:</strong> Auto Scaling Groups</li>
+                            <li><strong>Security:</strong> IAM, Security Groups</li>
                         </ul>
                     </div>
 
                     <div class="project-section">
                         <h3><i class="fa-solid fa-star"></i> Key Features</h3>
                         <ul class="bullet-list">
-                            <li>Role-based student and alumni profiles</li>
-                            <li>Algorithm-based skill matching</li>
-                            <li>Real-time connection requests</li>
-                            <li>Secure email authentication</li>
+                            <li>Auto-scaling web servers based on CPU utilization</li>
+                            <li>Multi-AZ database deployment</li>
+                            <li>Load balancing dynamic traffic distribution</li>
+                            <li>Isolated private and public subnets</li>
                         </ul>
                     </div>
 
                     <div class="project-section full-width architecture-section">
                         <h3><i class="fa-solid fa-sitemap"></i> System Architecture</h3>
-                        <p>Client-side Vanilla JS application communicating directly with Firebase Firestore using NoSQL
-                            structured data. Firebase Authentication securely handles user sessions without managing
-                            custom JWTs.</p>
+                        <p>Internet traffic flows through Route 53 to an Application Load Balancer. ALB distributes
+                            requests to EC2 instances in private subnets within a custom VPC. EC2 connects to a Multi-AZ
+                            RDS MySQL instance for structured data storage.</p>
                     </div>
 
                     <div class="project-section">
                         <h3><i class="fa-solid fa-chart-line"></i> Impact / Metrics</h3>
                         <ul class="bullet-list">
-                            <li>Connected 50+ students during beta testing phase</li>
-                            <li>Reduced average team formation time by 60%</li>
+                            <li>Achieved theoretical 99.9% uptime capability</li>
+                            <li>Zero downtime during simulated failure testing</li>
                         </ul>
                     </div>
 
                     <div class="project-section">
                         <h3><i class="fa-solid fa-lightbulb"></i> Challenges & Solutions</h3>
-                        <p><strong>Challenge:</strong> Real-time UI updates for connection requests without page
-                            reloads.<br>
-                            <strong>Solution:</strong> Used Firebase snapshot listeners to instantly push updates to the
-                            DOM asynchronously.
+                        <p><strong>Challenge:</strong> Ensuring database failover without manual intervention during
+                            server crashes.<br>
+                            <strong>Solution:</strong> Configured RDS Multi-AZ deployment to automatically switch to a
+                            standby replica during simulated primary instance failure.
                         </p>
                     </div>
                 </div>
 
                 <div class="project-actions">
-                    <a href="#" class="btn-link"><i class="fa-solid fa-link"></i> Live Demo</a>
-                    <a href="case-study-campusconnect.html" class="btn-link secondary"><i
-                            class="fa-brands fa-github"></i> GitHub</a>
+                    <a href="#" class="btn-link"><i class="fa-brands fa-aws"></i> View Diagram</a>
+                    <a href="#" class="btn-link secondary"><i class="fa-brands fa-github"></i> CloudFormation</a>
                 </div>
             </div>
         </div>

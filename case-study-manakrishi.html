@@ -2,130 +2,144 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manakrishi - Case Study</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manakrishi Case Study | Mahesh Portfolio</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/MK.png" />
+    <link rel="apple-touch-icon" href="assets/images/MK.png" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/premium-buttons.css" />
     <script src="https://kit.fontawesome.com/03414abcb6.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
     <style>
-        .case-study-hero {
-            padding: 100px 0 50px;
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('assets/images/drone-bg.jpg');
-            /* Ideally replace with a real image path or color */
-            background-color: #1a2f1a;
-            /* Fallback dark green */
-            background-size: cover;
+        body {
+            background: #0a0a0a;
+        }
+
+        .case-study-header {
+            padding: 150px 0 50px;
             text-align: center;
         }
 
-        .cs-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .cs-section {
-            margin-bottom: 40px;
-            background: #262626;
-            padding: 30px;
-            border-radius: 10px;
-        }
-
-        .cs-section h2 {
-            color: #00ff7f;
-            /* Green for Agriculture */
+        .case-study-header h1 {
+            font-size: 45px;
             margin-bottom: 20px;
-            border-bottom: 1px solid #444;
-            padding-bottom: 10px;
-        }
-
-        .tech-stack-list span {
-            display: inline-block;
-            background: #444;
-            padding: 5px 15px;
-            border-radius: 20px;
-            margin: 5px;
-            color: #fff;
-            font-size: 14px;
         }
 
         .back-btn {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #ff004f;
             text-decoration: none;
-            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: color 0.3s;
         }
 
         .back-btn:hover {
-            color: #00ff7f;
+            color: #fff;
         }
     </style>
 </head>
 
 <body>
+    <nav class="scrolled">
+        <a href="index.html"><img src="assets/images/MK.png" alt="Logo" class="logo" /></a>
+        <ul id="sidemenu">
+            <li><a href="index.html#header" class="nav-link">Home</a></li>
+            <li><a href="index.html#my-projects" class="nav-link">Projects</a></li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+        </ul>
+        <i class="fas fa-bars" onclick="openmenu()"></i>
+    </nav>
 
-    <div class="container" style="padding-top: 20px;">
-        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
-    </div>
-
-    <header class="case-study-hero">
-        <div class="container">
-            <h1 class="sub-title">Manakrishi</h1>
-            <p class="hero-subtext">When Drones Speak The Language of Farms</p>
-        </div>
-    </header>
-
-    <div class="cs-container">
-
-        <div class="cs-section">
-            <h2>The Problem</h2>
-            <p>Traditional farming in India faces significant challenges: health hazards from manual pesticide spraying,
-                inefficient resource usage leading to higher costs, and a lack of real-time data for crop monitoring.
-                Farmers often struggle with labor shortages and inconsistent crop yields.</p>
+    <div class="container">
+        <div class="case-study-header">
+            <a href="index.html#my-projects" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to
+                Projects</a>
+            <h1>Manakrishi Case Study</h1>
         </div>
 
-        <div class="cs-section">
-            <h2>The Solution</h2>
-            <p>Manakrishi revolutionizes agriculture by bringing precision drone spraying services to every farmer's
-                doorstep. By combining advanced drone technology with expert agronomy, we ensure micro-doses of
-                nutrients and pesticides are deployed exactly where needed, reducing waste and ensuring safety.</p>
-        </div>
+        <div class="premium-project-card" style="margin-bottom: 100px;">
+            <div class="project-image-wrapper" style="height: 500px;">
+                <img src="assets/images/work-1.png" alt="Manakrishi Project">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">Manakrishi – Farmer Support Mobile App</h2>
+                <p class="project-summary">A precision drone spraying platform and app that helps farmers access crop
+                    guidance, reducing manual spraying health risks and pesticide waste.</p>
 
-        <div class="cs-section">
-            <h2>Key Technologies</h2>
-            <p>A fusion of hardware and software to create a seamless ecosystem for farmers.</p>
-            <div class="tech-stack-list">
-                <span>Drone Technology</span>
-                <span>IoT Sensors</span>
-                <span>React Native (App)</span>
-                <span>Firebase</span>
-                <span>Data Analytics</span>
+                <div class="project-grid">
+                    <div class="project-section">
+                        <h3><i class="fa-solid fa-layer-group"></i> Tech Stack</h3>
+                        <ul class="clean-list">
+                            <li><strong>Frontend:</strong> React Native</li>
+                            <li><strong>Backend:</strong> Node.js, Express</li>
+                            <li><strong>Database:</strong> MongoDB</li>
+                            <li><strong>Hardware:</strong> Drone IoT Integration</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-section">
+                        <h3><i class="fa-solid fa-star"></i> Key Features</h3>
+                        <ul class="bullet-list">
+                            <li>Precision drone spraying scheduling</li>
+                            <li>Real-time crop health monitoring</li>
+                            <li>Multi-language support for rural farmers</li>
+                            <li>Secure user authentication</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-section full-width architecture-section">
+                        <h3><i class="fa-solid fa-sitemap"></i> System Architecture</h3>
+                        <p>React Native application sends REST API requests to a Node.js backend hosted on AWS.
+                            Real-time drone telemetry is processed via WebSockets and stored in MongoDB for historical
+                            yield analysis.</p>
+                    </div>
+
+                    <div class="project-section">
+                        <h3><i class="fa-solid fa-chart-line"></i> Impact / Metrics</h3>
+                        <ul class="bullet-list">
+                            <li>100% health safety ensured for field workers</li>
+                            <li>Optimized crop yields by reducing pesticide waste</li>
+                            <li>Currently serving active test users in target regions</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-section">
+                        <h3><i class="fa-solid fa-lightbulb"></i> Challenges & Solutions</h3>
+                        <p><strong>Challenge:</strong> Integrating real-time drone telemetry with low-latency updates
+                            for farmers.<br>
+                            <strong>Solution:</strong> Transitioned from standard HTTP polling to WebSocket connections
+                            for immediate status delivery.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-actions">
+                    <a href="https://www.manakrishi.in/" target="_blank" class="btn-link"><i
+                            class="fa-solid fa-globe"></i> Live Project</a>
+                </div>
             </div>
         </div>
-
-        <div class="cs-section">
-            <h2>Impact & Vision</h2>
-            <ul>
-                <li><strong>100% Health Safety:</strong> Removes human exposure to harmful chemicals.</li>
-                <li><strong>Cost Reduction:</strong> Optimized spraying reduces input costs for farmers.</li>
-                <li><strong>Sustainability:</strong> Minimizes water and pesticide usage through precision application.
-                </li>
-                <li><strong>Empowerment:</strong> Making smart farming tools accessible to rural farmers.</li>
-            </ul>
-        </div>
-
-        <div class="cs-section" style="text-align: center;">
-            <h2>See It In Action</h2>
-            <a href="https://www.manakrishi.in/" target="_blank" class="btn btn2">Visit Website</a>
-        </div>
-
     </div>
 
-    <div class="copyright">
-        <p>Copyright &#169; Mahesh.</p>
-    </div>
+    <footer class="premium-footer">
+        <div class="footer-glow"></div>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>Copyright &copy; <span id="year">2026</span> Mahesh. All Rights Reserved.</p>
+                <p class="made-with">Crafted with <i class="fas fa-heart"></i> & Code.</p>
+            </div>
+        </div>
+    </footer>
 
+    <script src="js/script.js"></script>
 </body>
 
 </html>

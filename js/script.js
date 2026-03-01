@@ -315,7 +315,7 @@ if (seeMoreBtn && extraWorkContainer) {
 // SCROLL-TRIGGERED ANIMATIONS
 // ============================================
 function initScrollAnimations() {
-  const animatedElements = document.querySelectorAll('.card, .project-card, .service-card, .work, .skill-category, .about-col-1, .about-col-2, .footer-brand, .footer-links, .footer-social-wrapper, .footer-bottom');
+  const animatedElements = document.querySelectorAll('.card, .project-card, .compact-project-card, .premium-project-card, .service-card, .work, .skill-category, .about-col-1, .about-col-2, .footer-brand, .footer-links, .footer-social-wrapper, .footer-bottom');
 
   const observerOptions = {
     threshold: 0.1,
@@ -367,7 +367,7 @@ if (typeof ScrollReveal !== 'undefined') {
   ScrollReveal().reveal('.header-text', { origin: 'left', delay: 300 });
   ScrollReveal().reveal('.hero-image', { origin: 'right', delay: 500 });
   ScrollReveal().reveal('.sub-title', { origin: 'top' });
-  ScrollReveal().reveal('.card, .project-card, .service-card', { origin: 'bottom', interval: 150 });
+  ScrollReveal().reveal('.card, .project-card, .compact-project-card, .premium-project-card, .service-card', { origin: 'bottom', interval: 150 });
   ScrollReveal().reveal('.work', { origin: 'bottom', interval: 200 });
   ScrollReveal().reveal('.skill-category', { origin: 'bottom', interval: 100 });
   ScrollReveal().reveal('.contact-left', { origin: 'left' });

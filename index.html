@@ -242,119 +242,76 @@
 
 
   <!-- ---------------My Projects Section--------------- -->
-  <div id="my-projects">
+  <div id="my-projects" class="compact-projects-section">
     <div class="container">
       <h1 class="sub-title">Featured Projects</h1>
-      <div class="projects-list">
+      <p style="color: #b3b3b3; text-align: center; margin-bottom: 50px; font-size: 16px;">View detailed case studies
+        including system architecture, impact, and tech stacks.</p>
 
-        <!-- Project: Manakrishi -->
-        <div class="project-card">
-          <div class="project-header">
-            <i class="fa-solid fa-leaf"></i>
-            <h2>Manakrishi</h2>
+      <div class="compact-projects-grid">
+
+        <!-- Project 1: Manakrishi -->
+        <div class="compact-project-card">
+          <div class="card-image">
+            <img src="assets/images/work-1.png" alt="Manakrishi Project">
           </div>
-          <p class="problem-statement"><strong>Problem:</strong> Manual spraying causes health risks and waste.</p>
-          <p class="project-desc">Precision drone spraying platform revolutionizing smart farming in India.</p>
-          <div class="project-tags">
-            <span>Drone Tech</span>
-            <span>IoT</span>
-            <span>React Native</span>
-          </div>
-          <p class="project-outcome"><strong>Outcome:</strong> 100% health safety and optimized crop yields.</p>
-          <div class="project-links">
-            <a href="https://www.manakrishi.in/" target="_blank" class="btn-link"><i class="fa-solid fa-globe"></i>
-              Website</a>
-            <a href="case-study-manakrishi.html" class="btn-link secondary">View Case Study</a>
+          <div class="card-content">
+            <h3 class="card-title">Manakrishi App</h3>
+            <p class="card-desc">Precision drone spraying app reducing health risks for farmers with IoT integration.
+            </p>
+            <div class="card-tags">
+              <span>React Native</span>
+              <span>Node.js</span>
+              <span>AWS</span>
+            </div>
+            <div class="card-actions">
+              <a href="case-study-manakrishi.html" class="btn-link">View Case Study</a>
+              <a href="https://www.manakrishi.in/" target="_blank" class="btn-link secondary"><i
+                  class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
           </div>
         </div>
 
-        <!-- Project 1: CampusConnect -->
-        <div class="project-card">
-          <div class="project-header">
-            <i class="fa-solid fa-laptop-code"></i>
-            <h2>CampusConnect</h2>
+        <!-- Project 2: CampusConnect -->
+        <div class="compact-project-card">
+          <div class="card-image">
+            <img src="assets/images/work-2.png" alt="CampusConnect Project">
           </div>
-          <p class="problem-statement"><strong>Problem:</strong> Students struggle to find peers for collaboration.</p>
-          <p class="project-desc">A LinkedIn-style platform connecting students for skill sharing and project
-            collaboration.</p>
-          <div class="project-tags">
-            <span>HTML/CSS</span>
-            <span>JavaScript</span>
-            <span>Firebase</span>
-          </div>
-          <p class="project-outcome"><strong>Outcome:</strong> Connected 50+ students in beta testing; reduced team
-            formation time.</p>
-          <div class="project-links">
-            <a href="#" class="btn-link"><i class="fa-solid fa-link"></i> Live Demo</a>
-            <a href="#" class="btn-link"><i class="fa-brands fa-github"></i> GitHub</a>
-            <a href="case-study-campusconnect.html" class="btn-link secondary">Read Case Study</a>
+          <div class="card-content">
+            <h3 class="card-title">CampusConnect</h3>
+            <p class="card-desc">Collaboration hub connecting 50+ students for algorithm-based skill matching.</p>
+            <div class="card-tags">
+              <span>JavaScript</span>
+              <span>Firebase</span>
+              <span>Firestore</span>
+            </div>
+            <div class="card-actions">
+              <a href="case-study-campusconnect.html" class="btn-link">View Case Study</a>
+              <a href="#" class="btn-link secondary"><i class="fa-brands fa-github"></i></a>
+            </div>
           </div>
         </div>
 
-        <!-- Project 2: AWS Architecture -->
-        <div class="project-card">
-          <div class="project-header">
-            <i class="fa-solid fa-cloud"></i>
-            <h2>Secure Cloud Hosting</h2>
+        <!-- Project 3: AWS Architecture -->
+        <div class="compact-project-card">
+          <div class="card-image">
+            <img src="assets/images/work-3.png" alt="Secure Cloud Hosting">
           </div>
-          <p class="problem-statement"><strong>Problem:</strong> Single-server setups are prone to downtime and data
-            loss.</p>
-          <p class="project-desc">Designed and deployed a highly available 3-tier architecture on AWS.</p>
-          <div class="project-tags">
-            <span>AWS EC2</span>
-            <span>RDS</span>
-            <span>Auto Scaling</span>
-            <span>ELB</span>
-          </div>
-          <p class="project-outcome"><strong>Outcome:</strong> Achieved 99.9% uptime capability with automated failover
-            strategies.</p>
-          <div class="project-links">
-            <a href="#" class="btn-link"><i class="fa-solid fa-link"></i> Live Demo</a>
-            <a href="#" class="btn-link"><i class="fa-brands fa-github"></i> GitHub</a>
+          <div class="card-content">
+            <h3 class="card-title">Cloud Architecture</h3>
+            <p class="card-desc">Highly available, fault-tolerant 3-tier web architecture on AWS mimicking enterprise
+              standards.</p>
+            <div class="card-tags">
+              <span>EC2 / S3</span>
+              <span>VPC / ALB</span>
+              <span>RDS DB</span>
+            </div>
+            <div class="card-actions">
+              <a href="case-study-aws.html" class="btn-link">View Case Study</a>
+              <a href="#" class="btn-link secondary"><i class="fa-brands fa-aws"></i></a>
+            </div>
           </div>
         </div>
-
-        <!-- Project 3: Jarvis AI -->
-        <div class="project-card">
-          <div class="project-header">
-            <i class="fa-solid fa-robot"></i>
-            <h2>Jarvis AI Assistant</h2>
-          </div>
-          <p class="problem-statement"><strong>Problem:</strong> Basic tasks require too many manual inputs.</p>
-          <p class="project-desc">Voice-activated assistant for automation and information retrieval.</p>
-          <div class="project-tags">
-            <span>Python</span>
-            <span>Flask</span>
-            <span>OpenAI API</span>
-          </div>
-          <p class="project-outcome"><strong>Outcome:</strong> Automates daily scheduling and web searches with voice
-            commands.</p>
-          <div class="project-links">
-            <a href="#" class="btn-link"><i class="fa-brands fa-github"></i> GitHub</a>
-          </div>
-        </div>
-
-        <!-- Project 4: Parallax Website -->
-        <div class="project-card">
-          <div class="project-header">
-            <i class="fa-solid fa-chart-bar"></i>
-            <h2>Parallax Experience</h2>
-          </div>
-          <p class="problem-statement"><strong>Problem:</strong> Static websites fail to engage users effectively.</p>
-          <p class="project-desc">Immersive single-page site using depth and motion effects.</p>
-          <div class="project-tags">
-            <span>HTML5</span>
-            <span>CSS3</span>
-            <span>Keyframes</span>
-          </div>
-          <p class="project-outcome"><strong>Outcome:</strong> Increased user engagement time by 40% due to visual
-            interactivity.</p>
-          <div class="project-links">
-            <a href="https://mahesh123-pro.github.io/parallax-website/" class="btn-link" target="_blank"><i
-                class="fa-solid fa-link"></i> Live Demo</a>
-          </div>
-        </div>
-
 
       </div>
     </div>
