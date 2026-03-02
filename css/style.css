@@ -392,14 +392,16 @@ nav ul li a:hover::after {
   justify-content: space-between;
   width: 100%;
   min-height: calc(100vh - 100px);
-  padding: 100px 10% 50px;
+  padding: 100px 10% 80px;
   position: relative;
   z-index: 2;
+  flex-wrap: wrap;
 }
 
 /* Header Text Styling */
 .header-text {
-  flex-basis: 50%;
+  flex: 1;
+  max-width: 600px;
   margin-top: 0;
   position: relative;
   z-index: 2;
@@ -583,37 +585,43 @@ nav ul li a:hover::after {
 
 /* Hero Image - Clean without glow */
 .hero-image {
-  flex-basis: 45%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: absolute;
-  right: -50px;
+  right: 0;
   bottom: 0;
   width: 50%;
-  height: 90%;
+  height: 95vh;
+  /* Increased from 85vh to make the image much larger */
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
   z-index: 1;
 }
 
 .hero-image img {
   height: 100%;
   width: auto;
-  max-width: none;
-  object-fit: cover;
+  max-width: 100%;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  object-fit: contain;
   animation: heroImageFloat 6s ease-in-out infinite;
   transition: all 0.5s ease;
+  transform-origin: bottom right;
+  /* Ensures scaling anchors properly to bottom corner */
+  transform: scale(1.1);
+  /* Explicitly increases rendering scale */
 }
 
 @keyframes heroImageFloat {
 
   0%,
   100% {
-    transform: translateY(0);
+    transform: translateY(0) scale(1.15);
   }
 
   50% {
-    transform: translateY(-25px);
+    transform: translateY(-25px) scale(1.15);
   }
 }
 
@@ -1067,6 +1075,38 @@ nav ul li a:hover::after {
   display: flex;
   flex-direction: column;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.highlight-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: grayscale(80%) opacity(0.4);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card.premium-highlight-card:hover .highlight-bg {
+  filter: grayscale(0%) opacity(0.7);
+  transform: scale(1.05);
+}
+
+.highlight-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0.3) 0%, rgba(17, 17, 17, 0.95) 70%, rgba(17, 17, 17, 1) 100%);
+  z-index: 1;
+}
+
+.card.premium-highlight-card>div:not(.highlight-overlay) {
+  position: relative;
+  z-index: 2;
 }
 
 /* Animated Gradient Border */
@@ -2585,36 +2625,35 @@ nav .fas {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 50px;
-  padding-top: 10%;
-  /* Increased padding to center vertically */
+  gap: 30px;
+  padding-top: 15vh;
+  /* Use vh for dynamic laptop fit */
+  min-height: 100vh;
   flex-wrap: wrap;
-  /* Allow wrapping on smaller screens */
 }
 
 .header-text {
   margin-top: 0;
-  /* Reset margin since we use padding-top on row */
   flex: 1;
-  max-width: 650px;
+  max-width: 600px;
+  /* Prevent text from taking too much width to allow image room */
 }
 
 /* Ensure header handles absolute positioning */
 #header {
   position: relative;
   overflow: hidden;
-  /* Prevent scrollbar from shifting image right */
-  /* Keep existing background props */
+  height: 100vh;
+  /* Ensure it doesn't overflow laptop height */
 }
 
 .hero-image {
   position: absolute;
-  right: -50px;
-  /* Slight move right */
+  right: 0;
   bottom: 0;
-  width: 50%;
-  height: 90%;
-  /* Adjust based on nav height */
+  width: 45%;
+  height: 85vh;
+  /* Keep strictly inside viewport */
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
@@ -2624,12 +2663,12 @@ nav .fas {
 .hero-image img {
   height: 100%;
   width: auto;
-  max-width: none;
-  /* Allow it to grow */
+  max-width: 100%;
   border: none;
   box-shadow: none;
   border-radius: 0;
-  object-fit: cover;
+  object-fit: contain;
+  /* Prevents image cutting off awkwardly */
 }
 
 .header-text {
