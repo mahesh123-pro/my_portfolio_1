@@ -319,10 +319,23 @@ nav ul li a:hover::after {
   width: 100%;
   height: 100%;
   background:
-    radial-gradient(ellipse at 20% 80%, rgba(30, 30, 30, 0.5) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(40, 40, 40, 0.3) 0%, transparent 50%),
-    linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+    radial-gradient(circle at 15% 50%, rgba(255, 0, 79, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
+    linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
   z-index: 0;
+  animation: bgGlow 8s infinite alternate ease-in-out;
+}
+
+@keyframes bgGlow {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 
 /* Floating Particles Container */
@@ -410,14 +423,19 @@ nav ul li a:hover::after {
 /* Animated Role Badge */
 .role-badge {
   display: inline-block;
-  background: linear-gradient(135deg, rgba(255, 0, 79, 0.2), rgba(255, 107, 107, 0.1));
+  background: rgba(255, 0, 79, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: #ff004f;
-  padding: 8px 20px;
+  padding: 10px 25px;
   border-radius: 30px;
   font-weight: 600;
-  font-size: 14px;
-  margin-bottom: 15px;
-  border: 1px solid rgba(255, 0, 79, 0.4);
+  font-size: 15px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(255, 0, 79, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 0, 79, 0.2);
+  letter-spacing: 1px;
+  text-transform: uppercase;
   animation: badgePulse 3s ease-in-out infinite;
   position: relative;
   overflow: hidden;
@@ -458,13 +476,15 @@ nav ul li a:hover::after {
 
 /* Main Heading with Gradient Text */
 .header-text h1 {
-  font-size: 56px;
+  font-size: 64px;
   margin-top: 20px;
   line-height: 1.1;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -1px;
   opacity: 0;
   animation: fadeSlideUp 1s ease forwards;
   animation-delay: 0.3s;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .header-text h1 span {
@@ -595,6 +615,33 @@ nav ul li a:hover::after {
   align-items: flex-end;
   justify-content: flex-end;
   z-index: 1;
+}
+
+.hero-image::after {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  bottom: 10%;
+  right: 10%;
+  background: radial-gradient(circle, rgba(255, 0, 79, 0.3) 0%, transparent 60%);
+  z-index: -1;
+  filter: blur(40px);
+  animation: heroGlowPulse 6s ease-in-out infinite;
+}
+
+@keyframes heroGlowPulse {
+
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
 }
 
 .hero-image img {
@@ -1876,6 +1923,24 @@ nav ul li a:hover::after {
 .btn:active {
   transform: translateY(-2px) scale(0.98);
   box-shadow: 0 10px 20px rgba(255, 0, 79, 0.4);
+}
+
+/* Specific styling to center the See More / See Less button in the Gallery */
+#seeMoreBtn {
+  display: block;
+  margin: 60px auto 20px;
+  text-align: center;
+  background: linear-gradient(135deg, transparent 0%, rgba(255, 0, 79, 0.1) 100%);
+  border: 1px solid #ff004f;
+  color: #ff004f;
+  box-shadow: none;
+}
+
+#seeMoreBtn:hover {
+  background: #ff004f;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(255, 0, 79, 0.3);
+  transform: translateY(-3px);
 }
 
 /* ------------------Testimonials---------------- */
