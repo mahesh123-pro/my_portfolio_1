@@ -593,11 +593,31 @@
           <a href="assets/docs/Mahesh(Resume2).pdf" download class="btn-resume-premium">My Resume</a>
         </div>
         <div class="contact-right">
-          <form name="submit-to-google-sheet">
-            <input type="text" name="Name" placeholder="Your Name" required>
-            <input type="email" name="Email" placeholder="Your Email" required>
-            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-            <button type="submit" class="btn btn2">Submit</button>
+          <form name="submit-to-google-sheet" class="premium-form">
+            <div class="form-header">
+              <h3 class="form-title">Send a Message <i class="fa-solid fa-rocket glow-icon"></i></h3>
+              <p class="form-subtitle">Let's build something amazing together!</p>
+            </div>
+
+            <div class="input-group">
+              <i class="fa-solid fa-user input-icon"></i>
+              <input type="text" name="Name" placeholder="Your Name" required>
+            </div>
+
+            <div class="input-group">
+              <i class="fa-solid fa-envelope input-icon"></i>
+              <input type="email" name="Email" placeholder="Your Email" required>
+            </div>
+
+            <div class="input-group">
+              <i class="fa-solid fa-comment-dots input-icon textarea-icon"></i>
+              <textarea name="Message" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn premium-submit-btn">
+              <span>Submit Feedback</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
           </form>
           <span id="msg"></span>
         </div>

@@ -214,7 +214,7 @@ document.addEventListener('click', (e) => {
 // ============================================
 // GOOGLE SHEETS FORM
 // ============================================
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyi2cd9O5YHKGYbQVGs0S-l9X05qB-RBkuauTIjeZsCc6pXe-3lh7EOKnw_iTGOWb2eGw/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbymhZQRiXeVBwmppCGavvLCxLg2t28vdPTlMFfdgSSLHAc3PFD4dQPUVGmZxddwkH0/exec';
 const form = document.forms['submit-to-google-sheet'];
 const msg = document.getElementById("msg");
 
@@ -230,7 +230,7 @@ if (form) {
 
     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
       .then(response => {
-        msg.innerHTML = "Message sent successfully!";
+        msg.innerHTML = "Thanks for your feedback!";
         msg.style.color = "#4caf50";
         form.reset();
 

@@ -2165,64 +2165,183 @@ nav ul li a:hover::after {
   border-color: #ff004f;
 }
 
-/* Glassmorphism Form */
-.contact-right form {
+/* Glassmorphism Form - Premium Glow Edition */
+.contact-right form.premium-form {
   width: 100%;
-  background: rgba(255, 255, 255, 0.02);
-  padding: 50px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 45px 50px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Minimalist Inputs */
-form input,
-form textarea {
-  width: 100%;
-  border: none;
-  border-bottom: 2px solid #333;
-  background: transparent;
-  padding: 15px 10px;
-  margin: 15px 0;
+/* Subtle glow behind form */
+.contact-right form.premium-form::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 0, 79, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.premium-form .form-header {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.premium-form .form-title {
   color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.glow-icon {
+  color: #ff004f;
+  filter: drop-shadow(0 0 8px rgba(255, 0, 79, 0.6));
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.premium-form .form-subtitle {
+  color: #aaa;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+/* Modern Input Groups */
+.premium-form .input-group {
+  position: relative;
+  margin-bottom: 25px;
+  z-index: 1;
+}
+
+.premium-form .input-icon {
+  position: absolute;
+  left: 20px;
+  top: 18px;
+  color: #888;
   font-size: 16px;
-  border-radius: 0;
-  /* Square edges for bottom border style */
   transition: all 0.3s ease;
 }
 
-form input:focus,
-form textarea:focus {
-  border-bottom-color: #ff004f;
-  background: linear-gradient(to top, rgba(255, 0, 79, 0.05), transparent);
+.premium-form .textarea-icon {
+  top: 22px;
 }
 
-form .btn2 {
-  padding: 15px 50px;
-  font-size: 16px;
-  margin-top: 30px;
-  cursor: pointer;
-  background: #fff;
-  /* High contrast button */
-  color: #000;
-  border: none;
-  border-radius: 30px;
-  font-weight: 700;
-  transition: 0.3s;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  width: auto;
-  /* Put visuals on the button text */
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
-}
-
-form .btn2:hover {
-  background: #ff004f;
+.premium-form input,
+.premium-form textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px 20px 16px 50px;
   color: #fff;
-  box-shadow: 0 10px 30px rgba(255, 0, 79, 0.3);
-  transform: translateY(-3px);
+  font-size: 15px;
+  border-radius: 12px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'Poppins', sans-serif;
 }
+
+.premium-form input::placeholder,
+.premium-form textarea::placeholder {
+  color: #777;
+}
+
+.premium-form input:focus,
+.premium-form textarea:focus {
+  outline: none;
+  border-color: #ff004f;
+  background: rgba(255, 0, 79, 0.03);
+  box-shadow: 0 0 20px rgba(255, 0, 79, 0.15);
+  transform: translateY(-2px);
+}
+
+.premium-form .input-group:focus-within .input-icon {
+  color: #ff004f;
+  filter: drop-shadow(0 0 5px rgba(255, 0, 79, 0.5));
+}
+
+.premium-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Premium Submit Button */
+.premium-form .premium-submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #ff004f 0%, #ff3366 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(255, 0, 79, 0.4);
+}
+
+.premium-form .premium-submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.premium-form .premium-submit-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(255, 0, 79, 0.6);
+}
+
+.premium-form .premium-submit-btn:hover::before {
+  left: 100%;
+}
+
+.premium-form .premium-submit-btn i {
+  transition: transform 0.3s ease;
+}
+
+.premium-form .premium-submit-btn:hover i {
+  transform: translateX(5px) translateY(-5px);
+}
+
 
 /* ============================================
    FOOTER - PREMIUM DESIGN
@@ -3519,7 +3638,7 @@ nav .fas {
     flex-wrap: wrap;
   }
 
-  .contact-right form {
+  .contact-right form.premium-form {
     padding: 30px 20px;
   }
 
