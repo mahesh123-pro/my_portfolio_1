@@ -399,8 +399,8 @@ tiltCards.forEach((card) => {
     // Dynamic lighting effect
     const glowX = (x / rect.width) * 100;
     const glowY = (y / rect.height) * 100;
-    card.style.background = `radial-gradient(circle at ${glowX}% ${glowY}%, rgba(255, 0, 79, 0.1), transparent 50%), 
-                              linear-gradient(145deg, #1a1a1a, #262626)`;
+    card.style.background = `radial-gradient(circle at ${glowX}% ${glowY}%, rgba(255, 0, 79, 0.15), transparent 50%), 
+                              linear-gradient(145deg, #111111, #181818)`;
   });
 
   card.addEventListener("mouseleave", () => {

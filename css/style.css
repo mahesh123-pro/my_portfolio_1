@@ -1055,21 +1055,22 @@ nav ul li a:hover::after {
   gap: 30px;
 }
 
-/* Card - Premium Glassmorphism */
-.card {
-  background: rgba(20, 20, 20, 0.8);
-  padding: 45px 35px;
+/* Card - Premium Design */
+.card.premium-highlight-card {
+  background: #111;
+  padding: 40px;
   border-radius: 20px;
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* Animated Gradient Border */
-.card::before {
+.card.premium-highlight-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1080,10 +1081,10 @@ nav ul li a:hover::after {
   background-size: 300% 100%;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.card:hover::before {
+.card.premium-highlight-card:hover::before {
   transform: scaleX(1);
   animation: gradientMove 2s linear infinite;
 }
@@ -1098,39 +1099,80 @@ nav ul li a:hover::after {
   }
 }
 
-.card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 0, 79, 0.1);
-  background: rgba(30, 30, 30, 0.9);
-  border-color: rgba(255, 0, 79, 0.2);
+.card.premium-highlight-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 0, 79, 0.1);
+  border-color: rgba(255, 0, 79, 0.3);
+  background: #151515;
+}
+
+.card-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 0, 79, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  border: 1px solid rgba(255, 0, 79, 0.2);
+  transition: all 0.5s ease;
+}
+
+.card:hover .card-icon-wrapper {
+  background: #ff004f;
+  transform: translateY(-5px) rotate(5deg);
+  box-shadow: 0 10px 20px rgba(255, 0, 79, 0.3);
 }
 
 .card-icon {
-  font-size: 52px;
+  font-size: 32px;
   color: #ff004f;
-  margin-bottom: 25px;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  display: inline-block;
+  transition: color 0.5s ease;
 }
 
 .card:hover .card-icon {
-  transform: scale(1.15) rotate(10deg);
-  text-shadow: 0 0 30px rgba(255, 0, 79, 0.6);
+  color: #fff;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .card-title {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   color: white;
   margin-bottom: 15px;
   letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.card:hover .card-title {
+  color: #ff004f;
 }
 
 .card-desc {
-  font-size: 15px;
+  font-size: 14.5px;
   color: #aaa;
   line-height: 1.7;
   margin-bottom: 30px;
+  flex-grow: 1;
+  transition: color 0.3s ease;
+}
+
+.card:hover .card-desc {
+  color: #ccc;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .card-date {
@@ -1138,17 +1180,28 @@ nav ul li a:hover::after {
   color: #ff004f;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  position: absolute;
-  bottom: 25px;
-  right: 30px;
-  opacity: 0.9;
-  transition: all 0.3s ease;
+  letter-spacing: 1.5px;
 }
 
-.card:hover .card-date {
+.card-link {
+  color: #555;
+  font-size: 16px;
+  transition: all 0.4s ease;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  text-decoration: none;
+}
+
+.card:hover .card-link {
   color: #fff;
-  text-shadow: 0 0 10px rgba(255, 0, 79, 0.5);
+  background: #ff004f;
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(255, 0, 79, 0.4);
 }
 
 /*---------------my project session---------------*/
@@ -1323,15 +1376,22 @@ nav ul li a:hover::after {
 }
 
 .service-card {
-  background: #1a1a1a;
-  padding: 40px;
-  border-radius: 12px;
-  border: 1px solid #2a2a2a;
-  transition: all 0.4s ease;
+  background: #111;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  counter-increment: service-count;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 0, 79, 0.1);
+  border-color: rgba(255, 0, 79, 0.3);
 }
 
 /* Elegant accent line on top */
@@ -1342,74 +1402,130 @@ nav ul li a:hover::after {
   left: 0;
   width: 100%;
   height: 3px;
-  background: #ff004f;
+  background: linear-gradient(90deg, #ff004f, #ff6b6b);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.4s ease;
-}
-
-.service-card:hover {
-  background: #202020;
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  border-color: #333;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
 }
 
 .service-card:hover::before {
   transform: scaleX(1);
 }
 
-/* Image Styling - Clean & Sharp */
-.service-image {
-  width: 100%;
-  height: 200px;
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 25px;
-  background: #111;
+/* Watermark Number */
+.service-card::after {
+  content: "0" counter(service-count);
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 45px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.02);
+  line-height: 1;
+  pointer-events: none;
+  font-family: 'Orbitron', sans-serif;
+  transition: all 0.4s ease;
+  z-index: 1;
 }
 
-.service-image img {
+.service-card:hover::after {
+  color: rgba(255, 0, 79, 0.05);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.service-image-wrapper {
+  width: 100%;
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.service-image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease, filter 0.5s ease;
-  filter: grayscale(100%) opacity(0.8);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s ease;
+  filter: grayscale(80%) opacity(0.7);
 }
 
-.service-card:hover .service-image img {
+.service-card:hover .service-image-wrapper img {
   transform: scale(1.05);
   filter: grayscale(0%) opacity(1);
 }
 
-.service-card i {
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: #ff004f;
-  display: inline-block;
-  transition: transform 0.3s ease;
+/* Icon Box inside Image Wrapper */
+.service-icon-box {
+  position: absolute;
+  bottom: -25px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: #111;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  z-index: 2;
 }
 
-.service-card:hover i {
+.service-card:hover .service-icon-box {
+  background: #ff004f;
+  border-color: #ff004f;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(255, 0, 79, 0.3);
+}
+
+.service-icon-box i {
+  font-size: 24px;
+  color: #ff004f;
+  transition: all 0.4s ease;
+}
+
+.service-card:hover .service-icon-box i {
+  color: #fff;
   transform: scale(1.1);
 }
 
-.service-card h2 {
+.service-content {
+  padding: 40px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.service-content h2 {
   font-size: 22px;
   font-weight: 600;
   color: #fff;
   margin-bottom: 15px;
+  transition: color 0.3s ease;
 }
 
-.service-card p {
+.service-card:hover .service-content h2 {
+  color: #ff004f;
+}
+
+.service-content p {
   color: #a0a0a0;
   font-size: 15px;
   line-height: 1.7;
   margin-bottom: 25px;
   flex-grow: 1;
+  transition: color 0.3s ease;
 }
 
-.service-card a {
+.service-card:hover .service-content p {
+  color: #ccc;
+}
+
+.service-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -1417,41 +1533,26 @@ nav ul li a:hover::after {
   color: #fff;
   font-weight: 600;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   margin-top: auto;
+  align-self: flex-start;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
 }
 
-.service-card a i {
-  font-size: 12px;
-  margin-bottom: 0;
+.service-link i {
+  font-size: 14px;
   transition: transform 0.3s ease;
 }
 
-.service-card a:hover {
+.service-link:hover {
   color: #ff004f;
+  border-bottom-color: #ff004f;
+  letter-spacing: 0.5px;
 }
 
-.service-card a:hover i {
-  transform: translateX(5px);
-  color: #ff004f;
-}
-
-/* Watermark Number - Subtle & Professional */
-.service-card {
-  counter-increment: service-count;
-}
-
-.service-card::after {
-  content: "0" counter(service-count);
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 40px;
-  font-weight: 800;
-  color: rgba(255, 255, 255, 0.03);
-  line-height: 1;
-  pointer-events: none;
-  font-family: sans-serif;
+.service-link:hover i {
+  transform: translateX(4px) translateY(-3px);
 }
 
 @keyframes fadeInUp {
@@ -1520,125 +1621,155 @@ nav ul li a:hover::after {
 .work {
   border-radius: 20px;
   position: relative;
+  background: #111;
   overflow: hidden;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  transform-style: preserve-3d;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.work::before {
+.work:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(255, 0, 79, 0.15), 0 0 30px rgba(255, 0, 79, 0.1);
+  border-color: rgba(255, 0, 79, 0.3);
+}
+
+.gallery-img-wrapper {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-img-wrapper::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(255, 0, 79, 0.1), transparent);
-  z-index: 1;
-  opacity: 0;
+  background: linear-gradient(to bottom, transparent 30%, #111 100%);
+  opacity: 0.9;
   transition: opacity 0.5s ease;
 }
 
-.work:hover {
-  transform: translateY(-15px) rotateX(5deg);
-  box-shadow: 0 30px 60px rgba(255, 0, 79, 0.2), 0 0 30px rgba(255, 0, 79, 0.1);
+.work:hover .gallery-img-wrapper::after {
+  opacity: 0.6;
 }
 
-.work:hover::before {
-  opacity: 1;
-}
-
-.work img {
+.gallery-img-wrapper img {
   width: 100%;
-  height: 380px;
-  object-fit: cover;
-  border-radius: 20px;
-  display: block;
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: brightness(0.9);
-}
-
-.work:hover img {
-  transform: scale(1.1);
-  filter: brightness(1);
-}
-
-.layer {
-  width: 100%;
-  height: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(255, 0, 79, 0.95) 100%);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 20px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0 40px;
-  text-align: center;
-  transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 2;
-}
-
-.work:hover .layer {
   height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.layer h3 {
+.work:hover .gallery-img-wrapper img {
+  transform: scale(1.08) rotate(1deg);
+}
+
+.gallery-content {
+  padding: 25px 30px 30px;
+  position: relative;
+  z-index: 2;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-top: -10px;
+  /* Overlaps slighty with gradient */
+}
+
+.gallery-header {
+  margin-bottom: 20px;
+}
+
+.gallery-header h3 {
+  font-size: 24px;
   font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 26px;
   color: #fff;
-  transform: translateY(30px);
-  opacity: 0;
-  transition: all 0.5s ease 0.1s;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+  letter-spacing: 0.5px;
 }
 
-.layer p {
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 15px;
+.work:hover .gallery-header h3 {
+  color: #ff004f;
+}
+
+.gallery-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gallery-tags span {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ababab;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.work:hover .gallery-tags span {
+  background: rgba(255, 0, 79, 0.1);
+  color: #ff004f;
+  border-color: rgba(255, 0, 79, 0.3);
+}
+
+.gallery-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.gallery-details p {
+  color: #aaa;
+  font-size: 14.5px;
   line-height: 1.7;
   margin-bottom: 25px;
-  transform: translateY(30px);
-  opacity: 0;
-  transition: all 0.5s ease 0.2s;
+  transition: color 0.3s ease;
 }
 
-.work:hover .layer h3,
-.work:hover .layer p {
-  transform: translateY(0);
-  opacity: 1;
+.work:hover .gallery-details p {
+  color: #ddd;
 }
 
-.layer a {
-  margin-top: 10px;
-  color: #ff004f;
-  text-decoration: none;
-  font-size: 20px;
-  line-height: 55px;
-  background: #fff;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  text-align: center;
-  transform: scale(0) rotate(-180deg);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-}
-
-.work:hover .layer a {
-  transform: scale(1) rotate(0deg);
-}
-
-.layer a:hover {
-  background: #000;
+.gallery-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: #fff;
-  transform: scale(1.1) rotate(360deg);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  align-self: flex-start;
+  margin-top: auto;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.gallery-link:hover {
+  color: #ff004f;
+  border-bottom-color: #ff004f;
+  letter-spacing: 0.5px;
+}
+
+.gallery-link i {
+  font-size: 14px;
+  transition: transform 0.3s;
+}
+
+.gallery-link:hover i {
+  transform: translateX(4px) translateY(-4px);
 }
 
 /* Extra Work Container Animation */
