@@ -1147,9 +1147,34 @@ nav ul li a:hover::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(17, 17, 17, 0.3) 0%, rgba(17, 17, 17, 0.95) 70%, rgba(17, 17, 17, 1) 100%);
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0.5) 0%, rgba(17, 17, 17, 0.8) 50%, rgba(17, 17, 17, 1) 100%);
   z-index: 1;
+  transition: opacity 0.5s ease;
 }
+
+.card.premium-highlight-card:hover .highlight-overlay {
+  opacity: 0.8;
+}
+
+/* Shining Sweep Effect */
+.card.premium-highlight-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transform: skewX(-25deg);
+  transition: all 0.7s ease;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.card.premium-highlight-card:hover::after {
+  left: 150%;
+}
+
 
 .card.premium-highlight-card>div:not(.highlight-overlay) {
   position: relative;
@@ -1187,10 +1212,11 @@ nav ul li a:hover::after {
 }
 
 .card.premium-highlight-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 0, 79, 0.1);
-  border-color: rgba(255, 0, 79, 0.3);
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 0, 79, 0.2);
+  border-color: rgba(255, 0, 79, 0.5);
   background: #151515;
+  z-index: 10;
 }
 
 .card-icon-wrapper {
@@ -1208,8 +1234,8 @@ nav ul li a:hover::after {
 
 .card:hover .card-icon-wrapper {
   background: #ff004f;
-  transform: translateY(-5px) rotate(5deg);
-  box-shadow: 0 10px 20px rgba(255, 0, 79, 0.3);
+  transform: translateY(-8px) rotate(10deg);
+  box-shadow: 0 15px 30px rgba(255, 0, 79, 0.4);
 }
 
 .card-icon {
@@ -1220,6 +1246,7 @@ nav ul li a:hover::after {
 
 .card:hover .card-icon {
   color: #fff;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
 }
 
 .card-content {
@@ -2833,10 +2860,10 @@ nav .fas {
 
 .hero-image {
   position: absolute;
-  right: 0;
+  right: -10%;
   bottom: 0;
-  width: 45%;
-  height: 85vh;
+  width: 55%;
+  height: 95vh;
   /* Keep strictly inside viewport */
   display: flex;
   align-items: flex-end;
@@ -2898,10 +2925,10 @@ nav .fas {
 
   .hero-image img {
     height: auto;
-    width: auto;
-    max-width: 50%;
+    width: 70%;
+    max-width: 70%;
     /* Adjusts relative to screen width */
-    max-height: 50vh;
+    max-height: 70vh;
     /* Prevents taking up too much vertical space */
     border-radius: 10px;
     /* Optional: Adds a consistent look */
@@ -2989,18 +3016,41 @@ nav .fas {
 }
 
 .skill-category {
-  background: #262626;
-  padding: 25px;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-  border-left: 4px solid #ff004f;
+  background: linear-gradient(145deg, #1e1e1e, #141414);
+  padding: 30px 25px;
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 4px solid #ff004f;
   height: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.skill-category::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  transform: skewX(-20deg);
+  transition: all 0.6s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.skill-category:hover::before {
+  left: 150%;
 }
 
 .skill-category:hover {
-  transform: translateY(-5px);
-  background: #333;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  transform: translateY(-10px) scale(1.02);
+  background: linear-gradient(145deg, #222, #181818);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 0, 79, 0.15);
+  border-color: rgba(255, 0, 79, 0.4);
 }
 
 .skill-category h3 {
@@ -3014,6 +3064,18 @@ nav .fas {
 
 .skill-category h3 i {
   color: #ff004f;
+  font-size: 24px;
+  background: rgba(255, 0, 79, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+
+.skill-category:hover h3 i {
+  background: #ff004f;
+  color: #fff;
+  transform: rotate(10deg) scale(1.1);
+  box-shadow: 0 5px 15px rgba(255, 0, 79, 0.4);
 }
 
 .skill-list {
@@ -3022,22 +3084,41 @@ nav .fas {
 }
 
 .skill-list li {
-  margin: 10px 0;
+  margin: 15px 0;
   color: #ccc;
   font-size: 15px;
-  padding-left: 20px;
+  padding-left: 25px;
   position: relative;
-  border-bottom: 1px solid #333;
-  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 10px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.skill-list li:hover {
+  color: #fff;
+  transform: translateX(8px);
+  border-color: rgba(255, 0, 79, 0.3);
 }
 
 .skill-list li::before {
-  content: "▹";
+  content: "\f105";
+  /* FontAwesome angle-right */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
   color: #ff004f;
   position: absolute;
   left: 0;
-  /* font-size: 18px; */
+  transition: all 0.3s ease;
 }
+
+.skill-list li:hover::before {
+  font-size: 18px;
+  left: 2px;
+  text-shadow: 0 0 10px rgba(255, 0, 79, 0.5);
+}
+
 
 .skill-list li:last-child {
   border-bottom: none;
@@ -3543,8 +3624,8 @@ nav .fas {
   }
 
   .hero-image img {
-    width: 70%;
-    max-width: 300px;
+    width: 90%;
+    max-width: 450px;
     height: auto;
     animation: none;
   }
