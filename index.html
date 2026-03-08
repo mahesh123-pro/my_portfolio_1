@@ -41,15 +41,17 @@
 
   <div id="header">
     <div class="container">
-      <nav>
-        <img src="assets/images/MK.png" alt="Logo" class="logo" />
+      <nav id="main-nav">
+        <div class="scroll-progress-container">
+          <div class="scroll-progress-bar" id="scroll-progress"></div>
+        </div>
+        <a href="#header" style="text-decoration: none;"><span class="logo-text">Mahesh.</span></a>
         <ul id="sidemenu">
-          <li><a href="#header" class="nav-link">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#services" class="nav-link">Side Hustles</a></li>
-          <li><a href="#gallery" class="nav-link">Gallery</a></li>
-          <li><a href="#my-projects" class="nav-link">Projects</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#header" class="nav-link nav-magnetic">Home</a></li>
+          <li><a href="#my-projects" class="nav-link nav-magnetic">Projects</a></li>
+          <li><a href="#skills-tools" class="nav-link nav-magnetic">Skills</a></li>
+          <li><a href="#about" class="nav-link nav-magnetic">About</a></li>
+          <li><a href="#contact" class="nav-link nav-magnetic">Contact</a></li>
           <i class="fas fa-times" onclick="closemenu()"></i>
         </ul>
         <i class="fas fa-bars" onclick="openmenu()"></i>

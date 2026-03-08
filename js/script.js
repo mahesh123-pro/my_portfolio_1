@@ -135,6 +135,15 @@ window.addEventListener('scroll', () => {
     requestAnimationFrame(updateNav);
     ticking = true;
   }
+
+  // Progress bar logic
+  const scrollProgress = document.getElementById('scroll-progress');
+  if (scrollProgress) {
+    const scrollTotal = document.documentElement.scrollTop || document.body.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollRatio = scrollTotal / height;
+    scrollProgress.style.width = `${scrollRatio * 100}%`;
+  }
 });
 
 // Active nav link on scroll
@@ -413,7 +422,7 @@ tiltCards.forEach((card) => {
 // ============================================
 // MAGNETIC HOVER EFFECT
 // ============================================
-const magneticElements = document.querySelectorAll('.btn, .btn-link, .social-icons a, .footer-social a');
+const magneticElements = document.querySelectorAll('.btn, .btn-link, .social-icons a, .footer-social a, .nav-magnetic, .logo-text');
 
 magneticElements.forEach(el => {
   el.addEventListener('mousemove', (e) => {
