@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journey 2024: Linux & Cloud Mastery | Mahesh Portfolio</title>
+    <meta name="description" content="Mahesh dives deep into Linux, AWS, and Cloud Infrastructure during 2024." />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/MK.png" />
+    <link rel="apple-touch-icon" href="assets/images/MK.png" />
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/03414abcb6.js" crossorigin="anonymous"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/case-study.css" />
+</head>
+
+<body>
+
+    <!-- Scroll Progress -->
+    <div id="cs-progress"></div>
+
+    <!-- Nav -->
+    <nav class="scrolled">
+        <a href="index.html" class="cs-logo-link" aria-label="Mahesh Portfolio">
+            <div class="cs-logo-badge">MK</div>
+            <div class="cs-logo-wordmark">
+                <span class="cs-logo-name">Mahesh.</span>
+                <span class="cs-logo-sub">Portfolio</span>
+            </div>
+        </a>
+        <ul id="sidemenu">
+            <li><a href="index.html#header" class="nav-link">Home</a></li>
+            <li><a href="index.html#about" class="nav-link">About</a></li>
+            <li><a href="index.html#my-projects" class="nav-link">Projects</a></li>
+            <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+        </ul>
+        <i class="fas fa-bars" onclick="openmenu()"></i>
+    </nav>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="cs-hero">
+        <div class="cs-hero-inner">
+            <a href="index.html#my-projects" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back to Projects
+            </a>
+
+            <div class="cs-tag"><i class="fa-solid fa-cloud"></i> Infrastructure Phase</div>
+
+            <h1><span>2024</span> —<br>Linux & Cloud Infrastructure</h1>
+
+            <p class="cs-desc">
+                Shifting focus towards the backbone of modern applications: Linux environments,
+                Cloud architecture, and AWS services.
+            </p>
+
+            <div class="cs-meta">
+                <div class="cs-meta-item">
+                    <span class="label">Focus</span>
+                    <span class="value">Cloud & DevOps</span>
+                </div>
+                <div class="cs-meta-item">
+                    <span class="label">Platforms</span>
+                    <span class="value">AWS, Azure, DigitalOcean</span>
+                </div>
+                <div class="cs-meta-item">
+                    <span class="label">OS</span>
+                    <span class="value">Ubuntu, Kali, CentOS</span>
+                </div>
+                <div class="cs-meta-item">
+                    <span class="label">Status</span>
+                    <span class="value" style="color:#3ddc84;">&#x25cf; Completed</span>
+                </div>
+            </div>
+
+            <div class="cs-hero-actions">
+                <a href="#story" class="cs-btn primary">
+                    <i class="fa-solid fa-book-open"></i> Read the Story
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ HERO IMAGE ═══ -->
+    <div class="cs-hero-image">
+        <div class="img-wrapper">
+            <img src="assets/images/timeline-2024-linux-cloud.jpg" alt="Linux and Cloud" loading="lazy" />
+        </div>
+    </div>
+
+    <!-- ═══ CONTENT BENTO ═══ -->
+    <main class="cs-content">
+
+        <!-- Row 1: Tech Stack + Key Features -->
+        <div class="cs-bento">
+
+            <!-- Tech Stack -->
+            <div class="cs-card col-6">
+                <div class="cs-section-title">
+                    <div class="icon-box"><i class="fa-solid fa-layer-group"></i></div>
+                    <h2>Core Tech</h2>
+                </div>
+                <div class="tech-list">
+                    <div class="tech-item">
+                        <span class="tech-label">Compute</span>
+                        <span class="tech-value">AWS EC2, Lambda</span>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-label">Linux</span>
+                        <span class="tech-value">Bash Scripting, SSH, Vim</span>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-label">Storage</span>
+                        <span class="tech-value">AWS S3, RDS (PostgreSQL)</span>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-label">DevOps</span>
+                        <span class="tech-value">Docker Foundations</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Milestones -->
+            <div class="cs-card col-6">
+                <div class="cs-section-title">
+                    <div class="icon-box"><i class="fa-solid fa-star"></i></div>
+                    <h2>Key Milestones</h2>
+                </div>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="bullet"><i class="fa-solid fa-check"></i></div>
+                        <span>Switched to Linux as primary OS</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="bullet"><i class="fa-solid fa-check"></i></div>
+                        <span>Deployed first web app on AWS EC2</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="bullet"><i class="fa-solid fa-check"></i></div>
+                        <span>Automated local backups using Bash scripts</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="bullet"><i class="fa-solid fa-check"></i></div>
+                        <span>Learned Serverless architecture with AWS Lambda</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2: Architecture -->
+        <div id="story" class="cs-bento">
+            <div class="cs-card col-12 arch-card">
+                <div class="cs-section-title">
+                    <div class="icon-box"><i class="fa-solid fa-pen-nib"></i></div>
+                    <h2>Deep Dive into the Cloud</h2>
+                </div>
+                <p class="arch-text">
+                    In 2024, I realized that building an app is only half the battle; knowing where and how to host it
+                    is just as crucial. I moved my daily workflow entirely to **Linux**, which was a steep but rewarding
+                    learning curve. Mastery of the terminal opened up a new level of efficiency.
+                    <br><br>
+                    I then turned my attention to the **Cloud**. I started with **AWS**, learning everything from basic
+                    EC2 instances to complex serverless functions with Lambda. This year was about understanding
+                    **infrastructure as a service**. I built and deployed several small internal projects, focusing on
+                    scalability and security. Learning how to manage servers, databases in the cloud, and storage
+                    buckets gave me a holistic view of the software lifecycle, moving me closer to becoming a true
+                    **Full-Stack Engineer**.
+                </p>
+            </div>
+        </div>
+
+        <!-- Row 3: Infrastructure Highlights -->
+        <div class="cs-bento">
+            <div class="cs-card col-6">
+                <div class="cs-section-title">
+                    <div class="icon-box"><i class="fa-solid fa-server"></i></div>
+                    <h2>Cloud Concepts</h2>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <p>Virtual Private Cloud (VPC) & Networking</p>
+                    </div>
+                    <div class="metric-card">
+                        <p>IAM Roles & Security Best Practices</p>
+                    </div>
+                    <div class="metric-card">
+                        <p>Database Management in the Cloud</p>
+                    </div>
+                    <div class="metric-card">
+                        <p>Docker Image Management</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cs-card col-6">
+                <div class="cs-section-title">
+                    <div class="icon-box"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h2>Challenges</h2>
+                </div>
+                <div class="challenge-block">
+                    <div class="ch-row">
+                        <span class="ch-badge problem">Problem</span>
+                        <p>High AWS costs from unused resources and misconfigured services.</p>
+                    </div>
+                    <div class="ch-row">
+                        <span class="ch-badge solution">Solution</span>
+                        <p>Implemented monitoring and used AWS budgets, while optimizing resource allocation through
+                            serverless alternatives.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="cs-bento">
+            <div class="cs-card col-12 cs-actions-card">
+                <div class="cta-left">
+                    <h3>Continue the Journey</h3>
+                    <p>Move forward to the next chapter of my evolution.</p>
+                </div>
+                <div class="cs-btn-group">
+                    <a href="journey-2025.html" class="cs-btn primary">
+                        Next Chapter: 2025 <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="premium-footer">
+        <div class="footer-glow"></div>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>Copyright &copy; <span id="year">2026</span> Mahesh. All Rights Reserved.</p>
+                <p class="made-with">Crafted with <i class="fas fa-heart"></i> &amp; Code.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/case-study.js"></script>
+</body>
+
+</html>

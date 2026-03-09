@@ -2519,6 +2519,13 @@ nav#main-nav .fa-times {
   animation: pulse 2s infinite;
 }
 
+.timeline-link {
+  text-decoration: none;
+  display: block;
+  flex: 1;
+  color: inherit;
+}
+
 .timeline-content {
   flex: 1;
   background: var(--bg2);
@@ -2611,10 +2618,13 @@ nav#main-nav .fa-times {
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
   }
+
   50% {
     transform: translate(-50%, -50%) scale(1.2);
     opacity: 0.8;
@@ -2626,14 +2636,14 @@ nav#main-nav .fa-times {
   .timeline::before {
     left: 30px;
   }
-  
+
   .timeline-item,
   .timeline-item:nth-child(even) {
     flex-direction: column;
     align-items: flex-start;
     padding-left: 50px;
   }
-  
+
   .timeline-year {
     flex: none;
     margin-bottom: 15px;
@@ -2642,21 +2652,21 @@ nav#main-nav .fa-times {
     left: 0;
     top: 0;
   }
-  
+
   .timeline-year::before {
     left: 30px;
     top: 50%;
   }
-  
+
   .timeline-content {
     margin: 0 !important;
     width: 100%;
   }
-  
+
   .timeline-content::before {
     display: none;
   }
-  
+
   .timeline-item.current .timeline-year::before {
     left: 30px;
   }
