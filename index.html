@@ -4,20 +4,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mahesh Portfolio</title>
+  <title>Mahesh | Full-Stack Developer & Cloud Engineer</title>
+  <meta name="description"
+    content="Mahesh — Full-Stack Developer & Cloud Engineer specializing in AWS, React, and Node.js. View my portfolio, projects, and case studies." />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/MK.png" />
   <link rel="apple-touch-icon" href="assets/images/MK.png" />
 
+  <!-- Preconnect to external origins (speeds up font/icon loading) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin />
+
+  <!-- Google Fonts — non-blocking -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;700&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet" />
+  </noscript>
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/premium-buttons.css" />
-  <script src="https://kit.fontawesome.com/03414abcb6.js" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/b3d4a3510f.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-
+  <!-- Font Awesome (single kit, async) -->
+  <script src="https://kit.fontawesome.com/03414abcb6.js" crossorigin="anonymous" async></script>
 </head>
 
 <body>
@@ -75,7 +90,7 @@
           </div>
         </div>
         <div class="hero-image">
-          <img src="assets/images/maheshmain.png" alt="Mahesh Profile">
+          <img src="assets/images/maheshmain.png" alt="Mahesh Profile" fetchpriority="high">
         </div>
       </div>
     </div>
@@ -87,7 +102,7 @@
     <div class="container">
       <div class="row">
         <div class="about-col-1">
-          <img src="assets/images/Maheshimage.png" alt="Mahesh - Cloud Engineer" />
+          <img src="assets/images/Maheshimage.png" alt="Mahesh - Cloud Engineer" loading="lazy" />
         </div>
         <div class="about-col-2">
           <h1 class="sub-title">About Me</h1>
@@ -698,7 +713,9 @@
   </footer>
 
 
-  <script src="js/script.js"></script>
+  <!-- Scripts — deferred for fast initial load -->
+  <script src="https://unpkg.com/scrollreveal@4/dist/scrollreveal.min.js" defer></script>
+  <script src="js/script.js" defer></script>
 </body>
 
 </html>
