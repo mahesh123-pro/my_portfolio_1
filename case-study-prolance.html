@@ -5,140 +5,269 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prolance Case Study | Mahesh Portfolio</title>
+    <meta name="description"
+        content="Deep-dive into Prolance – a professional networking and career growth platform built with Next.js, Node.js, and MongoDB." />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/MK.png" />
     <link rel="apple-touch-icon" href="assets/images/MK.png" />
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/premium-buttons.css" />
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
     <script src="https://kit.fontawesome.com/03414abcb6.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
 
-    <style>
-        body {
-            background: #0a0a0a;
-        }
-
-        .case-study-header {
-            padding: 150px 0 50px;
-            text-align: center;
-        }
-
-        .case-study-header h1 {
-            font-size: 45px;
-            margin-bottom: 20px;
-        }
-
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: #ff004f;
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 30px;
-            transition: color 0.3s;
-        }
-
-        .back-btn:hover {
-            color: #fff;
-        }
-    </style>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/case-study.css" />
 </head>
 
 <body>
+
+    <!-- Scroll Progress -->
+    <div id="cs-progress"></div>
+
+    <!-- Nav -->
     <nav class="scrolled">
-        <a href="index.html"><img src="assets/images/MK.png" alt="Logo" class="logo" /></a>
+        <a href="index.html" class="cs-logo-link" aria-label="Mahesh Portfolio">
+            <div class="cs-logo-badge">MK</div>
+            <div class="cs-logo-wordmark">
+                <span class="cs-logo-name">Mahesh.</span>
+                <span class="cs-logo-sub">Portfolio</span>
+            </div>
+        </a>
         <ul id="sidemenu">
             <li><a href="index.html#header" class="nav-link">Home</a></li>
+            <li><a href="index.html#about" class="nav-link">About</a></li>
             <li><a href="index.html#my-projects" class="nav-link">Projects</a></li>
+            <li><a href="index.html#contact" class="nav-link">Contact</a></li>
             <i class="fas fa-times" onclick="closemenu()"></i>
         </ul>
         <i class="fas fa-bars" onclick="openmenu()"></i>
     </nav>
 
-    <div class="container">
-        <div class="case-study-header">
-            <a href="index.html#my-projects" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to
-                Projects</a>
-            <h1>Prolance Case Study</h1>
+    <!-- ═══ HERO ═══ -->
+    <section class="cs-hero">
+        <div class="cs-hero-inner">
+            <a href="index.html#my-projects" class="back-btn" id="backBtn">
+                <i class="fa-solid fa-arrow-left"></i> Back to Projects
+            </a>
+
+            <div class="cs-tag"><i class="fa-solid fa-circle-dot"></i> Full-Stack Web App</div>
+
+            <h1><span>Prolance</span> —<br>Career Growth Platform</h1>
+
+            <p class="cs-desc">
+                The ultimate platform for students, professionals, and recruiters to
+                discover opportunities, collaborate, and master new skills in one unified hub.
+            </p>
+
+            <div class="cs-meta">
+                <div class="cs-meta-item">
+                    <span class="label">Role</span>
+                    <span class="value">Full-Stack Developer</span>
+                </div>
+                <div class="cs-meta-item">
+                    <span class="label">Stack</span>
+                    <span class="value">Next.js · Node.js · MongoDB</span>
+                </div>
+                <div class="cs-meta-item">
+                    <span class="label">Deployment</span>
+                    <span class="value">Vercel</span>
+                </div>
+                <div class="cs-meta-item">
+                    <span class="label">Status</span>
+                    <span class="value" style="color:#3ddc84;">&#x25cf; Live</span>
+                </div>
+            </div>
+
+            <div class="cs-hero-actions">
+                <a href="https://prolance-website-frontend-99.vercel.app/" target="_blank" class="cs-btn primary">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+                <a href="#" class="cs-btn ghost">
+                    <i class="fa-brands fa-github"></i> GitHub Repo
+                </a>
+            </div>
         </div>
+    </section>
 
-        <div class="premium-project-card case-study-card">
-            <div class="project-image-wrapper case-study-image">
-                <img src="assets/images/prolance.png" alt="Prolance Project">
-            </div>
-            <div class="project-content">
-                <h2 class="project-title">Prolance – Professional Networking & Career Growth Platform</h2>
-                <p class="project-summary">The ultimate platform for students, professionals, and recruiters to discover
-                    opportunities, collaborate, and master new skills.</p>
-
-                <div class="project-grid">
-                    <div class="project-section">
-                        <h3><i class="fa-solid fa-layer-group"></i> Tech Stack</h3>
-                        <ul class="clean-list">
-                            <li><strong>Frontend:</strong> Next.js, React, Tailwind CSS</li>
-                            <li><strong>Backend:</strong> Node.js, Express</li>
-                            <li><strong>Database:</strong> MongoDB</li>
-                            <li><strong>Deployment:</strong> Vercel</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-section">
-                        <h3><i class="fa-solid fa-star"></i> Key Features</h3>
-                        <ul class="bullet-list">
-                            <li>Job and Internship discovery tailored to skills</li>
-                            <li>Tech events, hackathons, and workshops</li>
-                            <li>Community discussions and knowledge sharing</li>
-                            <li>Curated learning resources and roadmaps</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-section full-width architecture-section">
-                        <h3><i class="fa-solid fa-sitemap"></i> System Architecture</h3>
-                        <p>A modern full-stack application leveraging Next.js for server-side rendering and static site
-                            generation, ensuring fast load times and optimal SEO. The backend is powered by Node.js,
-                            storing dynamic community and job data in MongoDB for flexibility and scalability.</p>
-                    </div>
-
-                    <div class="project-section">
-                        <h3><i class="fa-solid fa-chart-line"></i> Impact / Metrics</h3>
-                        <ul class="bullet-list">
-                            <li>A centralized hub replacing fragmented tools for students and recruiters</li>
-                            <li>Streamlined the talent discovery and hiring process</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-section">
-                        <h3><i class="fa-solid fa-lightbulb"></i> Challenges & Solutions</h3>
-                        <p><strong>Challenge:</strong> Managing high volumes of community discussions and real-time job
-                            postings.<br>
-                            <strong>Solution:</strong> Implemented efficient pagination and state management, utilizing
-                            Next.js API routes with MongoDB to optimize data fetching and rendering.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-actions">
-                    <a href="https://prolance-website-frontend-99.vercel.app/" target="_blank" class="btn-link"><i
-                            class="fa-solid fa-link"></i> Live Demo</a>
-                    <a href="#" class="btn-link secondary"><i class="fa-brands fa-github"></i> GitHub</a>
-                </div>
-            </div>
+    <!-- ═══ HERO IMAGE ═══ -->
+    <div class="cs-hero-image">
+        <div class="img-wrapper">
+            <img src="assets/images/prolance.png" alt="Prolance Platform Screenshot" loading="lazy" />
         </div>
     </div>
 
+    <!-- ═══ CONTENT BENTO ═══ -->
+    <main class="cs-content">
+
+        <!-- Row 1: Tech Stack + Key Features -->
+        <div class="cs-bento">
+
+            <!-- Tech Stack -->
+            <div class="cs-card col-6">
+                <div class="cs-section-title">
+                    <div class="icon-box"><i class="fa-solid fa-layer-group"></i></div>
+                    <h2>Tech Stack</h2>
+                </div>
+                <div class="tech-list">
+                    <div class="tech-item">
+                        <span class="tech-label">Frontend</span>
+                        <span class="tech-value">Next.js 14, React, Tailwind CSS</span>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-label">Backend</span>
+                        <span class="tech-value">Node.js, Express.js</span>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-label">Database</span>
+                        <span class="tech-value">MongoDB Atlas</span>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-label">Auth</span>
+                        <span class="tech-value">JWT, Bcrypt</span>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-label">Deploy</span>
+                        <span class="tech-value">Vercel (Frontend + API)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Features -->
+            <div class="cs-card col-6">
+                <div class="cs-section-title">
+                    <div class="icon-box"><i class="fa-solid fa-star"></i></div>
+                    <h2>Key Features</h2>
+                </div>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="bullet"><i class="fa-solid fa-check"></i></div>
+                        <span>Job and internship discovery tailored to your skill profile</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="bullet"><i class="fa-solid fa-check"></i></div>
+                        <span>Tech events, hackathons, and workshop listings</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="bullet"><i class="fa-solid fa-check"></i></div>
+                        <span>Community discussions and real-time knowledge sharing</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="bullet"><i class="fa-solid fa-check"></i></div>
+                        <span>Curated learning resources, roadmaps and mentorship</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="bullet"><i class="fa-solid fa-check"></i></div>
+                        <span>Recruiter-facing dashboards for talent discovery</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2: Architecture (full-width) -->
+        <div class="cs-bento">
+            <div class="cs-card col-12 arch-card">
+                <div class="cs-section-title">
+                    <div class="icon-box"><i class="fa-solid fa-sitemap"></i></div>
+                    <h2>System Architecture</h2>
+                </div>
+                <p class="arch-text">
+                    Prolance leverages <strong>Next.js 14</strong> for both server-side rendering and static site
+                    generation,
+                    ensuring fast initial page loads and optimal SEO across all public routes. The backend is a
+                    decoupled
+                    <strong>Node.js / Express</strong> REST API that handles authentication, job postings, and community
+                    data.
+                    <strong>MongoDB Atlas</strong> provides schema-flexible storage perfect for dynamic community and
+                    job data.
+                    API routes are protected via JWT middleware, and all calls are optimized with query pagination and
+                    server-side caching via Next.js API routes.
+                </p>
+            </div>
+        </div>
+
+        <!-- Row 3: Impact + Challenges -->
+        <div class="cs-bento">
+
+            <!-- Impact -->
+            <div class="cs-card col-6">
+                <div class="cs-section-title">
+                    <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
+                    <h2>Impact & Metrics</h2>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <p>Replaced 5+ fragmented tools for students and recruiters with one platform</p>
+                    </div>
+                    <div class="metric-card">
+                        <p>Streamlined the talent discovery and hiring pipeline significantly</p>
+                    </div>
+                    <div class="metric-card">
+                        <p>SEO-optimized pages driving organic discovery through search</p>
+                    </div>
+                    <div class="metric-card">
+                        <p>Sub-second load time on Vercel Edge Network globally</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Challenges -->
+            <div class="cs-card col-6">
+                <div class="cs-section-title">
+                    <div class="icon-box"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h2>Challenges & Solutions</h2>
+                </div>
+                <div class="challenge-block">
+                    <div class="ch-row">
+                        <span class="ch-badge problem">Problem</span>
+                        <p>Managing high volumes of community discussions and real-time job postings without degrading
+                            performance.</p>
+                    </div>
+                    <div class="ch-row">
+                        <span class="ch-badge solution">Solution</span>
+                        <p>Implemented cursor-based pagination and server-side caching via Next.js API routes,
+                            significantly reducing MongoDB query load and improving response times.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 4: CTA Card -->
+        <div class="cs-bento">
+            <div class="cs-card col-12 cs-actions-card">
+                <div class="cta-left">
+                    <h3>Explore Prolance Live</h3>
+                    <p>See the platform in action or explore the source code on GitHub.</p>
+                </div>
+                <div class="cs-btn-group">
+                    <a href="https://prolance-website-frontend-99.vercel.app/" target="_blank" class="cs-btn primary">
+                        <i class="fa-solid fa-link"></i> Live Demo
+                    </a>
+                    <a href="#" class="cs-btn ghost">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
     <footer class="premium-footer">
         <div class="footer-glow"></div>
         <div class="container">
             <div class="footer-bottom">
                 <p>Copyright &copy; <span id="year">2026</span> Mahesh. All Rights Reserved.</p>
-                <p class="made-with">Crafted with <i class="fas fa-heart"></i> & Code.</p>
+                <p class="made-with">Crafted with <i class="fas fa-heart"></i> &amp; Code.</p>
             </div>
         </div>
     </footer>
-    <script src="js/script.js"></script>
+
+    <script src="js/case-study.js"></script>
 </body>
 
 </html>

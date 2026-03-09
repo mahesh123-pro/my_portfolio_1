@@ -5,143 +5,270 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elegance Events Case Study | Mahesh Portfolio</title>
+    <meta name="description"
+        content="Deep-dive into Elegance Events — a premium event management platform with JWT auth, Framer Motion animations, and a lead-generation admin dashboard." />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/MK.png" />
     <link rel="apple-touch-icon" href="assets/images/MK.png" />
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/premium-buttons.css" />
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
     <script src="https://kit.fontawesome.com/03414abcb6.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
 
-    <style>
-        body {
-            background: #0a0a0a;
-        }
-
-        .case-study-header {
-            padding: 150px 0 50px;
-            text-align: center;
-        }
-
-        .case-study-header h1 {
-            font-size: 45px;
-            margin-bottom: 20px;
-        }
-
-        .back-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: #ff004f;
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 30px;
-            transition: color 0.3s;
-        }
-
-        .back-btn:hover {
-            color: #fff;
-        }
-    </style>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/case-study.css" />
 </head>
 
 <body>
+
+    <!-- Scroll Progress -->
+    <div id="cs-progress"></div>
+
+    <!-- Nav -->
     <nav class="scrolled">
-        <a href="index.html"><img src="assets/images/MK.png" alt="Logo" class="logo" /></a>
+        <a href="index.html" class="cs-logo-link" aria-label="Mahesh Portfolio">
+            <div class="cs-logo-badge">MK</div>
+            <div class="cs-logo-wordmark">
+                <span class="cs-logo-name">Mahesh.</span>
+                <span class="cs-logo-sub">Portfolio</span>
+            </div>
+        </a>
         <ul id="sidemenu">
             <li><a href="index.html#header" class="nav-link">Home</a></li>
+            <li><a href="index.html#about" class="nav-link">About</a></li>
             <li><a href="index.html#my-projects" class="nav-link">Projects</a></li>
+            <li><a href="index.html#contact" class="nav-link">Contact</a></li>
             <i class="fas fa-times" onclick="closemenu()"></i>
         </ul>
         <i class="fas fa-bars" onclick="openmenu()"></i>
     </nav>
 
-    <div class="container">
-        <div class="case-study-header">
-            <a href="index.html#my-projects" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to
-                Projects</a>
-            <h1>Elegance Events Case Study</h1>
+    <!-- ═══ HERO ═══ -->
+    <section class="cs-hero">
+        <div class="cs-hero-inner">
+            <a href="index.html#my-projects" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back to Projects
+            </a>
+
+            <div class="cs-tag"><i class="fa-solid fa-champagne-glasses"></i> Premium Web App</div>
+
+            <h1><span>Elegance Events</span> —<br>Event Management Platform</h1>
+
+            <p class="cs-desc">
+                A fully functional, premium event management and lead-generation website designed for organizing
+                luxury weddings, corporate events, and private celebrations — featuring a secure admin dashboard
+                and animated, Framer Motion-powered UI.
+            </p>
+
+            <div class="cs-meta">
+                <div class="cs-meta-item">
+                    <span class="label">Role</span>
+                    <span class="value">Full-Stack Developer</span>
+                </div>
+                <div class="cs-meta-item">
+                    <span class="label">Stack</span>
+                    <span class="value">React · Node.js · MongoDB</span>
+                </div>
+                <div class="cs-meta-item">
+                    <span class="label">Deployment</span>
+                    <span class="value">Vercel + Backend Service</span>
+                </div>
+                <div class="cs-meta-item">
+                    <span class="label">Status</span>
+                    <span class="value" style="color:#3ddc84;">&#x25cf; Live</span>
+                </div>
+            </div>
+
+            <div class="cs-hero-actions">
+                <a href="https://event-management-nine-chi.vercel.app/" target="_blank" class="cs-btn primary">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Project
+                </a>
+                <a href="#" class="cs-btn ghost">
+                    <i class="fa-brands fa-github"></i> GitHub Repo
+                </a>
+            </div>
         </div>
+    </section>
 
-        <div class="premium-project-card case-study-card">
-            <div class="project-image-wrapper case-study-image">
-                <img src="assets/images/work-4.png" alt="Elegance Events Project" style="object-fit: cover;">
-            </div>
-            <div class="project-content">
-                <h2 class="project-title">Elegance Events – Premium Event Management Platform</h2>
-                <p class="project-summary">A fully functional, premium event management and lead-generation website
-                    designed for organizing luxury weddings, corporate events, and private celebrations.</p>
-
-                <div class="project-grid">
-                    <div class="project-section">
-                        <h3><i class="fa-solid fa-layer-group"></i> Tech Stack</h3>
-                        <ul class="clean-list">
-                            <li><strong>Frontend:</strong> React (Vite), Tailwind CSS, Framer Motion</li>
-                            <li><strong>Backend:</strong> Node.js, Express</li>
-                            <li><strong>Database:</strong> MongoDB Atlas</li>
-                            <li><strong>Deployment:</strong> Vercel (Frontend), Backend Service</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-section">
-                        <h3><i class="fa-solid fa-star"></i> Key Features</h3>
-                        <ul class="bullet-list">
-                            <li>Dynamic, responsive UI with Framer Motion animations</li>
-                            <li>Secure Admin Dashboard with JWT authentication</li>
-                            <li>Lead generation & inquiry management system</li>
-                            <li>Interactive animated galleries and service listings</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-section full-width architecture-section">
-                        <h3><i class="fa-solid fa-sitemap"></i> System Architecture</h3>
-                        <p>The frontend, deployed on Vercel, communicates with a RESTful Node.js/Express backend API for
-                            handling inquiries, gallery data, and admin authentication. The backend persists data
-                            securely in a MongoDB cloud database. The admin panel utilizes JWT tokens for secure and
-                            authorized access to user inquiries and platform management.</p>
-                    </div>
-
-                    <div class="project-section">
-                        <h3><i class="fa-solid fa-chart-line"></i> Impact / Metrics</h3>
-                        <ul class="bullet-list">
-                            <li>Significantly improved visual appeal and user engagement</li>
-                            <li>Streamlined the booking and inquiry process for event clients</li>
-                            <li>Provided admins with a centralized dashboard for effortless lead management</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-section">
-                        <h3><i class="fa-solid fa-lightbulb"></i> Challenges & Solutions</h3>
-                        <p><strong>Challenge:</strong> Creating a premium feel while maintaining high performance and
-                            secure admin routing.<br>
-                            <strong>Solution:</strong> Leveraged Framer Motion for optimized, smooth micro-animations,
-                            and implemented robust token-based authentication (JWT) for the backend routes. Overcame
-                            Vercel deployment errors by properly configuring single-page application routing.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="project-actions">
-                    <a href="https://event-management-nine-chi.vercel.app/" target="_blank" class="btn-link"><i
-                            class="fa-solid fa-globe"></i> Live Project</a>
-                </div>
-            </div>
+    <!-- ═══ HERO IMAGE ═══ -->
+    <div class="cs-hero-image">
+        <div class="img-wrapper">
+            <img src="assets/images/work-4.png" alt="Elegance Events Platform Screenshot" loading="lazy"
+                style="object-fit: cover;" />
         </div>
     </div>
 
+    <!-- ═══ CONTENT BENTO ═══ -->
+    <main class="cs-content">
+
+        <!-- Row 1: Tech Stack + Key Features -->
+        <div class="cs-bento">
+
+            <!-- Tech Stack -->
+            <div class="cs-card col-6">
+                <div class="cs-section-title">
+                    <div class="icon-box"><i class="fa-solid fa-layer-group"></i></div>
+                    <h2>Tech Stack</h2>
+                </div>
+                <div class="tech-list">
+                    <div class="tech-item">
+                        <span class="tech-label">Frontend</span>
+                        <span class="tech-value">React (Vite), Framer Motion, Tailwind CSS</span>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-label">Backend</span>
+                        <span class="tech-value">Node.js, Express.js</span>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-label">Database</span>
+                        <span class="tech-value">MongoDB Atlas</span>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-label">Auth</span>
+                        <span class="tech-value">JWT (JSON Web Tokens)</span>
+                    </div>
+                    <div class="tech-item">
+                        <span class="tech-label">Deploy</span>
+                        <span class="tech-value">Vercel (Frontend) + Backend Service</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Features -->
+            <div class="cs-card col-6">
+                <div class="cs-section-title">
+                    <div class="icon-box"><i class="fa-solid fa-star"></i></div>
+                    <h2>Key Features</h2>
+                </div>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="bullet"><i class="fa-solid fa-check"></i></div>
+                        <span>Dynamic, responsive UI with Framer Motion micro-animations</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="bullet"><i class="fa-solid fa-check"></i></div>
+                        <span>Secure Admin Dashboard with JWT-based authentication</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="bullet"><i class="fa-solid fa-check"></i></div>
+                        <span>Lead generation and real-time inquiry management system</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="bullet"><i class="fa-solid fa-check"></i></div>
+                        <span>Interactive animated galleries and luxury service listings</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="bullet"><i class="fa-solid fa-check"></i></div>
+                        <span>SPA routing with proper Vercel deployment configuration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2: Architecture -->
+        <div class="cs-bento">
+            <div class="cs-card col-12 arch-card">
+                <div class="cs-section-title">
+                    <div class="icon-box"><i class="fa-solid fa-sitemap"></i></div>
+                    <h2>System Architecture</h2>
+                </div>
+                <p class="arch-text">
+                    The frontend, a <strong>React (Vite)</strong> SPA deployed on Vercel, communicates with a
+                    <strong>RESTful Node.js / Express</strong> backend API for handling client inquiries, gallery data,
+                    and admin authentication. The backend persists all data securely in a <strong>MongoDB Atlas</strong>
+                    cloud database. The admin panel uses token-based authentication — clients must provide a valid
+                    <strong>JWT</strong> on every protected API call. Route protection is enforced through Express
+                    middleware that validates and decodes tokens before allowing access to admin operations, including
+                    inquiry management and gallery CRUD. The Vercel deployment is configured with a custom
+                    <code>vercel.json</code> to handle client-side SPA routing correctly.
+                </p>
+            </div>
+        </div>
+
+        <!-- Row 3: Impact + Challenges -->
+        <div class="cs-bento">
+
+            <!-- Impact -->
+            <div class="cs-card col-6">
+                <div class="cs-section-title">
+                    <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
+                    <h2>Impact & Metrics</h2>
+                </div>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <p>Significantly improved visual appeal and client user engagement</p>
+                    </div>
+                    <div class="metric-card">
+                        <p>Streamlined booking and inquiry process for premium event clients</p>
+                    </div>
+                    <div class="metric-card">
+                        <p>Admins gained a centralized dashboard for effortless lead management</p>
+                    </div>
+                    <div class="metric-card">
+                        <p>Smooth Framer Motion animations with zero layout-shift or jank</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Challenges -->
+            <div class="cs-card col-6">
+                <div class="cs-section-title">
+                    <div class="icon-box"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h2>Challenges & Solutions</h2>
+                </div>
+                <div class="challenge-block">
+                    <div class="ch-row">
+                        <span class="ch-badge problem">Problem</span>
+                        <p>Creating a premium, animated feel while maintaining high performance and secure admin routing
+                            on Vercel.</p>
+                    </div>
+                    <div class="ch-row">
+                        <span class="ch-badge solution">Solution</span>
+                        <p>Leveraged Framer Motion's optimized animation pipeline (GPU-composited transforms only),
+                            implemented JWT middleware for all backend admin routes, and resolved Vercel SPA routing by
+                            adding a custom <code>vercel.json</code> rewrite rule.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 4: CTA -->
+        <div class="cs-bento">
+            <div class="cs-card col-12 cs-actions-card">
+                <div class="cta-left">
+                    <h3>Explore Elegance Events</h3>
+                    <p>Visit the live platform and experience the premium UI firsthand.</p>
+                </div>
+                <div class="cs-btn-group">
+                    <a href="https://event-management-nine-chi.vercel.app/" target="_blank" class="cs-btn primary">
+                        <i class="fa-solid fa-globe"></i> Live Project
+                    </a>
+                    <a href="#" class="cs-btn ghost">
+                        <i class="fa-brands fa-github"></i> GitHub Repo
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
     <footer class="premium-footer">
         <div class="footer-glow"></div>
         <div class="container">
             <div class="footer-bottom">
                 <p>Copyright &copy; <span id="year">2026</span> Mahesh. All Rights Reserved.</p>
-                <p class="made-with">Crafted with <i class="fas fa-heart"></i> & Code.</p>
+                <p class="made-with">Crafted with <i class="fas fa-heart"></i> &amp; Code.</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/case-study.js"></script>
 </body>
 
 </html>
