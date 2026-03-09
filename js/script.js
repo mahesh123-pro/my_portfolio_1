@@ -186,7 +186,7 @@ if (seeMoreBtn && extraWork) {
 /* ── Scroll-reveal animations ── */
 function initScrollReveal() {
   const targets = document.querySelectorAll(
-    '.card, .compact-project-card, .service-card, .work, .skill-category, .about-col-1, .about-col-2'
+    '.card, .compact-project-card, .service-card, .work, .skill-category, .about-col-1, .about-col-2, .timeline-item'
   );
 
   const io = new IntersectionObserver((entries) => {
@@ -209,6 +209,7 @@ function initScrollReveal() {
     sr.reveal('.service-card', { origin: 'bottom', interval: 120 });
     sr.reveal('.work', { origin: 'bottom', interval: 150 });
     sr.reveal('.skill-category', { origin: 'bottom', interval: 100 });
+    sr.reveal('.timeline-item', { origin: 'bottom', interval: 150 });
     sr.reveal('.contact-left', { origin: 'left' });
     sr.reveal('.contact-right', { origin: 'right' });
   }
