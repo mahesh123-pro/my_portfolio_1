@@ -4,6 +4,37 @@
 
 'use strict';
 
+/* ── Lenis Smooth Scroll ── */
+(function initLenis() {
+  if (window.lenis) return;
+  if (typeof window.Lenis === 'undefined') {
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/lenis@1.1.9/dist/lenis.min.js';
+    script.onload = setupLenis;
+    document.head.appendChild(script);
+  } else {
+    setupLenis();
+  }
+
+  function setupLenis() {
+    if (window.lenis) return;
+    const lenis = new window.Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      mouseMultiplier: 1,
+    });
+    window.lenis = lenis;
+    function raf(time) {
+      if (window.lenis === lenis) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+    }
+    requestAnimationFrame(raf);
+  }
+})();
+
 /* ── 1. Scroll Progress Bar ── */
 const progressBar = document.getElementById('cs-progress');
 function updateProgress() {
@@ -149,7 +180,11 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
         const target = document.querySelector(a.getAttribute('href'));
         if (target) {
             e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (window.lenis) {
+                window.lenis.scrollTo(target, { offset: -80 });
+            } else {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         }
     });
 });
@@ -159,7 +194,8 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closemenu();
     if (e.key === 'Home') {
         e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (window.lenis) window.lenis.scrollTo(0);
+        else window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 });
 
@@ -176,3 +212,58 @@ console.log(
     '%c Mahesh\'s Case Study ',
     'background: linear-gradient(90deg,#ff004f,#ff6b6b); color:#fff; font-size:16px; padding:10px 24px; border-radius:8px; font-weight:700;'
 );
+
+/* ── Premium Advanced Page Transition ── */
+(function initPageTransitions() {
+  document.addEventListener('DOMContentLoaded', () => {
+    const ptWrapper = document.createElement('div');
+    ptWrapper.className = 'pt-wrapper';
+    for (let i = 0; i < 5; i++) {
+      const strip = document.createElement('div');
+      strip.className = 'pt-strip';
+      ptWrapper.appendChild(strip);
+    }
+    document.body.appendChild(ptWrapper);
+
+    if (sessionStorage.getItem('isTransitioning')) {
+      sessionStorage.removeItem('isTransitioning');
+      document.body.classList.add('pt-enter');
+      const pl = document.getElementById('preloader');
+      if (pl) pl.style.display = 'none'; // hide normal preloader
+      
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          document.body.classList.add('pt-enter-active');
+          setTimeout(() => {
+            document.body.classList.remove('pt-enter', 'pt-enter-active');
+          }, 1100);
+        });
+      });
+    }
+
+    document.addEventListener('click', e => {
+      const a = e.target.closest('a');
+      if (!a) return;
+      
+      const href = a.getAttribute('href');
+      // Ignore anchors, external protocols, internal JS, un-linkable items
+      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return;
+      if (a.getAttribute('target') === '_blank' || a.hasAttribute('download')) return;
+
+      try {
+        const url = new URL(a.href);
+        if (url.origin !== window.location.origin) return;
+      } catch(err) { return; }
+
+      e.preventDefault();
+      const targetUrl = a.href;
+      document.body.classList.add('pt-leave');
+      sessionStorage.setItem('isTransitioning', 'true');
+      
+      // Navigate exactly after the full transition sweeps (240ms delay + 650ms animation + 10ms padding)
+      setTimeout(() => {
+        window.location.href = targetUrl;
+      }, 900); 
+    });
+  });
+})();

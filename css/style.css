@@ -29,7 +29,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   scroll-padding-top: 80px;
 }
 
@@ -1021,10 +1021,11 @@ nav#main-nav .fa-times {
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
   transition: all .5s var(--tr);
+  transform: translateY(var(--parallax-y, 0px));
 }
 
 .about-col-1 img:hover {
-  transform: scale(1.02) translateY(-8px);
+  transform: scale(1.02) translateY(calc(var(--parallax-y, 0px) - 8px));
   box-shadow: 0 30px 70px rgba(255, 0, 79, .18);
 }
 
@@ -1454,11 +1455,56 @@ nav#main-nav .fa-times {
   background: #050505;
 }
 
+.hz-scroll-section {
+  position: relative;
+  height: 300vh; /* Defines vertical scrolling length */
+  width: 100%;
+  padding: 0 !important; 
+}
+
+.hz-sticky-wrapper {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 60px 0; /* inner padding */
+}
+
+.hz-scroll-container {
+  width: 100%;
+  will-change: transform; /* optimized for JS translation */
+  margin-top: 20px;
+}
+
 .compact-projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 26px;
   margin-top: 16px;
+}
+
+.hz-grid {
+  display: flex !important;
+  flex-wrap: nowrap;
+  width: max-content;
+  gap: 32px;
+  padding-right: 20vw; /* padding at the end of scroll */
+}
+
+.hz-grid .compact-project-card {
+  width: 360px;
+  flex-shrink: 0;
+  height: 480px;
+}
+
+@media (max-width: 800px) {
+  .hz-grid .compact-project-card {
+    width: 280px;
+    height: 420px;
+  }
 }
 
 .compact-project-card {
@@ -1489,10 +1535,11 @@ nav#main-nav .fa-times {
   height: 100%;
   object-fit: cover;
   transition: transform .5s ease;
+  transform: translateY(var(--parallax-y, 0)) scale(1.02);
 }
 
 .compact-project-card:hover .card-image img {
-  transform: scale(1.06);
+  transform: translateY(var(--parallax-y, 0)) scale(1.08);
 }
 
 .compact-project-card .card-content {
@@ -1614,11 +1661,12 @@ nav#main-nav .fa-times {
   object-fit: cover;
   filter: grayscale(70%) opacity(.75);
   transition: all .7s var(--tr);
+  transform: translateY(var(--parallax-y, 0px));
 }
 
 .service-card:hover .service-image-wrapper img {
   filter: grayscale(0%) opacity(1);
-  transform: scale(1.05);
+  transform: scale(1.05) translateY(var(--parallax-y, 0px));
 }
 
 .service-icon-box {
@@ -1770,10 +1818,11 @@ nav#main-nav .fa-times {
   height: 100%;
   object-fit: cover;
   transition: transform .7s var(--tr);
+  transform: translateY(var(--parallax-y, 0)) scale(1.02);
 }
 
 .work:hover .gallery-img-wrapper img {
-  transform: scale(1.08) rotate(1deg);
+  transform: translateY(var(--parallax-y, 0)) scale(1.08) rotate(1deg);
 }
 
 .gallery-content {
@@ -2561,10 +2610,11 @@ nav#main-nav .fa-times {
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+  transform: translateY(var(--parallax-y, 0px));
 }
 
 .timeline-content:hover .timeline-image img {
-  transform: scale(1.05);
+  transform: scale(1.05) translateY(var(--parallax-y, 0px));
 }
 
 .timeline-text {
@@ -2855,4 +2905,48 @@ nav#main-nav .fa-times {
   .case-two-column {
     grid-template-columns: 1fr;
   }
+}
+
+/* ============================================================
+   PREMIUM PAGE TRANSITION
+   ============================================================ */
+.pt-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 9999999;
+  display: flex;
+  pointer-events: none;
+}
+.pt-strip {
+  flex: 1;
+  height: 100vh;
+  background: #050505;
+  border-right: 1px solid rgba(255, 255, 255, 0.03);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.65s cubic-bezier(0.85, 0, 0.15, 1);
+}
+.pt-strip:last-child {
+  border-right: none;
+}
+.pt-strip:nth-child(1) { transition-delay: 0.00s; }
+.pt-strip:nth-child(2) { transition-delay: 0.06s; }
+.pt-strip:nth-child(3) { transition-delay: 0.12s; }
+.pt-strip:nth-child(4) { transition-delay: 0.18s; }
+.pt-strip:nth-child(5) { transition-delay: 0.24s; }
+
+body.pt-leave .pt-strip {
+  transform: scaleY(1);
+  transform-origin: bottom;
+}
+
+body.pt-enter .pt-strip {
+  transform: scaleY(1);
+  transition: none;
+}
+
+body.pt-enter-active .pt-strip {
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.65s cubic-bezier(0.85, 0, 0.15, 1);
 }
