@@ -7,9 +7,10 @@
 /* ── Lenis Smooth Scroll ── */
 (function initLenis() {
   if (window.lenis) return;
+  
   if (typeof window.Lenis === 'undefined') {
     const script = document.createElement('script');
-    script.src = 'https://unpkg.com/lenis@1.1.9/dist/lenis.min.js';
+    script.src = 'https://unpkg.com/lenis@1.1.20/dist/lenis.min.js';
     script.onload = setupLenis;
     document.head.appendChild(script);
   } else {
@@ -19,17 +20,20 @@
   function setupLenis() {
     if (window.lenis) return;
     const lenis = new window.Lenis({
-      duration: 1.2,
+      duration: 1.4,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
       smoothWheel: true,
-      mouseMultiplier: 1,
+      wheelMultiplier: 1.1,
+      infinite: false,
     });
+
     window.lenis = lenis;
+
     function raf(time) {
-      if (window.lenis === lenis) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
   }
@@ -150,13 +154,21 @@ document.addEventListener('click', e => {
 /* ── Smooth scroll ── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', function (e) {
-    const target = document.querySelector(this.getAttribute('href'));
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+    const target = document.querySelector(href);
     if (!target) return;
+    
     e.preventDefault();
     if (window.lenis) {
-      window.lenis.scrollTo(target, { offset: -80 });
+      window.lenis.scrollTo(target, { 
+        offset: -80,
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+      });
     } else {
-      window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+      const top = target.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
     closemenu();
   });

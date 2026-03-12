@@ -288,7 +288,7 @@ nav .fa-bars:hover {
 }
 
 html {
-    scroll-behavior: auto;
+    scroll-behavior: auto !important;
 }
 
 body {

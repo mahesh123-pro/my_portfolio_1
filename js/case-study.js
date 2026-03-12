@@ -7,9 +7,10 @@
 /* ── Lenis Smooth Scroll ── */
 (function initLenis() {
   if (window.lenis) return;
+  
   if (typeof window.Lenis === 'undefined') {
     const script = document.createElement('script');
-    script.src = 'https://unpkg.com/lenis@1.1.9/dist/lenis.min.js';
+    script.src = 'https://unpkg.com/lenis@1.1.20/dist/lenis.min.js';
     script.onload = setupLenis;
     document.head.appendChild(script);
   } else {
@@ -19,17 +20,20 @@
   function setupLenis() {
     if (window.lenis) return;
     const lenis = new window.Lenis({
-      duration: 1.2,
+      duration: 1.4,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
       smoothWheel: true,
-      mouseMultiplier: 1,
+      wheelMultiplier: 1.1,
+      infinite: false,
     });
+
     window.lenis = lenis;
+
     function raf(time) {
-      if (window.lenis === lenis) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
   }
@@ -176,14 +180,22 @@ function initTilt() {
 
 /* ── 9. Smooth scroll for any anchor links ── */
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
-    a.addEventListener('click', (e) => {
-        const target = document.querySelector(a.getAttribute('href'));
+    a.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#' || href === '') return;
+        
+        const target = document.querySelector(href);
         if (target) {
             e.preventDefault();
             if (window.lenis) {
-                window.lenis.scrollTo(target, { offset: -80 });
+                window.lenis.scrollTo(target, { 
+                    offset: -80,
+                    duration: 1.2,
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+                });
             } else {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const top = target.getBoundingClientRect().top + window.pageYOffset - 80;
+                window.scrollTo({ top, behavior: 'smooth' });
             }
         }
     });
