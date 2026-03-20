@@ -277,6 +277,37 @@ document.querySelectorAll('.compact-project-card, .card.premium-highlight-card, 
   });
 });
 
+/* ── About Image Deep Tilt ── */
+const aboutCol = document.querySelector('.about-col-1');
+const aboutImg = document.querySelector('.about-img-premium');
+if (aboutCol && aboutImg) {
+  aboutCol.addEventListener('mousemove', e => {
+    const r = aboutCol.getBoundingClientRect();
+    const x = e.clientX - r.left;
+    const y = e.clientY - r.top;
+    const xc = r.width / 2;
+    const yc = r.height / 2;
+    const dx = x - xc;
+    const dy = y - yc;
+    
+    // Tilt the image
+    aboutImg.style.transition = 'transform .1s ease';
+    aboutImg.style.transform = `perspective(1000px) rotateX(${(dy / yc) * -10}deg) rotateY(${(dx / xc) * 10}deg) scale(1.04)`;
+    
+    // Move the glow background slightly in opposite direction
+    const glow = aboutCol.querySelector('::after'); // We can't select pseudo-elements but we can use CSS variables
+    aboutCol.style.setProperty('--about-glow-x', `${(dx / xc) * 15}px`);
+    aboutCol.style.setProperty('--about-glow-y', `${(dy / yc) * 15}px`);
+  });
+  
+  aboutCol.addEventListener('mouseleave', () => {
+    aboutImg.style.transition = 'transform .6s var(--tr)';
+    aboutImg.style.transform = 'perspective(1000px)';
+    aboutCol.style.setProperty('--about-glow-x', '0px');
+    aboutCol.style.setProperty('--about-glow-y', '0px');
+  });
+}
+
 /* ── Cursor glow (desktop only) ── */
 if (window.matchMedia('(hover: hover)').matches) {
   const glow = document.createElement('div');

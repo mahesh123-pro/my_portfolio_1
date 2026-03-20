@@ -1,0 +1,626 @@
+/* ============================================================
+   PREMIUM ANIMATIONS & TRANSITIONS (2026 EDITION)
+   Professional micro-interactions and scroll-triggered effects
+   ============================================================ */
+
+/* ── Advanced Keyframe Animations ── */
+
+/* Text reveal animation (character by character) */
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Smooth fade and scale up */
+@keyframes fadeScaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slide up with fade */
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide left with fade */
+@keyframes slideLeftFade {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide right with fade */
+@keyframes slideRightFade {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Bounce entrance */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Subtle pulse glow */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 79, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 0, 79, 0);
+  }
+}
+
+/* Text gradient shift */
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Smooth shimmer */
+@keyframes smoothShimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Floating animation */
+@keyframes floatUp {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Subtle rotate animation */
+@keyframes gentleRotate {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+/* Expanded glow pulse */
+@keyframes expandGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 79, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 0, 79, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 79, 0);
+  }
+}
+
+/* ── Scroll-Reveal Classes ── */
+
+/* Base state - hidden */
+.animate-hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Revealed state */
+.animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered reveal for elements */
+.card.animate-hidden,
+.project-card.animate-hidden,
+.skill-category.animate-hidden,
+.service-card.animate-hidden,
+.timeline-item.animate-hidden {
+  animation: slideUpFade 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Left column reveal */
+.about-col-1.animate-hidden {
+  animation: slideLeftFade 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Right column reveal */
+.about-col-2.animate-hidden {
+  animation: slideRightFade 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ── Enhanced Button Micro-Interactions ── */
+
+.btn,
+.btn-link,
+.btn-resume-premium {
+  position: relative;
+  overflow: visible;
+}
+
+/* Button ripple effect */
+.btn::after,
+.btn-link::after,
+.btn-resume-premium::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.btn:active::after,
+.btn-link:active::after,
+.btn-resume-premium:active::after {
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+/* Enhanced button hover scale */
+.btn:hover,
+.btn-link:hover {
+  animation: buttonBounce 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes buttonBounce {
+  0% {
+    transform: translateY(-4px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(-4px);
+  }
+}
+
+/* ── Card Hover Enhancements ── */
+
+.compact-project-card,
+.card,
+.service-card,
+.work {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Subtle background glow on card hover */
+.compact-project-card::before,
+.card::before,
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.compact-project-card:hover::before,
+.card:hover::before,
+.service-card:hover::before {
+  left: 100%;
+}
+
+/* Card shadow enhancement on hover */
+.compact-project-card:hover,
+.card:hover,
+.service-card:hover {
+  box-shadow: 0 20px 50px rgba(255, 0, 79, 0.2),
+              0 0 40px rgba(255, 0, 79, 0.1) !important;
+}
+
+/* ── Navigation Link Enhancements ── */
+
+nav#main-nav ul li a {
+  position: relative;
+}
+
+/* Underline animation with easing */
+nav#main-nav ul li a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--rg);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav#main-nav ul li a:hover::before {
+  transform: scaleX(1);
+}
+
+/* ── Section Title Animations ── */
+
+.sub-title {
+  position: relative;
+  animation: slideUpFade 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-title {
+  animation: slideUpFade 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sub-title::after,
+.section-title::after {
+  animation: slideLeftFade 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+
+/* ── Form Input Animations ── */
+
+input,
+textarea {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+input:focus,
+textarea:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 0, 79, 0.15) !important;
+}
+
+/* ── Image Hover Effects ── */
+
+img {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-col-1 img {
+  animation: imageReveal 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes imageReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ── Link Hover Effects ── */
+
+a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:not(.btn):not(.btn-link):not(.btn-resume-premium):not(.nav-link):not(.nav-magnetic):not(.timeline-link),
+.tab-links {
+  position: relative;
+}
+
+a:not(.btn):not(.btn-link):not(.btn-resume-premium):not(.nav-link):not(.nav-magnetic):not(.timeline-link)::after,
+.tab-links::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--rg);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:not(.btn):not(.btn-link):not(.btn-resume-premium):not(.nav-link):not(.nav-magnetic):not(.timeline-link):hover::after,
+.tab-links:hover::after {
+  transform: scaleX(1);
+}
+
+/* ── Timeline Animations ── */
+
+.timeline-item {
+  animation: slideUpFade 0.8s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+}
+
+.timeline-item:nth-child(odd) {
+  animation-delay: 0s;
+}
+
+.timeline-item:nth-child(even) {
+  animation-delay: 0.15s;
+}
+
+.timeline-item:hover {
+  transform: translateY(-8px);
+}
+
+.timeline-link {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-link:hover .timeline-content {
+  transform: scale(1.03);
+}
+
+/* ── Scroll Progress Indicator ── */
+
+.scroll-progress-bar {
+  animation: progressLoad 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes progressLoad {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ── Tab Animation ── */
+
+.tab-contents {
+  animation: fadeScaleUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Text Gradient Animation for Headings ── */
+
+h1,
+h2,
+h3 {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Skill Category Stagger ── */
+
+.skill-category {
+  animation: slideUpFade 0.7s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+}
+
+.skill-category:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.skill-category:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.skill-category:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.skill-category:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.skill-category:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+/* ── Enhanced Loading States ── */
+
+.btn:disabled,
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── Smooth Transition Defaults ── */
+
+* {
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Mobile-Optimized Animations ── */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .animate-hidden {
+    animation: slideUpFade 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  .card.animate-hidden,
+  .project-card.animate-hidden {
+    animation: slideUpFade 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+  }
+
+  .about-col-1.animate-hidden {
+    animation: slideUpFade 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+    transform: none;
+  }
+
+  .about-col-2.animate-hidden {
+    animation: slideUpFade 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+    transform: none;
+  }
+
+  .btn:hover,
+  .btn-link:hover {
+    animation: none;
+    transform: translateY(-2px);
+  }
+
+  .compact-project-card:hover,
+  .card:hover,
+  .service-card:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/* ── Accessibility & Performance ── */
+
+/* Reduce animation for users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::after,
+  *::before {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Enhanced Glassmorphism Transitions ── */
+
+nav#main-nav,
+.nav-pills,
+.menu-item {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Optional: Hero Text Character Animation ── */
+
+@keyframes charPop {
+  0% {
+    opacity: 0;
+    transform: translate(-20px, 20px) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+.char {
+  display: inline-block;
+  animation: charPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── Badge & Accent Animations ── */
+
+.role-badge,
+.badge,
+[class*="badge"] {
+  animation: slideUpFade 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
+}
+
+/* ── Enhanced Work/Project Hover States ── */
+
+.work-hover-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.work-hover-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.work-hover-effect:hover::after {
+  left: 100%;
+}
+
+/* ── Smooth Color Transitions ── */
+
+.btn,
+.btn-link,
+.btn-resume-premium,
+a[class*="btn"] {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, background-color, box-shadow;
+}
+
+/* Performance optimization */
+.card,
+.compact-project-card,
+.service-card {
+  will-change: transform;
+}
+
+img {
+  will-change: transform;
+}
