@@ -327,31 +327,38 @@ if (window.matchMedia('(hover: hover)').matches) {
 
 /* ── Horizontal Scroll Section ── */
 document.addEventListener("DOMContentLoaded", () => {
-  const hzSection = document.querySelector('.hz-scroll-section');
-  const hzContainer = document.querySelector('.hz-scroll-container');
-  const hzGrid = document.querySelector('.hz-grid');
+  const hzSections = document.querySelectorAll('.hz-scroll-section');
   
-  if (hzSection && hzContainer && hzGrid) {
+  if (hzSections.length > 0) {
     let ticking = false;
     window.addEventListener('scroll', () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          const rect = hzSection.getBoundingClientRect();
           const viewHeight = window.innerHeight;
-          const scrollDistance = rect.height - viewHeight;
-          const scrolled = Math.max(0, -rect.top); 
           
-          if (rect.top <= 0 && rect.bottom >= viewHeight) {
-            const progress = scrolled / scrollDistance; // 0 to 1
-            const maxTranslate = hzGrid.scrollWidth - window.innerWidth + 80; 
-            const moveX = progress * maxTranslate;
-            hzContainer.style.transform = `translateX(-${moveX}px)`;
-          } else if (rect.top > 0) {
-            hzContainer.style.transform = `translateX(0px)`;
-          } else if (rect.bottom < viewHeight) {
-            const maxTranslate = hzGrid.scrollWidth - window.innerWidth + 80;
-            hzContainer.style.transform = `translateX(-${maxTranslate}px)`;
-          }
+          hzSections.forEach(hzSection => {
+            const hzContainer = hzSection.querySelector('.hz-scroll-container');
+            const hzGrid = hzSection.querySelector('.hz-grid');
+            
+            if (hzContainer && hzGrid) {
+              const rect = hzSection.getBoundingClientRect();
+              const scrollDistance = rect.height - viewHeight;
+              const scrolled = Math.max(0, -rect.top); 
+              
+              if (rect.top <= 0 && rect.bottom >= viewHeight) {
+                const progress = scrolled / scrollDistance; // 0 to 1
+                const maxTranslate = hzGrid.scrollWidth - window.innerWidth + 80; 
+                const moveX = progress * maxTranslate;
+                hzContainer.style.transform = `translateX(-${moveX}px)`;
+              } else if (rect.top > 0) {
+                hzContainer.style.transform = `translateX(0px)`;
+              } else if (rect.bottom < viewHeight) {
+                const maxTranslate = hzGrid.scrollWidth - window.innerWidth + 80;
+                hzContainer.style.transform = `translateX(-${maxTranslate}px)`;
+              }
+            }
+          });
+          
           ticking = false;
         });
         ticking = true;

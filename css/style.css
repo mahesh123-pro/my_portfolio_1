@@ -1518,14 +1518,16 @@ nav#main-nav .fa-times {
   padding-right: 20vw; /* padding at the end of scroll */
 }
 
-.hz-grid .compact-project-card {
+.hz-grid .compact-project-card,
+.hz-grid .service-card {
   width: 360px;
   flex-shrink: 0;
   height: 480px;
 }
 
 @media (max-width: 800px) {
-  .hz-grid .compact-project-card {
+  .hz-grid .compact-project-card,
+  .hz-grid .service-card {
     width: 280px;
     height: 420px;
   }
