@@ -364,7 +364,7 @@ body {
 }
 
 .loader::before {
-  border-top-color: var(--red);
+  border-top-color: var(--primary);
   animation: spin 1.2s linear infinite;
 }
 
@@ -381,7 +381,7 @@ body {
   transform: translate(-50%, -50%);
   font-size: 13px;
   font-weight: 700;
-  color: var(--red);
+  color: var(--primary);
   font-family: 'Plus Jakarta Sans', sans-serif;
   letter-spacing: 2px;
 }
@@ -470,7 +470,7 @@ nav#main-nav.scrolled {
   height: 100%;
   width: 0;
   background: var(--rg);
-  box-shadow: 0 0 10px var(--red);
+  box-shadow: 0 0 10px var(--primary);
   border-radius: 0 2px 2px 0;
   transition: width .1s linear;
 }
@@ -1551,7 +1551,7 @@ nav#main-nav ul li a.active::after {
 }
 
 .btn-resume-premium:hover {
-  border-color: var(--red);
+  border-color: var(--primary);
   background: rgba(37, 99, 235, .1);
   box-shadow: 0 0 20px rgba(37, 99, 235, .25);
   transform: translateY(-3px);
@@ -1566,7 +1566,7 @@ nav#main-nav ul li a.active::after {
   font-weight: 600;
   padding: 10px 22px;
   border-radius: 50px;
-  background: var(--red);
+  background: var(--primary);
   color: #fff;
   transition: all var(--tr);
   box-shadow: 0 4px 15px rgba(37, 99, 235, .3);
@@ -1594,14 +1594,14 @@ nav#main-nav ul li a.active::after {
   display: block;
   margin: 50px auto 10px;
   background: transparent;
-  border: 1.5px solid var(--red);
-  color: var(--red);
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
   box-shadow: none;
   width: fit-content;
 }
 
 #seeMoreBtn:hover {
-  background: var(--red);
+  background: var(--primary);
   color: #fff;
   box-shadow: 0 8px 25px rgba(37, 99, 235, .3);
   transform: translateY(-3px);
@@ -1801,7 +1801,7 @@ nav#main-nav ul li a.active::after {
   content: '';
   width: 0;
   height: 2px;
-  background: var(--red);
+  background: var(--primary);
   position: absolute;
   left: 50%;
   bottom: -12px;
@@ -1816,7 +1816,7 @@ nav#main-nav ul li a.active::after {
 }
 
 .tab-links.active-link {
-  color: var(--red);
+  color: var(--primary);
 }
 
 .tab-links.active-link::after {
@@ -1865,11 +1865,11 @@ nav#main-nav ul li a.active::after {
   top: 6px;
   width: 2px;
   height: 75%;
-  background: linear-gradient(to bottom, var(--red), transparent);
+  background: linear-gradient(to bottom, var(--primary), transparent);
 }
 
 .tab-contents ul li span {
-  color: var(--red);
+  color: var(--primary);
   font-size: 14px;
   font-weight: 600;
   display: block;
@@ -1909,7 +1909,7 @@ nav#main-nav ul li a.active::after {
   padding: 28px 24px;
   border-radius: var(--r);
   border: 1px solid var(--border);
-  border-bottom: 3px solid var(--red);
+  border-bottom: 3px solid var(--primary);
   position: relative;
   overflow: hidden;
   transition: all .4s var(--tr);
@@ -1950,7 +1950,7 @@ nav#main-nav ul li a.active::after {
 }
 
 .skill-category h3 i {
-  color: var(--red);
+  color: var(--primary);
   font-size: 20px;
   background: rgba(37, 99, 235, .1);
   padding: 8px;
@@ -1959,7 +1959,7 @@ nav#main-nav ul li a.active::after {
 }
 
 .skill-category:hover h3 i {
-  background: var(--red);
+  background: var(--primary);
   color: #fff;
   transform: rotate(8deg) scale(1.1);
   box-shadow: 0 4px 12px rgba(37, 99, 235, .4);
@@ -1992,7 +1992,7 @@ nav#main-nav ul li a.active::after {
   content: '\f105';
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
-  color: var(--red);
+  color: var(--primary);
   position: absolute;
   left: 0;
   top: 10px;
@@ -2082,14 +2082,14 @@ nav#main-nav ul li a.active::after {
 }
 
 .card:hover .card-icon-wrapper {
-  background: var(--red);
+  background: var(--primary);
   transform: translateY(-6px) rotate(8deg);
   box-shadow: 0 12px 25px rgba(37, 99, 235, .4);
 }
 
 .card-icon {
   font-size: 28px;
-  color: var(--red);
+  color: var(--primary);
   transition: color .5s ease;
 }
 
@@ -2105,7 +2105,7 @@ nav#main-nav ul li a.active::after {
 }
 
 .card:hover .card-title {
-  color: var(--red);
+  color: var(--primary);
 }
 
 .card-desc {
@@ -2126,7 +2126,7 @@ nav#main-nav ul li a.active::after {
 
 .card-date {
   font-size: 12px;
-  color: var(--red);
+  color: var(--primary);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -2148,7 +2148,7 @@ nav#main-nav ul li a.active::after {
 
 .card:hover .card-link {
   color: #fff;
-  background: var(--red);
+  background: var(--primary);
   transform: translateX(4px);
   box-shadow: 0 4px 12px rgba(37, 99, 235, .4);
 }
@@ -2236,7 +2236,7 @@ nav#main-nav ul li a.active::after {
   width: 100%;
   height: 200px;
   overflow: hidden;
-  border-bottom: 2px solid var(--red);
+  border-bottom: 2px solid var(--primary);
 }
 
 .compact-project-card .card-image img {
@@ -2266,7 +2266,7 @@ nav#main-nav ul li a.active::after {
 }
 
 .compact-project-card:hover .card-title {
-  color: var(--red);
+  color: var(--primary);
 }
 
 .compact-project-card .card-desc {
@@ -2286,7 +2286,7 @@ nav#main-nav ul li a.active::after {
 
 .compact-project-card .card-tags span {
   background: rgba(37, 99, 235, .08);
-  color: var(--red);
+  color: var(--primary);
   font-size: 11px;
   padding: 4px 10px;
   border-radius: 20px;
@@ -2396,15 +2396,15 @@ nav#main-nav ul li a.active::after {
 }
 
 .service-card:hover .service-icon-box {
-  background: var(--red);
-  border-color: var(--red);
+  background: var(--primary);
+  border-color: var(--primary);
   transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(37, 99, 235, .3);
+  box-shadow: 0 12px 28px var(--primary-glow);
 }
 
 .service-icon-box i {
   font-size: 22px;
-  color: var(--red);
+  color: var(--primary);
   transition: all .4s ease;
 }
 
@@ -2429,7 +2429,7 @@ nav#main-nav ul li a.active::after {
 }
 
 .service-card:hover .service-content h2 {
-  color: var(--red);
+  color: var(--primary);
 }
 
 .service-content p {
@@ -2455,8 +2455,8 @@ nav#main-nav ul li a.active::after {
 }
 
 .service-link:hover {
-  color: var(--red);
-  border-bottom-color: var(--red);
+  color: var(--primary);
+  border-bottom-color: var(--primary);
   letter-spacing: .3px;
 }
 
@@ -2556,7 +2556,7 @@ nav#main-nav ul li a.active::after {
 }
 
 .work:hover .gallery-header h3 {
-  color: var(--red);
+  color: var(--primary);
 }
 
 .gallery-tags {
@@ -2577,7 +2577,7 @@ nav#main-nav ul li a.active::after {
 
 .work:hover .gallery-tags span {
   background: rgba(37, 99, 235, .1);
-  color: var(--red);
+  color: var(--primary);
   border-color: rgba(37, 99, 235, .25);
 }
 
@@ -2610,8 +2610,8 @@ nav#main-nav ul li a.active::after {
 }
 
 .gallery-link:hover {
-  color: var(--red);
-  border-bottom-color: var(--red);
+  color: var(--primary);
+  border-bottom-color: var(--primary);
 }
 
 .extra-work-container {
@@ -2684,7 +2684,7 @@ nav#main-nav ul li a.active::after {
 }
 
 .contact-left p i {
-  color: var(--red);
+  color: var(--primary);
   font-size: 18px;
   background: rgba(37, 99, 235, .1);
   padding: 10px;
@@ -2716,10 +2716,10 @@ nav#main-nav ul li a.active::after {
 
 .social-icons a:hover {
   color: #fff;
-  background: var(--red);
+  background: var(--primary);
   transform: translateY(-7px) scale(1.1);
   box-shadow: 0 10px 22px rgba(37, 99, 235, .4);
-  border-color: var(--red);
+  border-color: var(--primary);
 }
 
 /* Form */
@@ -2750,7 +2750,7 @@ nav#main-nav ul li a.active::after {
 }
 
 .glow-icon {
-  color: var(--red);
+  color: var(--primary);
   filter: drop-shadow(0 0 8px rgba(37, 99, 235, .6));
   animation: floatIcon 3s ease-in-out infinite;
 }
@@ -2811,14 +2811,14 @@ nav#main-nav ul li a.active::after {
 .premium-form input:focus,
 .premium-form textarea:focus {
   outline: none;
-  border-color: var(--red);
+  border-color: var(--primary);
   background: rgba(37, 99, 235, .03);
   box-shadow: 0 0 18px rgba(37, 99, 235, .14);
   transform: translateY(-2px);
 }
 
 .premium-form .input-group:focus-within .input-icon {
-  color: var(--red);
+  color: var(--primary);
 }
 
 .premium-form textarea {
@@ -2949,7 +2949,7 @@ nav#main-nav ul li a.active::after {
 }
 
 .footer-brand h2 span {
-  color: var(--red);
+  color: var(--primary);
   animation: pulseColor 3s infinite;
 }
 
@@ -2961,7 +2961,7 @@ nav#main-nav ul li a.active::after {
   }
 
   50% {
-    text-shadow: 0 0 22px rgba(37, 99, 235, .8), 0 0 10px var(--red)
+    text-shadow: 0 0 22px rgba(37, 99, 235, .8), 0 0 10px var(--primary)
   }
 }
 
@@ -2991,7 +2991,7 @@ nav#main-nav ul li a.active::after {
 
 .footer-links a::before {
   content: '→';
-  color: var(--red);
+  color: var(--primary);
   opacity: 0;
   transform: translateX(-8px);
   transition: all .3s ease;
@@ -3101,7 +3101,7 @@ nav#main-nav ul li a.active::after {
 }
 
 .made-with i {
-  color: var(--red);
+  color: var(--primary);
   animation: heartBeat 1.5s ease-in-out infinite;
   margin: 0 4px;
 }
@@ -3250,7 +3250,7 @@ nav#main-nav ul li a.active::after {
   text-align: center;
   font-weight: 700;
   font-size: 1.2rem;
-  color: var(--red);
+  color: var(--primary);
   font-family: 'Inter', sans-serif;
   position: relative;
   z-index: 2;
@@ -3264,7 +3264,7 @@ nav#main-nav ul li a.active::after {
   transform: translate(-50%, -50%);
   width: 16px;
   height: 16px;
-  background: var(--red);
+  background: var(--primary);
   border-radius: 50%;
   border: 3px solid var(--bg);
   box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
@@ -3301,7 +3301,7 @@ nav#main-nav ul li a.active::after {
 .timeline-content:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
-  border-color: var(--red);
+  border-color: var(--primary);
 }
 
 .timeline-image {
@@ -3537,7 +3537,7 @@ nav#main-nav ul li a.active::after {
 
 .case-meta-grid>div:hover {
   transform: translateY(-4px);
-  border-color: var(--red);
+  border-color: var(--primary);
   box-shadow: 0 14px 35px rgba(37, 99, 235, 0.14);
 }
 
@@ -3803,7 +3803,7 @@ body.pt-enter-active .pt-strip {
   align-items: center;
   gap: 8px;
   font-weight: 600;
-  color: var(--red2);
+  color: var(--accent);
   text-decoration: none;
   font-size: 14px;
   transition: color 0.3s;
@@ -3973,14 +3973,17 @@ body.pt-enter-active .pt-strip {
   right: -25px;
 }
 
-.roadmap-item.right .roadmap-dot,
 .roadmap-item.current .roadmap-dot {
+  right: -25px;
+}
+
+.roadmap-item.right .roadmap-dot {
   left: -25px;
 }
 
 .roadmap-dot.active {
-  background: var(--rg);
-  color: #fff;
+  background: var(--primary);
+  color: hsl(0, 0%, 100%);
   border-color: transparent;
   animation: roadmapPulse 2s infinite;
 }
@@ -4077,23 +4080,22 @@ body.pt-enter-active .pt-strip {
   }
   
   .roadmap-item {
-    width: 100%;
+    width: 100% !important;
+    left: 0 !important;
     text-align: left !important;
     padding-left: 80px !important;
     padding-right: 0 !important;
   }
   
-  .roadmap-item.left .roadmap-dot,
-  .roadmap-item.right .roadmap-dot,
-  .roadmap-item.current .roadmap-dot {
-    left: 15px;
-    right: auto;
+  .roadmap-item .roadmap-dot {
+    left: 15px !important;
+    right: auto !important;
   }
 
-  .roadmap-item.left .roadmap-card,
-  .roadmap-item.left .roadmap-tags {
-    align-items: flex-start;
-    justify-content: flex-start;
+  .roadmap-item .roadmap-card,
+  .roadmap-item .roadmap-tags {
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
   }
 }
 
