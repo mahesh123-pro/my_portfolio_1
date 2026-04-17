@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ── Console Easter Egg ── */
 console.log(
     '%c Mahesh\'s Case Study ',
-    'background: linear-gradient(90deg,#ff004f,#ff6b6b); color:#fff; font-size:16px; padding:10px 24px; border-radius:8px; font-weight:700;'
+    'background: linear-gradient(90deg,#2563eb,#0ea5e9); color:#fff; font-size:16px; padding:10px 24px; border-radius:8px; font-weight:700;'
 );
 
 /* ── Premium Advanced Page Transition ── */
@@ -279,3 +279,4 @@ console.log(
     });
   });
 })();
+

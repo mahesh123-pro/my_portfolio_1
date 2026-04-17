@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mahesh | Full-Stack Developer & Cloud Engineer</title>
+  <title>Mahesh | Cloud Architect, Full-Stack Developer & Tech Lead</title>
   <meta name="description"
-    content="Mahesh — Full-Stack Developer & Cloud Engineer specializing in AWS, React, and Node.js. View my portfolio, projects, and case studies." />
+    content="Mahesh — Cloud Architect and Full-Stack Developer building scalable AWS solutions and premium web products. Explore projects, case studies, and professional highlights." />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/MK.png" />
@@ -19,23 +19,25 @@
 
   <!-- Google Fonts — non-blocking -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
     rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript>
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
       rel="stylesheet" />
   </noscript>
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/theme-pro.css" />
   <link rel="stylesheet" href="css/premium-buttons.css" />
+  <link rel="stylesheet" href="css/animations.css" />
 
   <!-- Font Awesome (single kit, async) -->
   <script src="https://kit.fontawesome.com/03414abcb6.js" crossorigin="anonymous" async></script>
 </head>
 
-<body>
+<body class="home-page">
   <!-- Preloader -->
   <div id="preloader">
     <div class="loader">
@@ -71,225 +73,176 @@
           <li><a href="#header" class="nav-link nav-magnetic">Home</a></li>
           <li><a href="#my-projects" class="nav-link nav-magnetic">Projects</a></li>
           <li><a href="#tech-journey" class="nav-link nav-magnetic">Journey</a></li>
-          <li><a href="#skills-tools" class="nav-link nav-magnetic">Skills</a></li>
-          <li><a href="#about" class="nav-link nav-magnetic">About</a></li>
+          <li><a href="#about-skills" class="nav-link nav-magnetic">About</a></li>
           <li><a href="#contact" class="nav-link nav-magnetic">Contact</a></li>
-          <i class="fas fa-times" onclick="closemenu()"></i>
+          <li class="menu-close-item">
+            <button type="button" class="menu-close" aria-label="Close navigation menu" onclick="closemenu()">
+              <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+          </li>
         </ul>
-        <i class="fas fa-bars" onclick="openmenu()"></i>
+        <div class="nav-actions">
+          <a href="#contact" class="nav-contact">Start a Project</a>
+          <button type="button" class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" onclick="openmenu()">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+          </button>
+        </div>
       </nav>
 
       <div class="header-row">
         <div class="header-text">
-          <p class="role-badge">Cloud Engineer & Web Developer</p>
-          <h1>Full-Stack Developer &amp; <span>Cloud Engineer</span></h1>
-          <p class="hero-subtext">Building scalable apps &amp; deploying on AWS.</p>
+          <div class="hero-topline">
+            <p class="role-badge"><span class="role-badge-dot"></span>Cloud Solutions Architect &amp; Full-Stack Engineer</p>
+            <div class="hero-availability">
+              <span class="availability-dot"></span>
+              Open to Internships, Freelance, and Full-Time Roles
+            </div>
+          </div>
+          <p class="hero-intro">Hi, I'm Mahesh</p>
+          <h1>Architecting the <span>future of cloud</span> & digital experiences.</h1>
+          <p class="hero-subtext">I design and deliver end-to-end solutions using AWS, React, and Node.js, combining clean architecture with high-impact product engineering.</p>
           <div class="hero-btns">
-            <a href="#my-projects" class="btn btn-primary">View Projects</a>
-            <a href="assets/docs/Mahesh(Resume2).pdf" download class="btn-resume-premium">My Resume</a>
+            <a href="#my-projects" class="btn btn-primary"><i class="fa-solid fa-layer-group"></i>View Projects</a>
+            <a href="assets/docs/Mahesh(Resume2).pdf" download class="btn-resume-premium"><i class="fa-solid fa-file-arrow-down"></i>Download Resume</a>
+          </div>
+          <div class="hero-proof-grid">
+            <article class="hero-proof-card">
+              <span class="hero-proof-label">Current focus</span>
+              <strong>AWS architecture, product engineering, and performance optimization</strong>
+            </article>
+            <article class="hero-proof-card">
+              <span class="hero-proof-label">Latest role</span>
+              <strong>Tech Lead at GKLT (Manakrishi), delivering scalable agri-tech platforms</strong>
+            </article>
+          </div>
+          <div class="hero-socials" aria-label="Social links">
+            <a href="https://github.com/mahesh123-pro" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/bakki-mahesh-b48686242/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://medium.com/@kolim5263" target="_blank" rel="noopener noreferrer">Medium</a>
           </div>
         </div>
-        <div class="hero-image">
-          <img src="assets/images/maheshmain.png" alt="Mahesh Profile" fetchpriority="high">
+
+        <div class="hero-visual">
+          <div class="hero-visual-card">
+            <div class="hero-orb hero-orb-one"></div>
+            <div class="hero-orb hero-orb-two"></div>
+            <div class="hero-visual-top">
+              <div class="hero-window-controls" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <p>Designing systems that are scalable, fast, and user-first</p>
+            </div>
+            <div class="hero-image-panel">
+              <div class="hero-image-badge hero-image-badge-top">
+                <i class="fa-solid fa-location-dot"></i>
+                Hyderabad, India
+              </div>
+              <div class="hero-image">
+                <img src="assets/images/maheshmain.png" alt="Mahesh Profile" fetchpriority="high">
+              </div>
+              <div class="hero-image-badge hero-image-badge-bottom">
+                <i class="fa-solid fa-sparkles"></i>
+                Architecture. Engineering. Execution.
+              </div>
+            </div>
+            <div class="hero-stack-panel">
+              <span>AWS</span>
+              <span>React</span>
+              <span>Node.js</span>
+              <span>Three.js</span>
+            </div>
+          </div>
         </div>
       </div>
+      <a href="#about-skills" class="hero-scroll-cue" aria-label="Scroll to About section">
+        <span>Scroll to explore</span>
+        <i class="fa-solid fa-arrow-down-long"></i>
+      </a>
     </div>
   </div>
 
 
-  <!------------------------about------------>
-  <div id="about">
+  <!-- ----------------- Premium Bento Grid: About & Skills ----------------- -->
+  <div id="about-skills" class="bento-section pt-100">
     <div class="container">
-      <div class="row">
-        <div class="about-col-1">
-          <img src="assets/images/mahesh-about.png" alt="Mahesh - Cloud Engineer & Developer" loading="lazy" class="about-img-premium" />
+      <h1 class="sub-title">Who I Am &amp; Expertise</h1>
+      <p class="section-subtitle">A concise overview of my background, real-world experience, and technical strengths.</p>
+      
+      <div class="bento-grid">
+        
+        <!-- Bio Card (Spans Multiple Rows/Cols) -->
+        <div class="bento-card card bio-card">
+          <div class="bento-glow"></div>
+          <div class="bento-image-bg">
+            <img src="assets/images/mahesh-about.png" alt="Mahesh" />
+            <div class="bento-image-overlay"></div>
+          </div>
+          <div class="bento-content">
+            <h2 class="bento-title">Hi, I'm Mahesh</h2>
+            <p class="bento-text">
+              I am a B-Tech student at MLRITM focused on <strong>Cloud Computing</strong> and <strong>Full-Stack Development</strong>.
+              I build scalable applications on AWS, craft user-centric interfaces, and continuously grow in DevOps and system design.
+            </p>
+            <a href="https://medium.com/@kolim5263" target="_blank" class="bento-link">Read my engineering insights on Medium <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
         </div>
-        <div class="about-col-2">
-          <h1 class="sub-title">About Me</h1>
-          <div class="about-text">
-            <p>
-              I'm <strong>Mahesh</strong>, a B-Tech student at MLRITM specializing in
-              <strong>Cloud Computing</strong> &amp; <strong>Full-Stack Development</strong>.
-              I build and deploy scalable apps on AWS, write clean code, and design
-              intuitive interfaces. Currently expanding into <strong>DevOps</strong>
-              and cloud security. I also write on my
-              <a href="https://medium.com/@kolim5263" target="_blank"
-                style="color:#ff004f;text-decoration:none;font-weight:bold">Medium Blog</a>.
-            </p>
-          </div>
 
-          <div class="tab-titles">
-            <p class="tab-links active-link" onclick="opentab('skills', event)">
-              Skills
-            </p>
-            <p class="tab-links" onclick="opentab('experience', event)">
-              Experience
-            </p>
-            <p class="tab-links" onclick="opentab('education', event)">Education</p>
+        <!-- Experience Card -->
+        <div class="bento-card card exp-card">
+          <div class="bento-glow"></div>
+          <div class="bento-icon-wrapper blue-gradient">
+            <i class="fa-solid fa-briefcase"></i>
           </div>
-          <div class="tab-contents active-tab" id="skills">
-            <ul>
-              <li><span>Web Development</span>Building responsive Full-Stack apps</li>
-              <li><span>Cloud Computing</span>Designing secure AWS Architectures</li>
-              <li><span>UI/UX Design</span>Creating user-centered digital experiences</li>
+          <div class="bento-content">
+            <h3 class="bento-title-sm">Current Role</h3>
+            <p class="bento-text-strong">Tech Lead @ GKLT (Manakrishi)</p>
+            <span class="bento-date">Dec 2025 - Present</span>
+          </div>
+        </div>
+
+        <!-- Cloud & DevOps -->
+        <div class="bento-card card skill-card cloud-card">
+          <div class="bento-glow"></div>
+          <div class="bento-icon-wrapper aws-gradient">
+            <i class="fa-brands fa-aws"></i>
+          </div>
+          <div class="bento-content">
+            <h3 class="bento-title-sm">Cloud &amp; DevOps</h3>
+            <div class="bento-tags">
+              <span>AWS EC2</span><span>S3</span><span>RDS</span><span>IAM</span>
+              <span>Linux</span><span>Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full Stack: Frontend & Backend -->
+        <div class="bento-card card skill-card code-card">
+          <div class="bento-glow"></div>
+          <div class="bento-icon-wrapper cyan-gradient">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <div class="bento-content">
+            <h3 class="bento-title-sm">Full-Stack Dev</h3>
+            <div class="bento-tags">
+              <span>React.js</span><span>Node.js</span><span>Python</span>
+              <span>MongoDB</span><span>Tailwind CSS</span><span>REST APIs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="bento-card card edu-card">
+          <div class="bento-glow"></div>
+          <div class="bento-icon-wrapper purple-gradient">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div class="bento-content">
+            <h3 class="bento-title-sm">Education</h3>
+            <ul class="bento-list">
+              <li><strong>B-Tech</strong> MLRITM (2023 - Present)</li>
+              <li><strong>Inter</strong> Narayana College (2023)</li>
             </ul>
           </div>
-          <div class="tab-contents" id="experience">
-            <ul>
-              <li>
-                <span>10-12-2025 - Present</span>Tech Lead at GKLT(Manakrishi)
-              </li>
-            </ul>
-          </div>
-          <div class="tab-contents" id="education">
-            <ul>
-              <li>
-                <span>2023 - Present</span>B-Tech Marri Laxman Reddy Institute of Technology and Management
-                (MLRITM), Hyderabad.
-              </li>
-              <li>
-                <span>2023</span>
-                Inter from Narayana college, Chintal, Hyderabad.
-              </li>
-              <li><span>2021</span>10th from Netaji high school, Chintal, Hyderabad.</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- ----------------- My Tech Journey Timeline ----------------- -->
-  <div id="tech-journey" class="tech-journey-section">
-    <div class="container">
-      <h1 class="sub-title">My Tech Journey</h1>
-      <p class="journey-subtitle">From curiosity to cloud engineering - my learning evolution</p>
-
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-year">2020</div>
-          <a href="journey-2020.html" class="timeline-link">
-            <div class="timeline-content">
-              <div class="timeline-image">
-                <img src="assets/images/maheshmain.png" alt="Mahesh Starting Exploration">
-              </div>
-              <div class="timeline-text">
-                <h3>Started Exploring Technology</h3>
-                <p>First steps into programming and digital world exploration</p>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-year">2023</div>
-          <a href="journey-2023.html" class="timeline-link">
-            <div class="timeline-content">
-              <div class="timeline-image">
-                <img src="assets/images/timeline-2023-college.jpg" alt="ECE Engineering at MLRITM">
-              </div>
-              <div class="timeline-text">
-                <h3>Began ECE Engineering at MLRITM</h3>
-                <p>Formal education in Electronics and Communication Engineering</p>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-year">2024</div>
-          <a href="journey-2024.html" class="timeline-link">
-            <div class="timeline-content">
-              <div class="timeline-image">
-                <img src="assets/images/timeline-2024-linux-cloud.jpg" alt="Linux and Cloud Computing">
-              </div>
-              <div class="timeline-text">
-                <h3>Focused on Linux, Cloud Computing, DevOps</h3>
-                <p>Deep dive into system administration and cloud technologies</p>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-year">2025</div>
-          <a href="journey-2025.html" class="timeline-link">
-            <div class="timeline-content">
-              <div class="timeline-image">
-                <img src="assets/images/timeline-2025-aws-projects.jpg" alt="AWS Cloud Projects">
-              </div>
-              <div class="timeline-text">
-                <h3>Built Cloud Projects and AWS Architectures</h3>
-                <p>Hands-on experience with real-world cloud solutions</p>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="timeline-item current">
-          <div class="timeline-year">Now</div>
-          <a href="journey-now.html" class="timeline-link">
-            <div class="timeline-content">
-              <div class="timeline-image">
-                <img src="assets/images/timeline-now-ai-iot.jpg" alt="AI IoT Cloud Systems">
-              </div>
-              <div class="timeline-text">
-                <h3>Building Real-World AI + IoT + Cloud Systems</h3>
-                <p>Creating integrated solutions combining cutting-edge technologies</p>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ----------------- Skills & Tools Section ----------------- -->
-  <div id="skills-tools">
-    <div class="container">
-      <h1 class="sub-title">Skills & Tools</h1>
-      <div class="skills-categories">
-
-        <div class="skill-category">
-          <h3><i class="fa-solid fa-code"></i> Frontend</h3>
-          <ul class="skill-list">
-            <li>HTML5 / CSS3</li>
-            <li>JavaScript (ES6+)</li>
-            <li>React.js (Basic)</li>
-            <li>Tailwind CSS</li>
-          </ul>
-        </div>
-
-        <div class="skill-category">
-          <h3><i class="fa-solid fa-server"></i> Backend</h3>
-          <ul class="skill-list">
-            <li>Node.js</li>
-            <li>Python / Flask</li>
-            <li>MySQL / MongoDB</li>
-            <li>REST APIs</li>
-          </ul>
-        </div>
-
-        <div class="skill-category">
-          <h3><i class="fa-brands fa-aws"></i> Cloud & DevOps</h3>
-          <ul class="skill-list">
-            <li>AWS (EC2, S3, RDS)</li>
-            <li>IAM & Security Groups</li>
-            <li>Linux (Shell Scripting)</li>
-            <li>Basic Docker</li>
-          </ul>
-        </div>
-
-        <div class="skill-category">
-          <h3><i class="fa-solid fa-screwdriver-wrench"></i> Tools</h3>
-          <ul class="skill-list">
-            <li>Git & GitHub</li>
-            <li>Figma (UI Design)</li>
-            <li>VS Code</li>
-            <li>Postman</li>
-          </ul>
         </div>
 
       </div>
@@ -298,18 +251,16 @@
 
   <section id="certifications" class="certifications-section">
     <div class="container">
-      <h2 class="section-title">Highlights & Credibility</h2>
+      <h2 class="section-title">Proof of Work &amp; Credibility</h2>
 
       <div class="cards">
         <div class="card premium-highlight-card">
-          <img src="assets/images/aws_cert_img.png" alt="AWS Cloud Certification" class="highlight-bg">
-          <div class="highlight-overlay"></div>
           <div class="card-icon-wrapper">
             <i class="fa-brands fa-aws card-icon"></i>
           </div>
           <div class="card-content">
             <h3 class="card-title">AWS Certified</h3>
-            <p class="card-desc">Specialized in Cloud Architecture and Serverless deployment.</p>
+            <p class="card-desc">Validated expertise in AWS cloud architecture, security, and deployment best practices.</p>
             <div class="card-footer">
               <span class="card-date">NPTEL Certified</span>
               <a href="#" class="card-link"><i class="fa-solid fa-arrow-right"></i></a>
@@ -318,14 +269,12 @@
         </div>
 
         <div class="card premium-highlight-card">
-          <img src="assets/images/hackathon_win_img.png" alt="Hackathon Winner" class="highlight-bg">
-          <div class="highlight-overlay"></div>
           <div class="card-icon-wrapper">
             <i class="fa-solid fa-trophy card-icon"></i>
           </div>
           <div class="card-content">
             <h3 class="card-title">Hackathon Winner</h3>
-            <p class="card-desc">Recognized for innovative AR/VR solutions at Meta Loop Hackathon.</p>
+            <p class="card-desc">Awarded for building practical AR/VR solutions with strong product thinking and execution.</p>
             <div class="card-footer">
               <span class="card-date">2024</span>
               <a href="#" class="card-link"><i class="fa-solid fa-arrow-right"></i></a>
@@ -334,14 +283,12 @@
         </div>
 
         <div class="card premium-highlight-card">
-          <img src="assets/images/projects_deployed_img.png" alt="Projects Deployed" class="highlight-bg">
-          <div class="highlight-overlay"></div>
           <div class="card-icon-wrapper">
             <i class="fa-solid fa-rocket card-icon"></i>
           </div>
           <div class="card-content">
             <h3 class="card-title">5+ Projects Deployed</h3>
-            <p class="card-desc">Full-stack applications running live on AWS and Vercel.</p>
+            <p class="card-desc">Designed, built, and shipped production-ready web products on AWS and Vercel.</p>
             <div class="card-footer">
               <span class="card-date">Active</span>
               <a href="#" class="card-link"><i class="fa-solid fa-arrow-right"></i></a>
@@ -350,14 +297,12 @@
         </div>
 
         <div class="card premium-highlight-card">
-          <img src="assets/images/tech_speaker_img.png" alt="Technical Speaker" class="highlight-bg">
-          <div class="highlight-overlay"></div>
           <div class="card-icon-wrapper">
             <i class="fa-solid fa-microphone-lines card-icon"></i>
           </div>
           <div class="card-content">
             <h3 class="card-title">Technical Speaker</h3>
-            <p class="card-desc">Presented research on Cloud Security at National Technical Fest.</p>
+            <p class="card-desc">Presented cloud security and modern engineering practices at a national technical fest.</p>
             <div class="card-footer">
               <span class="card-date">Valorous 2025</span>
               <a href="#" class="card-link"><i class="fa-solid fa-arrow-right"></i></a>
@@ -373,7 +318,7 @@
   <div id="my-projects" class="compact-projects-section hz-scroll-section">
     <div class="hz-sticky-wrapper">
       <div class="container">
-        <h1 class="sub-title">Featured Projects</h1>
+        <h1 class="sub-title">Flagship Projects</h1>
         
         <div class="hz-scroll-container">
           <div class="compact-projects-grid hz-grid">
@@ -385,7 +330,7 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">Manakrishi App</h3>
-            <p class="card-desc">Precision drone spraying app reducing health risks for farmers with IoT integration.
+            <p class="card-desc">Agri-tech platform enabling precision drone spraying, safer operations, and better farm outcomes through IoT workflows.
             </p>
             <div class="card-tags">
               <span>React Native</span>
@@ -407,7 +352,7 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">Prolance</h3>
-            <p class="card-desc">A professional networking platform.</p>
+            <p class="card-desc">Professional networking platform built to help users create meaningful connections and growth opportunities.</p>
             <div class="card-tags">
               <span>Next.js</span>
               <span>Node.js</span>
@@ -415,7 +360,7 @@
             </div>
             <div class="card-actions">
               <a href="case-study-prolance.html" class="btn-link">View Case Study</a>
-              <a href="https://prolance-website-frontend-99.vercel.app/" target="_blank" class="btn-link secondary"><i
+              <a href="https://www.prolance.me/" target="_blank" rel="noopener noreferrer" class="btn-link secondary"><i
                   class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
           </div>
@@ -428,7 +373,7 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">VisaEnsure</h3>
-            <p class="card-desc">Global visa support platform with AI-powered document validation and student-focused UX.</p>
+            <p class="card-desc">Global visa assistance platform with AI-powered document validation and a student-first user experience.</p>
             <div class="card-tags">
               <span>Next.js</span>
               <span>Tailwind CSS</span>
@@ -449,8 +394,8 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">Cloud Architecture</h3>
-            <p class="card-desc">Highly available, fault-tolerant 3-tier web architecture on AWS mimicking enterprise
-              standards.</p>
+            <p class="card-desc">Enterprise-style 3-tier AWS architecture focused on high availability, security, and resilience.
+            </p>
             <div class="card-tags">
               <span>EC2 / S3</span>
               <span>VPC / ALB</span>
@@ -470,8 +415,7 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">Elegance Events</h3>
-            <p class="card-desc">Premium full-stack event management platform with an admin dashboard for lead
-              generation.</p>
+            <p class="card-desc">End-to-end event management platform with an admin suite for lead generation, operations, and insights.</p>
             <div class="card-tags">
               <span>React</span>
               <span>Node.js</span>
@@ -492,7 +436,7 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">3D Portfolio Website</h3>
-            <p class="card-desc">An immersive and interactive 3D web portfolio featuring modern animations and custom designs.</p>
+            <p class="card-desc">Immersive 3D portfolio experience crafted with modern web technologies and cinematic motion design.</p>
             <div class="card-tags">
               <span>Next.js</span>
               <span>Three.js</span>
@@ -517,7 +461,7 @@
   <div id="services" class="hz-scroll-section">
     <div class="hz-sticky-wrapper">
       <div class="container">
-        <h1 class="sub-title">My Side Hustles</h1>
+        <h1 class="sub-title">Services I Offer</h1>
         <div class="hz-scroll-container">
           <div class="services-list hz-grid">
             <div class="service-card premium-service-card">
@@ -529,7 +473,7 @@
           </div>
           <div class="service-content">
             <h2>Web Design</h2>
-            <p>Crafting visually stunning, responsive websites that blend creativity with performance.</p>
+            <p>Designing polished, conversion-focused websites that deliver a premium experience on every screen.</p>
             <a href="#" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
@@ -543,7 +487,7 @@
           </div>
           <div class="service-content">
             <h2>Video Editing</h2>
-            <p>Editing and producing polished video content — from shorts to full promotional reels.</p>
+            <p>Producing clean, story-driven edits for shorts, promos, and brand-focused visual content.</p>
             <a href="https://mega.nz/folder/SvxFBTgI#5wiSFAP6_EU2mCdKLgTQcg" target="_blank" class="service-link">Learn
               More <i class="fa-solid fa-arrow-right"></i></a>
           </div>
@@ -558,7 +502,7 @@
           </div>
           <div class="service-content">
             <h2>Photo Editing</h2>
-            <p>Retouching, color grading, and creative manipulation to transform images into captivating visuals.</p>
+            <p>High-quality retouching, color correction, and creative editing for impactful visual storytelling.</p>
             <a href="#" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
@@ -572,7 +516,7 @@
           </div>
           <div class="service-content">
             <h2>Web Development</h2>
-            <p>Building fast, secure, scalable full-stack web apps from frontend to cloud deployment.</p>
+            <p>Building secure, scalable full-stack products with clean architecture from frontend to cloud deployment.</p>
             <a href="#" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
@@ -586,8 +530,8 @@
           </div>
           <div class="service-content">
             <h2>Medium Blog Writer</h2>
-            <p>Sharing technical insights, deep dives into Cloud Computing, DevOps, and Development.</p>
-            <a href="https://medium.com/@kolim5263" target="_blank" class="service-link">Read My Blog <i class="fa-solid fa-arrow-right"></i></a>
+            <p>Publishing practical engineering insights on cloud, DevOps, and full-stack development.</p>
+            <a href="https://medium.com/@kolim5263" target="_blank" class="service-link">Explore Articles <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
 
@@ -600,7 +544,7 @@
   <!----------------My Work Section---------------->
   <div id="gallery">
     <div class="container">
-      <h1 class="sub-title">More Work (Gallery)</h1>
+      <h1 class="sub-title">Additional Work &amp; Experiments</h1>
 
       <div class="work-list" id="workList">
 
@@ -618,7 +562,7 @@
               </div>
             </div>
             <div class="gallery-details">
-              <p>Responsive social platform with real-time updates, profiles &amp; feeds.</p>
+              <p>Real-time social platform with profile management, live feeds, and interactive user engagement.</p>
               <a href="#" class="gallery-link">Live Preview <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
@@ -638,7 +582,7 @@
               </div>
             </div>
             <div class="gallery-details">
-              <p>Dynamic music platform with streaming, playlists &amp; intuitive navigation.</p>
+              <p>Dynamic music experience featuring discovery, playlists, and a smooth, intuitive listening flow.</p>
               <a href="#" class="gallery-link">Live Preview <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
@@ -658,7 +602,7 @@
               </div>
             </div>
             <div class="gallery-details">
-              <p>Built an intuitive online shopping app with product browsing, secure checkout, and user reviews.</p>
+              <p>Feature-rich e-commerce application with secure checkout, product management, and user reviews.</p>
               <a href="#" class="gallery-link">Live Preview <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </div>
@@ -680,7 +624,7 @@
                 </div>
               </div>
               <div class="gallery-details">
-                <p>Created a modern portfolio with responsive design and animations.</p>
+                <p>Modern portfolio website with responsive layouts, custom interactions, and clear personal branding.</p>
                 <a href="#" class="gallery-link">Live Preview <i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
@@ -728,38 +672,34 @@
     <div class="container">
       <div class="row">
         <div class="contact-left">
-          <h1 class="sub-title">Contact Me</h1>
-          <p class="contact-cta">Open to internships, collaborations &amp; cloud projects.</p>
+          <h1 class="sub-title">Let's Work Together</h1>
+          <p class="contact-cta">Available for internships, freelance projects, and full-time opportunities.</p>
           <p><i class="fa-solid fa-paper-plane"></i> kolim5263@gmail.com</p>
           <p><i class="fa-solid fa-square-phone"></i> 6302596695</p>
           <div class="social-icons">
-            <a href="https://discord.gg/zknVjSuv" target="_blank" rel="noopener noreferrer">
+            <a href="https://discord.gg/zknVjSuv" target="_blank" rel="noopener noreferrer" aria-label="Discord">
               <i class="fa-brands fa-discord"></i>
             </a>
-            <a href="https://www.instagram.com/alpha_soul_11/" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-facebook"></i>
-            </a>
-            <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
-            <a href="https://www.instagram.com/alpha_soul_11/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/alpha_soul_11/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <i class="fa-brands fa-square-instagram"></i>
             </a>
-            <a href="https://www.linkedin.com/in/bakki-mahesh-b48686242/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/bakki-mahesh-b48686242/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <i class="fa-brands fa-linkedin"></i>
             </a>
-            <a href="https://github.com/mahesh123-pro" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/mahesh123-pro" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <i class="fa-brands fa-square-github"></i>
             </a>
-            <a href="https://medium.com/@kolim5263" target="_blank" rel="noopener noreferrer">
+            <a href="https://medium.com/@kolim5263" target="_blank" rel="noopener noreferrer" aria-label="Medium">
               <i class="fa-brands fa-medium"></i>
             </a>
           </div>
-          <a href="assets/docs/Mahesh(Resume2).pdf" download class="btn-resume-premium">My Resume</a>
+          <a href="assets/docs/Mahesh(Resume2).pdf" download class="btn-resume-premium">Download Resume</a>
         </div>
         <div class="contact-right">
           <form name="submit-to-google-sheet" class="premium-form">
             <div class="form-header">
               <h3 class="form-title">Send a Message <i class="fa-solid fa-rocket glow-icon"></i></h3>
-              <p class="form-subtitle">Let's build something amazing together!</p>
+              <p class="form-subtitle">Tell me about your idea. I usually respond within 24 hours.</p>
             </div>
 
             <div class="input-group">
@@ -778,7 +718,7 @@
             </div>
 
             <button type="submit" class="submit-btn premium-submit-btn">
-              <span>Submit Feedback</span>
+              <span>Send Message</span>
               <i class="fa-solid fa-paper-plane"></i>
             </button>
           </form>
@@ -795,19 +735,19 @@
       <div class="footer-content">
         <div class="footer-brand">
           <h2>Mahesh<span>.</span></h2>
-          <p>Building scalable cloud solutions,<br>immersive web experiences,<br>and shaping the future of digital.</p>
+          <p>I help teams build scalable cloud systems,<br>premium web products,<br>and solutions that drive measurable impact.</p>
         </div>
 
         <ul class="footer-links">
           <li><a href="#header">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Side Hustles</a></li>
+          <li><a href="#about-skills">About &amp; Skills</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
 
         <div class="footer-social-wrapper">
-          <p>Connect with me</p>
+          <p>Let's Connect</p>
           <div class="footer-social">
             <a href="https://github.com/mahesh123-pro" target="_blank"><i class="fa-brands fa-github"></i></a>
             <a href="https://www.linkedin.com/in/bakki-mahesh-b48686242/" target="_blank"><i
@@ -824,9 +764,9 @@
       <div class="footer-bottom">
         <p>Copyright &copy; <span id="year">2026</span> Mahesh. All Rights Reserved.</p>
         <div class="footer-status">
-          <span class="status-dot"></span> Available for Work
+          <span class="status-dot"></span> Open for Opportunities
         </div>
-        <p class="made-with">Crafted with <i class="fas fa-heart"></i> & Code.</p>
+        <p class="made-with">Designed and developed with passion.</p>
       </div>
     </div>
 
@@ -840,6 +780,8 @@
   <!-- Scripts — deferred for fast initial load -->
   <script src="https://unpkg.com/scrollreveal@4/dist/scrollreveal.min.js" defer></script>
   <script src="js/script.js" defer></script>
+  <script src="js/enhanced-interactions.js" defer></script>
 </body>
 
 </html>
+

@@ -39,25 +39,40 @@
   }
 })();
 
-/* ── Particles ── */
+/* ── Reactive Particles ── */
 function createParticles() {
   const c = document.getElementById('particles-container');
   if (!c) return;
-  for (let i = 0; i < 30; i++) {
+  const count = window.innerWidth < 768 ? 20 : 45;
+  for (let i = 0; i < count; i++) {
     const p = document.createElement('div');
     p.classList.add('particle');
     const sz = Math.random() * 3 + 1.5;
-    const op = Math.random() * 0.4 + 0.08;
+    const op = Math.random() * 0.4 + 0.1;
     p.style.cssText = `
       width:${sz}px;height:${sz}px;
       left:${Math.random() * 100}%;
-      animation-duration:${Math.random() * 22 + 14}s;
-      animation-delay:${Math.random() * 12}s;
+      top:${Math.random() * 100}%;
+      animation-duration:${Math.random() * 20 + 15}s;
+      animation-delay:${Math.random() * 10}s;
       opacity:${op};
       background:rgba(255,255,255,${op});
-      box-shadow:0 0 ${sz * 2}px rgba(255,255,255,.25);
+      box-shadow:0 0 ${sz * 3}px hsla(226, 82%, 63%, 0.3);
     `;
     c.appendChild(p);
+
+    // Mouse reaction
+    document.addEventListener('mousemove', e => {
+      const dx = e.clientX - p.offsetLeft;
+      const dy = e.clientY - p.offsetTop;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < 150) {
+        const force = (150 - dist) / 150;
+        p.style.transform = `translate(${dx * force * 0.2}px, ${dy * force * 0.2}px)`;
+      } else {
+        p.style.transform = '';
+      }
+    });
   }
 }
 
@@ -86,7 +101,7 @@ function updateNav() {
     mainNav.classList.toggle('scrolled', y > 50);
     // Auto-hide on scroll down, show on scroll up
     if (y > lastY && y > 400) {
-      mainNav.style.transform = 'translateY(-100%)';
+      mainNav.style.transform = 'translateY(-140%)';
     } else {
       mainNav.style.transform = 'translateY(0)';
     }
@@ -135,18 +150,27 @@ window.opentab = opentab;
 
 /* ── Mobile Menu ── */
 const sidemenu = document.getElementById('sidemenu');
+const menuToggle = document.querySelector('.menu-toggle');
 
 function openmenu() {
-  if (sidemenu) { sidemenu.style.right = '0'; document.body.style.overflow = 'hidden'; }
+  if (sidemenu) {
+    sidemenu.style.right = '12px';
+    document.body.style.overflow = 'hidden';
+  }
+  if (menuToggle) menuToggle.setAttribute('aria-expanded', 'true');
 }
 function closemenu() {
-  if (sidemenu) { sidemenu.style.right = '-280px'; document.body.style.overflow = ''; }
+  if (sidemenu) {
+    sidemenu.style.right = '-320px';
+    document.body.style.overflow = '';
+  }
+  if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
 }
 window.openmenu = openmenu;
 window.closemenu = closemenu;
 
 document.addEventListener('click', e => {
-  if (sidemenu && !sidemenu.contains(e.target) && !e.target.classList.contains('fa-bars')) {
+  if (sidemenu && !sidemenu.contains(e.target) && !e.target.closest('.menu-toggle')) {
     closemenu();
   }
 });
@@ -203,7 +227,7 @@ if (form) {
         }, 5000);
       })
       .catch(() => {
-        if (msgEl) { msgEl.textContent = '❌ Oops! Something went wrong. Try again.'; msgEl.style.color = '#ff004f'; }
+        if (msgEl) { msgEl.textContent = '❌ Oops! Something went wrong. Try again.'; msgEl.style.color = '#2563eb'; }
         btn.innerHTML = orig;
         btn.disabled = false;
       });
@@ -262,21 +286,6 @@ function initScrollReveal() {
   }
 }
 
-/* ── Subtle 3D card tilt ── */
-document.querySelectorAll('.compact-project-card, .card.premium-highlight-card, .service-card').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const r = card.getBoundingClientRect();
-    const rx = ((e.clientY - r.top - r.height / 2) / r.height * -5).toFixed(2);
-    const ry = ((e.clientX - r.left - r.width / 2) / r.width * 5).toFixed(2);
-    card.style.transition = 'transform .08s ease';
-    card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.02,1.02,1.02)`;
-  });
-  card.addEventListener('mouseleave', () => {
-    card.style.transition = 'transform .5s ease';
-    card.style.transform = '';
-  });
-});
-
 /* ── About Image Deep Tilt ── */
 const aboutCol = document.querySelector('.about-col-1');
 const aboutImg = document.querySelector('.about-img-premium');
@@ -313,7 +322,7 @@ if (window.matchMedia('(hover: hover)').matches) {
   const glow = document.createElement('div');
   glow.style.cssText = `
     position:fixed;width:300px;height:300px;border-radius:50%;
-    background:radial-gradient(circle,rgba(255,0,79,.08) 0%,transparent 70%);
+    background:radial-gradient(circle,rgba(37, 99, 235,.08) 0%,transparent 70%);
     pointer-events:none;z-index:0;transition:transform .12s ease;
     transform:translate(-50%,-50%);top:0;left:0;
   `;
@@ -418,11 +427,94 @@ window.addEventListener('scroll', () => {
     const y = window.scrollY;
     if (y < window.innerHeight) {
       const hero = document.querySelector('.hero-image img');
-      if (hero) hero.style.transform = `translateY(${y * 0.18}px) scale(1.12)`;
+      if (hero && window.innerWidth > 900) {
+        hero.style.transform = `translateY(${y * 0.12}px) scale(1.06)`;
+      }
     }
     pTick = false;
   });
 }, { passive: true });
+
+/* ── Magnetic Hover Effect ── */
+function initMagneticButtons() {
+  const btns = document.querySelectorAll('.btn, .nav-magnetic, .logo-link');
+  btns.forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const { left, top, width, height } = btn.getBoundingClientRect();
+      const x = e.clientX - left - width / 2;
+      const y = e.clientY - top - height / 2;
+      btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
+}
+document.addEventListener('DOMContentLoaded', initMagneticButtons);
+
+/* ── Text Scramble Effect ── */
+class TextScramble {
+  constructor(el) {
+    this.el = el;
+    this.chars = '!<>-_\\/[]{}—=+*^?#________';
+    this.update = this.update.bind(this);
+  }
+  setText(newText) {
+    const oldText = this.el.innerText;
+    const length = Math.max(oldText.length, newText.length);
+    const promise = new Promise((resolve) => (this.resolve = resolve));
+    this.queue = [];
+    for (let i = 0; i < length; i++) {
+      const from = oldText[i] || '';
+      const to = newText[i] || '';
+      const start = Math.floor(Math.random() * 40);
+      const end = start + Math.floor(Math.random() * 40);
+      this.queue.push({ from, to, start, end });
+    }
+    cancelAnimationFrame(this.frameRequest);
+    this.frame = 0;
+    this.update();
+    return promise;
+  }
+  update() {
+    let output = '';
+    let complete = 0;
+    for (let i = 0, n = this.queue.length; i < n; i++) {
+      let { from, to, start, end, char } = this.queue[i];
+      if (this.frame >= end) {
+        complete++;
+        output += to;
+      } else if (this.frame >= start) {
+        if (!char || Math.random() < 0.28) {
+          char = this.randomChar();
+          this.queue[i].char = char;
+        }
+        output += `<span class="scramble-char">${char}</span>`;
+      } else {
+        output += from;
+      }
+    }
+    this.el.innerHTML = output;
+    if (complete === this.queue.length) {
+      this.resolve();
+    } else {
+      this.frameRequest = requestAnimationFrame(this.update);
+      this.frame++;
+    }
+  }
+  randomChar() {
+    return this.chars[Math.floor(Math.random() * this.chars.length)];
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const el = document.querySelector('.hero-subtext');
+    if (el) {
+        const originalText = el.innerText;
+        const fx = new TextScramble(el);
+        setTimeout(() => fx.setText(originalText), 2000);
+    }
+});
 
 /* ── Scroll-to-top button ── */
 const scrollTopBtn = document.getElementById('scrollTopBtn');
@@ -460,8 +552,8 @@ document.addEventListener('keydown', e => {
 });
 
 /* ── Console easter egg ── */
-console.log('%c Mahesh\'s Portfolio ', 'background:linear-gradient(90deg,#ff004f,#ff6b6b);color:#fff;font-size:20px;padding:14px 30px;border-radius:10px;font-weight:800;');
-console.log('%c Built with passion & modern web tech ', 'color:#ff004f;font-size:13px;padding:4px;');
+console.log('%c Mahesh\'s Portfolio ', 'background:linear-gradient(90deg,#2563eb,#0ea5e9);color:#fff;font-size:20px;padding:14px 30px;border-radius:10px;font-weight:800;');
+console.log('%c Built with passion & modern web tech ', 'color:#2563eb;font-size:13px;padding:4px;');
 console.log('%c 📧 kolim5263@gmail.com ', 'color:#888;font-size:12px;');
 
 /* ── Premium Advanced Page Transition ── */
@@ -518,3 +610,4 @@ console.log('%c 📧 kolim5263@gmail.com ', 'color:#888;font-size:12px;');
     });
   });
 })();
+

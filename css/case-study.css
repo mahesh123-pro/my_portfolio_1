@@ -14,14 +14,14 @@
 }
 
 :root {
-    --red: #ff004f;
-    --red-soft: rgba(255, 0, 79, 0.12);
-    --red-glow: rgba(255, 0, 79, 0.25);
-    --bg: #080808;
-    --bg2: #0f0f0f;
-    --bg3: #141414;
+    --red: #2563eb;
+    --red-soft: rgba(37, 99, 235, 0.12);
+    --red-glow: rgba(37, 99, 235, 0.25);
+    --bg: #020617;
+    --bg2: #0f172a;
+    --bg3: #1e293b;
     --border: rgba(255, 255, 255, 0.07);
-    --border-r: rgba(255, 0, 79, 0.25);
+    --border-r: rgba(37, 99, 235, 0.25);
     --text: #f0f0f0;
     --muted: #888;
     --radius: 16px;
@@ -45,11 +45,11 @@ nav {
 }
 
 nav.scrolled {
-    background: rgba(8, 8, 8, 0.88);
+    background: rgba(2, 6, 23, 0.88);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     padding: 14px 5%;
-    border-bottom: 1px solid rgba(255, 0, 79, 0.08);
+    border-bottom: 1px solid rgba(37, 99, 235, 0.08);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
 
@@ -75,8 +75,8 @@ nav.scrolled {
     width: 36px;
     height: 36px;
     border-radius: 9px;
-    background: linear-gradient(135deg, #ff004f, #ff6b6b);
-    box-shadow: 0 0 14px rgba(255, 0, 79, 0.4), 0 0 0 1px rgba(255, 0, 79, 0.25);
+    background: linear-gradient(135deg, #2563eb, #0ea5e9);
+    box-shadow: 0 0 14px rgba(37, 99, 235, 0.4), 0 0 0 1px rgba(37, 99, 235, 0.25);
     font-size: 12px;
     font-weight: 800;
     color: #fff;
@@ -122,7 +122,7 @@ nav.scrolled {
 }
 
 .cs-logo-link:hover .cs-logo-badge {
-    box-shadow: 0 0 24px rgba(255, 0, 79, 0.6), 0 0 0 1px rgba(255, 0, 79, 0.35);
+    box-shadow: 0 0 24px rgba(37, 99, 235, 0.6), 0 0 0 1px rgba(37, 99, 235, 0.35);
 }
 
 .cs-logo-wordmark {
@@ -135,7 +135,7 @@ nav.scrolled {
     font-size: 18px;
     font-weight: 800;
     letter-spacing: -0.5px;
-    background: linear-gradient(135deg, #fff 40%, rgba(255, 0, 79, 0.8) 100%);
+    background: linear-gradient(135deg, #fff 40%, rgba(37, 99, 235, 0.8) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -182,7 +182,7 @@ nav ul li a::after {
     left: 14px;
     right: 14px;
     height: 1.5px;
-    background: linear-gradient(90deg, var(--red), #ff6b6b);
+    background: linear-gradient(90deg, var(--red), #0ea5e9);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -223,7 +223,7 @@ nav .fa-bars:hover {
         right: -280px;
         width: 280px;
         height: 100vh;
-        background: rgba(10, 6, 16, 0.96);
+        background: rgba(2, 6, 23, 0.96);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         flex-direction: column;
@@ -272,14 +272,14 @@ nav .fa-bars:hover {
 }
 
 :root {
-    --red: #ff004f;
-    --red-soft: rgba(255, 0, 79, 0.12);
-    --red-glow: rgba(255, 0, 79, 0.25);
-    --bg: #080808;
-    --bg2: #0f0f0f;
-    --bg3: #141414;
+    --red: #2563eb;
+    --red-soft: rgba(37, 99, 235, 0.12);
+    --red-glow: rgba(37, 99, 235, 0.25);
+    --bg: #020617;
+    --bg2: #0f172a;
+    --bg3: #1e293b;
     --border: rgba(255, 255, 255, 0.07);
-    --border-r: rgba(255, 0, 79, 0.25);
+    --border-r: rgba(37, 99, 235, 0.25);
     --text: #f0f0f0;
     --muted: #888;
     --radius: 16px;
@@ -306,7 +306,7 @@ body {
     left: 0;
     width: 0%;
     height: 3px;
-    background: linear-gradient(90deg, var(--red), #ff6b6b);
+    background: linear-gradient(90deg, var(--red), #0ea5e9);
     z-index: 9999;
     transition: width 0.1s linear;
     box-shadow: 0 0 10px var(--red-glow);
@@ -365,7 +365,7 @@ body {
     transform: translateX(-50%);
     width: 700px;
     height: 700px;
-    background: radial-gradient(circle, rgba(255, 0, 79, 0.08) 0%, transparent 65%);
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 65%);
     pointer-events: none;
     animation: pulseGlow 6s ease-in-out infinite;
 }
@@ -518,9 +518,9 @@ body {
     overflow: hidden;
     border: 1px solid var(--border);
     box-shadow:
-        0 0 0 1px rgba(255, 0, 79, 0.1),
+        0 0 0 1px rgba(37, 99, 235, 0.1),
         0 40px 80px rgba(0, 0, 0, 0.6),
-        0 0 60px rgba(255, 0, 79, 0.08);
+        0 0 60px rgba(37, 99, 235, 0.08);
 }
 
 .cs-hero-image img {
@@ -542,7 +542,7 @@ body {
     inset: 0;
     background: linear-gradient(to bottom,
             transparent 60%,
-            rgba(8, 8, 8, 0.7) 100%);
+            rgba(2, 6, 23, 0.7) 100%);
     pointer-events: none;
 }
 
@@ -622,7 +622,7 @@ body {
 
 .cs-card:hover {
     border-color: var(--border-r);
-    box-shadow: 0 8px 40px rgba(255, 0, 79, 0.1), 0 0 0 1px rgba(255, 0, 79, 0.05);
+    box-shadow: 0 8px 40px rgba(37, 99, 235, 0.1), 0 0 0 1px rgba(37, 99, 235, 0.05);
     transform: translateY(-4px);
 }
 
@@ -742,8 +742,8 @@ body {
 }
 
 .metric-card {
-    background: rgba(255, 0, 79, 0.04);
-    border: 1px solid rgba(255, 0, 79, 0.12);
+    background: rgba(37, 99, 235, 0.04);
+    border: 1px solid rgba(37, 99, 235, 0.12);
     border-radius: var(--radius-sm);
     padding: 18px;
     transition: var(--transition);
@@ -791,7 +791,7 @@ body {
 
 .ch-badge.problem {
     background: rgba(255, 100, 60, 0.12);
-    color: #ff6b6b;
+    color: #0ea5e9;
     border: 1px solid rgba(255, 100, 60, 0.2);
 }
 
@@ -814,7 +814,7 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 24px;
-    background: linear-gradient(135deg, rgba(255, 0, 79, 0.06) 0%, rgba(255, 0, 79, 0.02) 100%);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.06) 0%, rgba(37, 99, 235, 0.02) 100%);
     border-color: var(--border-r);
 }
 
@@ -853,15 +853,15 @@ body {
 }
 
 .cs-btn.primary {
-    background: linear-gradient(135deg, var(--red), #ff6b6b);
+    background: linear-gradient(135deg, var(--red), #0ea5e9);
     color: #fff;
     border: none;
-    box-shadow: 0 4px 20px rgba(255, 0, 79, 0.35);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.35);
 }
 
 .cs-btn.primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(255, 0, 79, 0.5);
+    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.5);
 }
 
 .cs-btn.ghost {
@@ -941,7 +941,7 @@ body {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 0, 79, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
     transform: translate(-50%, -50%);
