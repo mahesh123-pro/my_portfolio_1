@@ -214,6 +214,25 @@ body {
 }
 
 @media (max-width: 980px) {
+  .header-row {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 120px;
+  }
+
+  .header-text {
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .hero-topline, .hero-btns, .hero-socials {
+    justify-content: center;
+  }
+
+  .hero-proof-grid {
+    justify-items: center;
+  }
+
   .home-page .hero-visual-card {
     transform: none;
   }
@@ -830,33 +849,34 @@ nav#main-nav ul li a.active::after {
 
 .header-row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: clamp(40px, 6vw, 80px);
+  justify-content: space-between;
+  text-align: left;
+  gap: clamp(40px, 6vw, 100px);
   min-height: 100svh;
-  padding: 160px 0 100px;
+  padding: 140px 0 80px;
   position: relative;
   z-index: 2;
 }
 
 .header-text {
-  max-width: 900px;
+  flex: 1.2;
+  max-width: 720px;
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .hero-topline {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .role-badge {
@@ -1015,7 +1035,7 @@ nav#main-nav ul li a.active::after {
   flex-wrap: wrap;
   gap: 16px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   opacity: 0;
   animation: fadeSlideUp 1s ease forwards;
   animation-delay: .7s;
@@ -1067,7 +1087,7 @@ nav#main-nav ul li a.active::after {
   flex-wrap: wrap;
   gap: 18px;
   margin-top: 24px;
-  justify-content: center;
+  justify-content: flex-start;
   opacity: 0;
   animation: fadeSlideUp 1s ease forwards;
   animation-delay: .95s;
