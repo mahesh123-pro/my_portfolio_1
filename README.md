@@ -1,37 +1,73 @@
-# My Portfolio Website
+# React + TypeScript + Vite
 
-Welcome to my portfolio website repository! This project is a reflection of my journey in web development, showcasing my skills, projects, and creativity.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## How It Started
+Currently, two official plugins are available:
 
-I started building this portfolio website to create a personal space where I could showcase my work and share my journey as a developer. The idea was to have a platform that represents my skills and serves as a hub for my professional presence.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Tools and Technologies Used
+## React Compiler
 
-Here are the tools and technologies I used to build this portfolio:
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-- **HTML5**: For structuring the content.
-- **CSS3**: For styling and creating a visually appealing design.
-- **JavaScript**: For adding interactivity and dynamic features.
-- **Frameworks/Libraries**: [Add any frameworks or libraries you used, e.g., React, Bootstrap].
-- **Version Control**: Git and GitHub for managing the codebase.
-- **Design Tools**: [Add any design tools, e.g., Figma, Adobe XD, etc.].
+## Expanding the ESLint configuration
 
-## Upcoming Updates
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-I plan to enhance this portfolio with the following updates:
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-- **Responsive Design**: Ensure the website looks great on all devices.
-- **Dark Mode**: Add a toggle for light and dark themes.
-- **Blog Section**: Include a blog to share my thoughts and experiences.
-- **Animations**: Add smooth animations for better user experience.
-- **Backend Integration**: Connect to a backend for dynamic content.
-- **SEO Optimization**: Improve search engine visibility.
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-Stay tuned for more updates as I continue to improve and expand this project!
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
-## Feedback
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-I would love to hear your feedback! Feel free to open an issue or reach out to me with suggestions or ideas.
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-Thank you for visiting my portfolio repository!
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
